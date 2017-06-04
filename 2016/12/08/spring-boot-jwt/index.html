@@ -1,0 +1,937 @@
+
+<!doctype html>
+<html class="theme-next use-motion theme-next-mala">
+<head>
+  
+
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+  <link rel="stylesheet" type="text/css" href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5"/>
+
+
+
+  <link href='//fonts.googleapis.com/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+
+
+<link rel="stylesheet" type="text/css" href="/css/main.css?v=0.4.5.1"/>
+
+
+    <meta name="description" content="Each man is the architect of his own fate." />
+
+
+
+  <meta name="keywords" content="java,spring," />
+
+
+
+
+
+  <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.1" />
+
+
+<meta name="description" content="这篇文章我们来讲一下如何集成JWT到Spring Boot项目中来完成接口的权限验证。
+JWTJWT是一种用于双方之间传递安全信息的简洁的、URL安全的表述性声明规范。JWT作为一个开放的标准（ RFC 7519 ），定义了一种简洁的，自包含的方法用于通信双方之间以Json对象的形式安全的传递信息。因为数字签名的存在，这些信息是可信的，JWT可以使用HMAC算法或者是RSA的公私秘钥对进行签名。如">
+<meta property="og:type" content="article">
+<meta property="og:title" content="集成JWT到Spring Boot项目">
+<meta property="og:url" content="https://blankcat.github.io/2016/12/08/spring-boot-jwt/index.html">
+<meta property="og:site_name" content="BlankCat">
+<meta property="og:description" content="这篇文章我们来讲一下如何集成JWT到Spring Boot项目中来完成接口的权限验证。
+JWTJWT是一种用于双方之间传递安全信息的简洁的、URL安全的表述性声明规范。JWT作为一个开放的标准（ RFC 7519 ），定义了一种简洁的，自包含的方法用于通信双方之间以Json对象的形式安全的传递信息。因为数字签名的存在，这些信息是可信的，JWT可以使用HMAC算法或者是RSA的公私秘钥对进行签名。如">
+<meta property="og:image" content="http://img1.tuicool.com/UfIbUjj.png!web">
+<meta property="og:image" content="http://7xs4nh.com1.z0.glb.clouddn.com/login.png">
+<meta property="og:image" content="http://7xs4nh.com1.z0.glb.clouddn.com/spring-boot-jwt-user-0.png">
+<meta property="og:image" content="http://7xs4nh.com1.z0.glb.clouddn.com/spring-boot-jwt-1.png">
+<meta property="og:updated_time" content="2017-04-20T05:55:21.482Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="集成JWT到Spring Boot项目">
+<meta name="twitter:description" content="这篇文章我们来讲一下如何集成JWT到Spring Boot项目中来完成接口的权限验证。
+JWTJWT是一种用于双方之间传递安全信息的简洁的、URL安全的表述性声明规范。JWT作为一个开放的标准（ RFC 7519 ），定义了一种简洁的，自包含的方法用于通信双方之间以Json对象的形式安全的传递信息。因为数字签名的存在，这些信息是可信的，JWT可以使用HMAC算法或者是RSA的公私秘钥对进行签名。如">
+<meta name="twitter:image" content="http://img1.tuicool.com/UfIbUjj.png!web">
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var CONFIG = {
+    scheme: 'Mala',
+    sidebar: 'post'
+  };
+</script>
+
+  <title> 集成JWT到Spring Boot项目 | BlankCat </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  <!--[if lte IE 8]>
+  <div style=' clear: both; height: 59px; padding:0 0 0 15px; position: relative;margin:0 auto;'>
+    <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
+      <img src="http://7u2nvr.com1.z0.glb.clouddn.com/picouterie.jpg" border="0" height="42" width="820"
+           alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today or use other browser ,like chrome firefox safari."
+           style='margin-left:auto;margin-right:auto;display: block;'/>
+    </a>
+  </div>
+<![endif]-->
+  
+
+
+
+  <div class="container one-column page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><h1 class="site-meta">
+  <span class="logo-line-before"><i></i></span>
+  <a href="/" class="brand" rel="start">
+      <span class="logo">
+        <i class="icon-next-logo"></i>
+      </span>
+      <span class="site-title">BlankCat</span>
+  </a>
+  <span class="logo-line-after"><i></i></span>
+</h1>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu ">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            <i class="menu-item-icon icon-next-home"></i> <br />
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            <i class="menu-item-icon icon-next-categories"></i> <br />
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            <i class="menu-item-icon icon-next-archives"></i> <br />
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            <i class="menu-item-icon icon-next-tags"></i> <br />
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            <i class="menu-item-icon icon-next-about"></i> <br />
+            About
+          </a>
+        </li>
+      
+
+      
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    
+      
+
+      
+        <style type="text/css">
+
+    .circle {
+        width: 40px;
+        height: 40px;
+        background: #555 no-repeat;
+        cursor: move;
+    }
+
+    .assist-btn {
+        position: fixed;
+        top: 50％;
+        left: 10px;
+        -moz-border-radius: 50px;
+        -webkit-border-radius: 50px;
+        border-radius: 50px;
+        outline: none;
+        border: none;
+        color: #87daff;
+    }
+
+</style>
+
+<script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+<script type="text/javascript">
+    // 浮动圆点展开与收缩
+    /*
+    $(function () {
+        var assist_box = $('.assist-box');
+        $('#assist_btn').hover(function () {
+            assist_box.stop().show(300);
+        }, function () {
+            assist_box.stop().hide(150);
+        })
+    });
+    */  
+    //浮动圆点拖动
+    $(function () {
+        var box = document.getElementById('assist_btn');
+        box.onmousedown = function (event) {
+            var e = event || window.event,
+                t = e.target || e.srcElement,
+                // 鼠标按下时的坐标x1,y1
+                x1 = e.clientX,
+                y1 = e.clientY,
+                //鼠标按下时的左右偏移量
+                dragLeft = this.offsetLeft,
+                dragTop = this.offsetTop;
+
+            document.onmousemove = function (event) {
+                var e = event || window.event,
+                    t = e.target || e.srcElement,
+                    // 鼠标移动时的动态坐标
+                    x2 = e.clientX,
+                    y2 = e.clientY,
+                    // 鼠标移动时的坐标的变化量
+                    x = x2 - x1,
+                    y = y2 - y1;
+                box.style.left = (dragLeft + x) + 'px';
+                box.style.top = (dragTop + y) + 'px';
+            }
+
+            document.onmouseup = function () {
+                this.onmousemove = null;
+            }
+        }
+    });
+
+/*
+    $whitesmoke   = #f5f5f5
+    $gainsboro    = #eee
+    $gray-lighter = #ddd
+    $grey-light   = #ccc
+    $grey         = #bbb
+    $grey-dark    = #999
+    $grey-dim     = #666
+    $black-light  = #555
+    $black-deep   = #222
+    $red          = #ff2a2a
+    $blue-bright  = #87daff
+    $blue         = #0684bd
+    $blue-deep    = #262a30
+*/
+    // white theme
+    var body = {color: "#555", background: "white"};
+    var a_tag = {color: "#222"};
+    var header = { background: "#f5f5f5"};
+    var logo_line_i = {background: "#222"};
+    // var post_code = {background: "#eee", color: "#222"};
+
+    function switch_theme() {
+        $("body").css(body);
+        $("a:not('.links-of-author-item a, .site-state-item a, .site-state-posts a, .feed-link a, .motion-element a, .post-tags a, .show-commit-cls a, #donate_board a')").css(a_tag);
+        $(".header, .footer").css(header);
+        $(".logo-line-before i, .logo-line-after i").css(logo_line_i);
+        //$(".post code").css(post_code);
+        $("#idhyt-surprise-ball #idhyt-surprise-ball-animation .drag").css(a_tag);
+        $(".post-title-link, .posts-expand .post-meta, .post-comments-count, .disqus-comment-count, .post-category a, .post-nav-next a, .post-nav-item a").css(a_tag);
+        
+        // $("code").css({color: '#c5c8c6', background: '#1d1f21'});
+        $("#assist_btn").hide(1500);
+    }
+
+    $(function () {
+        $("#assist_btn").dblclick(function() {
+            switch_theme();
+        });
+    });
+
+</script>
+
+<div>
+
+    <button class="assist-btn circle" id="assist_btn" title="双击切换">
+        亮
+    </button>
+
+</div>
+
+
+
+
+
+
+
+
+
+      
+
+    
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div id="content" class="content"> 
+
+  <div id="posts" class="posts-expand">
+    
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
+              集成JWT到Spring Boot项目
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          Posted on
+          <time itemprop="dateCreated" datetime="2016-12-08T14:46:56+08:00" content="2016-12-08">
+            2016-12-08
+          </time>
+        </span>
+
+        
+          <span class="post-category" >
+            &nbsp; | &nbsp; In
+            
+              <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                <a href="/categories/spring/" itemprop="url" rel="index">
+                  <span itemprop="name">spring</span>
+                </a>
+              </span>
+
+              
+              
+
+            
+          </span>
+        
+
+        
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        <span itemprop="articleBody"><p>这篇文章我们来讲一下如何集成JWT到Spring Boot项目中来完成接口的权限验证。</p>
+<h1 id="JWT"><a href="#JWT" class="headerlink" title="JWT"></a>JWT</h1><p>JWT是一种用于双方之间传递安全信息的简洁的、URL安全的表述性声明规范。JWT作为一个开放的标准（ RFC 7519 ），定义了一种简洁的，自包含的方法用于通信双方之间以Json对象的形式安全的传递信息。因为数字签名的存在，这些信息是可信的，JWT可以使用HMAC算法或者是RSA的公私秘钥对进行签名。<br>如何使用JWT？</p>
+<p>在身份鉴定的实现中，传统方法是在服务端存储一个session，给客户端返回一个cookie，而使用JWT之后，当用户使用它的认证信息登陆系统之后，会返回给用户一个JWT，用户只需要本地保存该token（通常使用local storage，也可以使用cookie）即可。<br><a id="more"></a><br>因为用户的状态在服务端的内存中是不存储的，所以这是一种 无状态 的认证机制。服务端的保护路由将会检查请求头 Authorization 中的JWT信息，如果合法，则允许用户的行为。由于JWT是自包含的，因此减少了需要查询数据库的需要。</p>
+<p>JWT的这些特性使得我们可以完全依赖其无状态的特性提供数据API服务，甚至是创建一个下载流服务。因为JWT并不使用Cookie的，所以你可以使用任何域名提供你的API服务而不需要担心跨域资源共享问题（CORS）。<br>大概就是这样：<br><img src="http://img1.tuicool.com/UfIbUjj.png!web" alt=""></p>
+<h1 id="Spring-Boot集成"><a href="#Spring-Boot集成" class="headerlink" title="Spring Boot集成"></a>Spring Boot集成</h1><p>我是勤劳的搬运工，<a href="http://www.jdon.com/dl/best/json-web-tokens-spring-cloud-microservices.html" target="_blank" rel="external">这应该是翻译老外的东西</a>，项目地址：<a href="https://github.com/thomas-kendall/trivia-microservices。" target="_blank" rel="external">https://github.com/thomas-kendall/trivia-microservices。</a></p>
+<p>废话不多说了，我直接上代码,依然是搬运工。<br>我是gradle构建的，就是引入一些依赖的jar包。顺便推荐一下阿里云的中央仓库</p>
+<pre><code>http://maven.aliyun.com/nexus/content/groups/public/
+</code></pre><figure class="highlight groovy"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">dependencies &#123;</div><div class="line">	compile(<span class="string">'org.springframework.boot:spring-boot-starter-aop'</span>)</div><div class="line">	compile(<span class="string">'org.springframework.boot:spring-boot-starter-security'</span>)</div><div class="line">	compile(<span class="string">'org.mybatis.spring.boot:mybatis-spring-boot-starter:1.1.1'</span>)</div><div class="line">	compile(<span class="string">'org.springframework.boot:spring-boot-starter-web'</span>)</div><div class="line">    compile(<span class="string">'com.google.guava:guava:20.0'</span>)</div><div class="line">    compile(<span class="string">'com.alibaba:druid:0.2.9'</span>)</div><div class="line">	compile(<span class="string">'org.apache.commons:commons-lang3:3.5'</span>)</div><div class="line">	compile(<span class="string">'commons-collections:commons-collections:3.2.2'</span>)</div><div class="line">	compile(<span class="string">'commons-codec:commons-codec:1.10'</span>)</div><div class="line">	compile(<span class="string">'com.github.pagehelper:pagehelper:4.1.6'</span>)</div><div class="line">	compile(<span class="string">'io.jsonwebtoken:jjwt:0.6.0'</span>)</div><div class="line">	runtime(<span class="string">'mysql:mysql-connector-java'</span>)</div><div class="line">	compileOnly(<span class="string">'org.projectlombok:lombok'</span>)</div><div class="line">	testCompile(<span class="string">'org.springframework.boot:spring-boot-starter-test'</span>)</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>下面这个是类是产生token的主要类</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"> * Created by YangFan on 2016/11/28 上午10:01.</div><div class="line"> * &lt;p/&gt;</div><div class="line"> */</div><div class="line"><span class="meta">@Slf</span>4j</div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">JsonWebTokenUtility</span> </span>&#123;</div><div class="line">    <span class="keyword">private</span> SignatureAlgorithm signatureAlgorithm;</div><div class="line">    <span class="keyword">private</span> Key secretKey;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="title">JsonWebTokenUtility</span><span class="params">()</span> </span>&#123;</div><div class="line"></div><div class="line">        <span class="comment">// 这里不是真正安全的实践</span></div><div class="line">        <span class="comment">// 为了简单，我们存储一个静态key在这里，</span></div><div class="line">        signatureAlgorithm = SignatureAlgorithm.HS512;</div><div class="line">        String encodedKey =</div><div class="line">                <span class="string">"L7A/6zARSkK1j7Vd5SDD9pSSqZlqF7mAhiOgRbgv9Smce6tf4cJnvKOjtKPxNNnWQj+2lQEScm3XIUjhW+YVZg=="</span>;</div><div class="line">        secretKey = deserializeKey(encodedKey);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">createJsonWebToken</span><span class="params">(AuthTokenDetails authTokenDetails)</span> </span>&#123;</div><div class="line">        String token =</div><div class="line">                Jwts.builder().setSubject(authTokenDetails.getId().toString())</div><div class="line">                        .claim(<span class="string">"username"</span>, authTokenDetails.getUsername())</div><div class="line">                        .claim(<span class="string">"roleNames"</span>, authTokenDetails.getRoleNames())</div><div class="line">                        .setExpiration(authTokenDetails.getExpirationDate())</div><div class="line">                        .signWith(getSignatureAlgorithm(),</div><div class="line">                                getSecretKey()).compact();</div><div class="line">        <span class="keyword">return</span> token;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">private</span> Key <span class="title">deserializeKey</span><span class="params">(String encodedKey)</span> </span>&#123;</div><div class="line">        <span class="keyword">byte</span>[] decodedKey = Base64.getDecoder().decode(encodedKey);</div><div class="line">        Key key =</div><div class="line">                <span class="keyword">new</span> SecretKeySpec(decodedKey, getSignatureAlgorithm().getJcaName());</div><div class="line">        <span class="keyword">return</span> key;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">private</span> Key <span class="title">getSecretKey</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">return</span> secretKey;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> SignatureAlgorithm <span class="title">getSignatureAlgorithm</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">return</span> signatureAlgorithm;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> AuthTokenDetails <span class="title">parseAndValidate</span><span class="params">(String token)</span> </span>&#123;</div><div class="line">        AuthTokenDetails authTokenDetails = <span class="keyword">null</span>;</div><div class="line">        <span class="keyword">try</span> &#123;</div><div class="line">            Claims claims =</div><div class="line">                    Jwts.parser().setSigningKey(getSecretKey()).parseClaimsJws(token).getBody();</div><div class="line">            String userId = claims.getSubject();</div><div class="line">            String username = (String) claims.get(<span class="string">"username"</span>);</div><div class="line">            List&lt;String&gt; roleNames = (List) claims.get(<span class="string">"roleNames"</span>);</div><div class="line">            Date expirationDate = claims.getExpiration();</div><div class="line"></div><div class="line">            authTokenDetails = <span class="keyword">new</span> AuthTokenDetails();</div><div class="line">            authTokenDetails.setId(Long.valueOf(userId));</div><div class="line">            authTokenDetails.setUsername(username);</div><div class="line">            authTokenDetails.setRoleNames(roleNames);</div><div class="line">            authTokenDetails.setExpirationDate(expirationDate);</div><div class="line">        &#125; <span class="keyword">catch</span> (JwtException ex) &#123;</div><div class="line">            log.error(ex.getMessage(), ex);</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> authTokenDetails;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">private</span> String <span class="title">serializeKey</span><span class="params">(Key key)</span> </span>&#123;</div><div class="line">        String encodedKey =</div><div class="line">                Base64.getEncoder().encodeToString(key.getEncoded());</div><div class="line">        <span class="keyword">return</span> encodedKey;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>现在我们需要一个定制授权过滤器，将能读取请求头部信息，在Spring中已经有一个这样的授权Filter称为：RequestHeaderAuthenticationFilter，我们只要扩展继承即可：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@Component</span></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">JsonWebTokenAuthenticationFilter</span> <span class="keyword">extends</span> <span class="title">RequestHeaderAuthenticationFilter</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="title">JsonWebTokenAuthenticationFilter</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="comment">// Don't throw exceptions if the header is missing</span></div><div class="line">        <span class="keyword">this</span>.setExceptionIfHeaderMissing(<span class="keyword">false</span>);</div><div class="line"></div><div class="line">        <span class="comment">// This is the request header it will look for</span></div><div class="line">        <span class="keyword">this</span>.setPrincipalRequestHeader(<span class="string">"Authorization"</span>);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="meta">@Autowired</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setAuthenticationManager</span><span class="params">(</span></span></div><div class="line">            AuthenticationManager authenticationManager) &#123;</div><div class="line">        <span class="keyword">super</span>.setAuthenticationManager(authenticationManager);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>在这里，头部信息将被转换为Spring Authentication对象，名称为PreAuthenticatedAuthenticationToken<br>我们需要一个授权提供者读取这个记号，然后验证它，然后转换为我们自己的定制授权对象，就是把header里的token转化成我们自己的授权对象。然后把解析之后的对象返回给Spring Security，这里就相当于完成了token-&gt;session的转换。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="meta">@Component</span></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">JsonWebTokenAuthenticationProvider</span> <span class="keyword">implements</span> <span class="title">AuthenticationProvider</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="keyword">private</span> JsonWebTokenUtility tokenService = <span class="keyword">new</span> JsonWebTokenUtility();</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> Authentication <span class="title">authenticate</span><span class="params">(Authentication authentication)</span></span></div><div class="line">            <span class="keyword">throws</span> AuthenticationException &#123;</div><div class="line">        Authentication authenticatedUser = <span class="keyword">null</span>;</div><div class="line">        <span class="comment">// Only process the PreAuthenticatedAuthenticationToken</span></div><div class="line">        <span class="keyword">if</span> (authentication.getClass().</div><div class="line">                isAssignableFrom(PreAuthenticatedAuthenticationToken.class)</div><div class="line">                &amp;&amp; authentication.getPrincipal() != <span class="keyword">null</span>) &#123;</div><div class="line">            String tokenHeader = (String) authentication.getPrincipal();</div><div class="line">            UserDetails userDetails = parseToken(tokenHeader);</div><div class="line">            <span class="keyword">if</span> (userDetails != <span class="keyword">null</span>) &#123;</div><div class="line">                authenticatedUser =</div><div class="line">                        <span class="keyword">new</span> JsonWebTokenAuthentication(userDetails, tokenHeader);</div><div class="line">            &#125;</div><div class="line">        &#125; <span class="keyword">else</span> &#123;</div><div class="line">            <span class="comment">// It is already a JsonWebTokenAuthentication</span></div><div class="line">            authenticatedUser = authentication;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> authenticatedUser;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">private</span> UserDetails <span class="title">parseToken</span><span class="params">(String tokenHeader)</span> </span>&#123;</div><div class="line"></div><div class="line">        UserDetails principal = <span class="keyword">null</span>;</div><div class="line">        AuthTokenDetails authTokenDetails =</div><div class="line">                tokenService.parseAndValidate(tokenHeader);</div><div class="line"></div><div class="line">        <span class="keyword">if</span> (authTokenDetails != <span class="keyword">null</span>) &#123;</div><div class="line">            List&lt;GrantedAuthority&gt; authorities =</div><div class="line">                    authTokenDetails.getRoleNames().stream()</div><div class="line">                            .map(SimpleGrantedAuthority::<span class="keyword">new</span>).collect(Collectors.toList());</div><div class="line">            <span class="comment">// userId介入Spring Security</span></div><div class="line">            principal = <span class="keyword">new</span> User(authTokenDetails.getId().toString(), <span class="string">""</span>,</div><div class="line">                    authorities);</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        <span class="keyword">return</span> principal;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">supports</span><span class="params">(Class&lt;?&gt; authentication)</span> </span>&#123;</div><div class="line">        <span class="keyword">return</span></div><div class="line">                authentication.isAssignableFrom(</div><div class="line">                        PreAuthenticatedAuthenticationToken.class)||</div><div class="line">                        authentication.isAssignableFrom(</div><div class="line">                                JsonWebTokenAuthentication.class);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h1 id="Spring-Security"><a href="#Spring-Security" class="headerlink" title="Spring Security"></a>Spring Security</h1><p>上面完成了JWT和Spring Boot的集成。<br>接下来我们再如何把自己的权限系统也接入Spring Security。<br>刚才已经展示了通过JsonWebTokenAuthenticationProvider的处理，我们已经能通过header的token来识别用户，并拿到他的角色和userId等信息。</p>
+<p>配置Spring Security有3个不可缺的类。<br>首先配置拦截器，拦截所有的请求。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"> * Created by YangFan on 2016/11/28 上午11:32.</div><div class="line"> * &lt;p/&gt;</div><div class="line"> */</div><div class="line"><span class="meta">@Component</span></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">DemoSecurityInterceptor</span> <span class="keyword">extends</span> <span class="title">AbstractSecurityInterceptor</span></span></div><div class="line">        <span class="keyword">implements</span> <span class="title">Filter</span> &#123;</div><div class="line"></div><div class="line"></div><div class="line">    <span class="meta">@Autowired</span></div><div class="line">    <span class="keyword">private</span> FilterInvocationSecurityMetadataSource securityMetadataSource;</div><div class="line"></div><div class="line">    <span class="meta">@Autowired</span></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setAccessDecisionManager</span><span class="params">(AccessDecisionManager accessDecisionManager)</span> </span>&#123;</div><div class="line">        <span class="keyword">super</span>.setAccessDecisionManager(accessDecisionManager);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@Autowired</span></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setAuthenticationManager</span><span class="params">(AuthenticationManager authenticationManager)</span> </span>&#123;</div><div class="line">        <span class="keyword">super</span>.setAuthenticationManager(authenticationManager);</div><div class="line">    &#125;</div><div class="line"></div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">doFilter</span><span class="params">(ServletRequest request, ServletResponse response, FilterChain chain)</span></span></div><div class="line">            <span class="keyword">throws</span> IOException, ServletException &#123;</div><div class="line"></div><div class="line">        FilterInvocation fi = <span class="keyword">new</span> FilterInvocation(request, response, chain);</div><div class="line">        invoke(fi);</div><div class="line"></div><div class="line">    &#125;</div><div class="line"></div><div class="line"></div><div class="line">    <span class="keyword">public</span> Class&lt;? extends Object&gt; getSecureObjectClass() &#123;</div><div class="line">        <span class="keyword">return</span> FilterInvocation.class;</div><div class="line">    &#125;</div><div class="line"></div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">invoke</span><span class="params">(FilterInvocation fi)</span> <span class="keyword">throws</span> IOException, ServletException </span>&#123;</div><div class="line"></div><div class="line">        InterceptorStatusToken token = <span class="keyword">super</span>.beforeInvocation(fi);</div><div class="line"></div><div class="line">        <span class="keyword">try</span> &#123;</div><div class="line">            fi.getChain().doFilter(fi.getRequest(), fi.getResponse());</div><div class="line">        &#125; <span class="keyword">finally</span> &#123;</div><div class="line">            <span class="keyword">super</span>.afterInvocation(token, <span class="keyword">null</span>);</div><div class="line">        &#125;</div><div class="line"></div><div class="line">    &#125;</div><div class="line"></div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> SecurityMetadataSource <span class="title">obtainSecurityMetadataSource</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.securityMetadataSource;</div><div class="line">    &#125;</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">destroy</span><span class="params">()</span> </span>&#123;</div><div class="line"></div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">init</span><span class="params">(FilterConfig filterconfig)</span> <span class="keyword">throws</span> ServletException </span>&#123;</div><div class="line"></div><div class="line">    &#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>然后是把我们自己的权限数据加载到Spring Security中。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"> * Created by YangFan on 2016/11/28 上午11:33.</div><div class="line"> * &lt;p/&gt;</div><div class="line"> * 最核心的地方，就是提供某个资源对应的权限定义，即getAttributes方法返回的结果。</div><div class="line"> * 此类在初始化时，应该取到所有资源及其对应角色的定义。</div><div class="line"> */</div><div class="line"><span class="meta">@Component</span></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">DemoInvocationSecurityMetadataSourceService</span> <span class="keyword">implements</span></span></div><div class="line">        <span class="title">FilterInvocationSecurityMetadataSource</span> &#123;</div><div class="line"></div><div class="line"></div><div class="line">    <span class="keyword">private</span> <span class="keyword">static</span> Map&lt;String, Collection&lt;ConfigAttribute&gt;&gt; resourceMap = <span class="keyword">null</span>;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="title">DemoInvocationSecurityMetadataSourceService</span><span class="params">()</span> </span>&#123;</div><div class="line"></div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">loadResourceDefine</span><span class="params">()</span> </span>&#123;</div><div class="line"></div><div class="line">        <span class="comment">/*</span></div><div class="line">         * 应当是资源为key， 权限为value。 资源通常为url， 权限就是那些以ROLE_为前缀的角色。 一个资源可以由多个权限来访问。</div><div class="line">         * sparta</div><div class="line">         */</div><div class="line">        Role r = <span class="keyword">new</span> Role();</div><div class="line">        r.setId(<span class="number">0L</span>);</div><div class="line">        r.setName(<span class="string">"admin"</span>);</div><div class="line">        <span class="comment">// 假数据</span></div><div class="line">        List&lt;Role&gt; roles = Collections.singletonList(r); <span class="comment">// 替换为查询角色列表</span></div><div class="line">        resourceMap = <span class="keyword">new</span> HashMap&lt;&gt;();</div><div class="line"></div><div class="line">        <span class="keyword">for</span> (Role role : roles) &#123;</div><div class="line">            ConfigAttribute ca = <span class="keyword">new</span> SecurityConfig(role.getName());</div><div class="line"></div><div class="line">            Map&lt;String, Object&gt; params = <span class="keyword">new</span> HashMap&lt;&gt;();</div><div class="line">            params.put(<span class="string">"roleId"</span>, role.getId());</div><div class="line">            <span class="comment">// 查询每个角色对于的权限,我这里假设直接查到了url</span></div><div class="line">            List&lt;String&gt; resources = Collections.singletonList(<span class="string">"/user/*"</span>);</div><div class="line"></div><div class="line">            <span class="keyword">for</span> (String url : resources) &#123;</div><div class="line"></div><div class="line">                <span class="comment">/*</span></div><div class="line">                 * 判断资源文件和权限的对应关系，如果已经存在相关的资源url，则要通过该url为key提取出权限集合，将权限增加到权限集合中。</div><div class="line">                 * sparta</div><div class="line">                 */</div><div class="line">                <span class="keyword">if</span> (resourceMap.containsKey(url)) &#123;</div><div class="line"></div><div class="line">                    Collection&lt;ConfigAttribute&gt; value = resourceMap.get(url);</div><div class="line">                    value.add(ca);</div><div class="line">                    resourceMap.put(url, value);</div><div class="line">                &#125; <span class="keyword">else</span> &#123;</div><div class="line">                    Collection&lt;ConfigAttribute&gt; atts = <span class="keyword">new</span> ArrayList&lt;&gt;();</div><div class="line">                    atts.add(ca);</div><div class="line">                    resourceMap.put(url, atts);</div><div class="line">                &#125;</div><div class="line"></div><div class="line">            &#125;</div><div class="line"></div><div class="line">        &#125;</div><div class="line"></div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> Collection&lt;ConfigAttribute&gt; <span class="title">getAllConfigAttributes</span><span class="params">()</span> </span>&#123;</div><div class="line">        loadResourceDefine();</div><div class="line">        <span class="keyword">return</span> <span class="keyword">null</span>;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="comment">// 根据URL，找到相关的权限配置。</span></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> Collection&lt;ConfigAttribute&gt; <span class="title">getAttributes</span><span class="params">(Object object)</span></span></div><div class="line">            <span class="keyword">throws</span> IllegalArgumentException &#123;</div><div class="line"></div><div class="line">        FilterInvocation filterInvocation = (FilterInvocation) object;</div><div class="line">        <span class="keyword">for</span> (String url : resourceMap.keySet()) &#123;</div><div class="line">            RequestMatcher requestMatcher = <span class="keyword">new</span> AntPathRequestMatcher(url);</div><div class="line">            HttpServletRequest httpRequest = filterInvocation.getHttpRequest();</div><div class="line"></div><div class="line">            <span class="keyword">if</span> (requestMatcher.matches(httpRequest)) &#123;</div><div class="line">                <span class="keyword">return</span> resourceMap.get(url);</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        <span class="keyword">return</span> <span class="keyword">null</span>;</div><div class="line"></div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">supports</span><span class="params">(Class&lt;?&gt; arg0)</span> </span>&#123;</div><div class="line"></div><div class="line">        <span class="keyword">return</span> <span class="keyword">true</span>;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>现在我们拿到了用户的角色，也拿到了系统里有的角色和权限，就需要判断他是否有这个权限了，配置如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"> * Created by YangFan on 2016/11/28 下午12:19.</div><div class="line"> * &lt;p/&gt;</div><div class="line"> * AccessdecisionManager在Spring security中是很重要的。</div><div class="line"> * &lt;p&gt;</div><div class="line"> * 在验证部分简略提过了，所有的Authentication实现需要保存在一个GrantedAuthority对象数组中。</div><div class="line"> * 这就是赋予给主体的权限。 GrantedAuthority对象通过AuthenticationManager</div><div class="line"> * 保存到 Authentication对象里，然后从AccessDecisionManager读出来，进行授权判断。</div><div class="line"> * &lt;p&gt;</div><div class="line"> * Spring Security提供了一些拦截器，来控制对安全对象的访问权限，例如方法调用或web请求。</div><div class="line"> * 一个是否允许执行调用的预调用决定，是由AccessDecisionManager实现的。</div><div class="line"> * 这个 AccessDecisionManager 被AbstractSecurityInterceptor调用，</div><div class="line"> * 它用来作最终访问控制的决定。 这个AccessDecisionManager接口包含三个方法：</div><div class="line"> * &lt;p&gt;</div><div class="line"> * void decide(Authentication authentication, Object secureObject,</div><div class="line"> * List&lt;ConfigAttributeDefinition&gt; config) throws AccessDeniedException;</div><div class="line"> * boolean supports(ConfigAttribute attribute);</div><div class="line"> * boolean supports(Class clazz);</div><div class="line"> * &lt;p&gt;</div><div class="line"> * 从第一个方法可以看出来，AccessDecisionManager使用方法参数传递所有信息，这好像在认证评估时进行决定。</div><div class="line"> * 特别是，在真实的安全方法期望调用的时候，传递安全Object启用那些参数。</div><div class="line"> * 比如，让我们假设安全对象是一个MethodInvocation。</div><div class="line"> * 很容易为任何Customer参数查询MethodInvocation，</div><div class="line"> * 然后在AccessDecisionManager里实现一些有序的安全逻辑，来确认主体是否允许在那个客户上操作。</div><div class="line"> * 如果访问被拒绝，实现将抛出一个AccessDeniedException异常。</div><div class="line"> * &lt;p&gt;</div><div class="line"> * 这个 supports(ConfigAttribute) 方法在启动的时候被</div><div class="line"> * AbstractSecurityInterceptor调用，来决定AccessDecisionManager</div><div class="line"> * 是否可以执行传递ConfigAttribute。</div><div class="line"> * supports(Class)方法被安全拦截器实现调用，</div><div class="line"> * 包含安全拦截器将显示的AccessDecisionManager支持安全对象的类型。</div><div class="line"> */</div><div class="line"><span class="meta">@Component</span></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">DemoAccessDecisionManager</span> <span class="keyword">implements</span> <span class="title">AccessDecisionManager</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">decide</span><span class="params">(Authentication authentication, Object object,</span></span></div><div class="line">                       Collection&lt;ConfigAttribute&gt; configAttributes)</div><div class="line">            <span class="keyword">throws</span> AccessDeniedException, InsufficientAuthenticationException &#123;</div><div class="line"></div><div class="line">        <span class="keyword">if</span> (configAttributes == <span class="keyword">null</span>) &#123;</div><div class="line">            <span class="keyword">return</span>;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        <span class="keyword">for</span> (ConfigAttribute ca : configAttributes) &#123;</div><div class="line"></div><div class="line">            String needRole = ca.getAttribute();</div><div class="line"></div><div class="line">            <span class="comment">//ga 为用户所被赋予的权限。 needRole 为访问相应的资源应该具有的权限。</span></div><div class="line">            <span class="keyword">for</span> (GrantedAuthority ga : authentication.getAuthorities()) &#123;</div><div class="line"></div><div class="line">                <span class="keyword">if</span> (needRole.trim().equals(ga.getAuthority().trim())) &#123;</div><div class="line"></div><div class="line">                    <span class="keyword">return</span>;</div><div class="line">                &#125;</div><div class="line"></div><div class="line">            &#125;</div><div class="line"></div><div class="line">        &#125;</div><div class="line"></div><div class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> AccessDeniedException(<span class="string">"没有权限进行操作！"</span>);</div><div class="line"></div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">supports</span><span class="params">(ConfigAttribute attribute)</span> </span>&#123;</div><div class="line"></div><div class="line">        <span class="keyword">return</span> <span class="keyword">true</span>;</div><div class="line"></div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">supports</span><span class="params">(Class&lt;?&gt; clazz)</span> </span>&#123;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">true</span>;</div><div class="line"></div><div class="line">    &#125;</div><div class="line"></div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>我们试试登录的接口：<br><img src="http://7xs4nh.com1.z0.glb.clouddn.com/login.png" alt=""></p>
+<p>然后我们用这个token来调用另外一个接口。<br>我们先试试不传Token会返回什么</p>
+<p><img src="http://7xs4nh.com1.z0.glb.clouddn.com/spring-boot-jwt-user-0.png" alt=""></p>
+<p>判断没有登录，现在再来试试带上token的请求。<br>已经成功的请求到了数据。<br><img src="http://7xs4nh.com1.z0.glb.clouddn.com/spring-boot-jwt-1.png" alt=""></p>
+<p>好了，核心配置就是这些，我把这些代码上传github上，有需要的可以下载下来看看。里面的角色和权限都是虚拟数据，应用还需要自行修改代码。<br><a href="https://github.com/sail-y/spring-boot-jwt" target="_blank" rel="external">https://github.com/sail-y/spring-boot-jwt</a></p>
+</span>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/java/" rel="tag">#java</a>
+          
+            <a href="/tags/spring/" rel="tag">#spring</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/12/13/concurrency6/" rel="prev">并发编程6-任务执行</a>
+            
+          </div>
+
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/12/08/concurrency5/" rel="next">并发编程5-基础构建模块</a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div>
+      
+        <style type="text/css">
+
+    .donate_bar {
+        text-align: center;
+        margin-top : 5%;
+    }
+
+    .donate_bar.hidden {
+        display:none;
+    }
+/*
+    .donate_bar a.btn_donate {
+        display: inline-block;
+        width: 82px;
+        height: 82px;
+        margin-left:auto;
+        margin-right:auto;
+
+        background: url("http://img.t.sinajs.cn/t5/style/images/apps_PRF/e_media/btn_reward.gif") no-repeat;
+        _background: url("http://img.t.sinajs.cn/t5/style/images/apps_PRF/e_media/btn_reward.gif") no-repeat; 
+
+        -webkit-transition: background 0s;
+        -moz-transition: background 0s;
+        -o-transition: background 0s;
+        -ms-transition: background 0s;
+        transition: background 0s;
+    }
+*/
+    .donate_bar a.btn_donate:hover { 
+        // background-position: 0px -82px;
+        color: #87daff
+    }
+
+    .donate_bar .donate_txt {
+        display: block;
+        color: #9d9d9d;
+        font: 14px/2 "Microsoft Yahei";
+    }
+
+    .bold { 
+        font-weight: bold; 
+    }
+
+    .post-donate a {
+        border-bottom: 0px;
+    }
+
+    #donate_guide table {
+        border: none;
+    }
+
+    #donate_guide td {
+        border-bottom: none;
+        border-right: none;
+        background: #333333;
+        valign: top;
+    }
+
+</style>
+
+
+
+    
+
+    <div class ="post-donate">
+        <div id="donate_board" class="donate_bar center">
+              <a id="btn_donate" class="btn_donate" href="javascript:;" title="打赏">赏</a>
+              <span id="donate_txt" class="donate_txt">
+                   
+                        仅仅是一个功能
+                   
+              </span>
+            <br>
+        </div>  
+  
+        <div id="donate_guide" class="donate_bar center hidden">
+            <!--
+            
+                <a href="https://blankcat.github.io/myself/images/alipay.jpg" title="支付宝打赏" class="fancybox" rel="article0" 
+                    style="float:left;margin-left:25%;margin-right:10px;">
+                    <img src="https://blankcat.github.io/myself/images/alipay.jpg" title="" height="164px" width="164px">
+                </a> 
+              
+
+            
+                <a href="https://blankcat.github.io/myself/images/wechat.jpg" title="微信打赏" class="fancybox" rel="article0"
+                    style="margin-right:30%">
+                    <img src="https://blankcat.github.io/myself/images/wechat.jpg" title="" height="164px" width="164px">
+                </a>
+            
+            -->
+            <table>
+                <tr>
+                    <td>
+                        
+                            <a href="https://blankcat.github.io/myself/images/alipay.jpg" title="支付宝打赏" class="fancybox" rel="article0" 
+                                style="float:left;margin-left:25%;margin-right:10px;">
+                                <img src="https://blankcat.github.io/myself/images/alipay.jpg" title="" height="164px" width="164px">
+                            </a> 
+                         
+                    </td>
+                    <td>
+                        
+                            <a href="https://blankcat.github.io/myself/images/wechat.jpg" title="微信打赏" class="fancybox" rel="article0"
+                                style="margin-right:30%">
+                                <img src="https://blankcat.github.io/myself/images/wechat.jpg" title="" height="164px" width="164px">
+                            </a>
+                        
+                    </td>
+                </tr>
+            </table>
+
+        </div>
+
+        <script type="text/javascript">
+            document.getElementById('btn_donate').onclick = function() {
+                $('#donate_board').addClass('hidden');
+                // $('#donate_guide').removeClass('hidden');
+                $('#donate_guide').show(2000);
+            }
+
+        </script>
+    </div>
+
+    
+
+
+      
+    </div>
+
+    <div class="post-spread">
+      
+        <div class="bdsharebuttonbox">
+	<a href="#" class="bds_more" data-cmd="more"></a>
+	<a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+	<a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+	<a href="#" class="bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+	<a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a>
+	<a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博"></a>
+	<a href="#" class="bds_douban" data-cmd="douban" title="分享到豆瓣网"></a>
+</div>
+<script>
+    window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"1","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+
+      
+    </div>
+  </div>
+
+ </div>
+
+        
+
+        
+          <div class="comments" id="comments">
+            
+          </div>
+        
+      </div>
+
+      
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table Of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" src="/images/default_avatar.jpg" alt="BlankCat" itemprop="image"/>
+          <p class="site-author-name" itemprop="name">BlankCat</p>
+        </div>
+        <p class="site-description motion-element" itemprop="description">Each man is the architect of his own fate.</p>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">60</span>
+              <span class="site-state-item-name">posts</span>
+            </a>
+          </div>
+
+          <div class="site-state-item site-state-categories">
+            <a href="/categories">
+              <span class="site-state-item-count">16</span>
+              <span class="site-state-item-name">categories</span>
+              </a>
+          </div>
+
+          <div class="site-state-item site-state-tags">
+            <a href="/tags">
+              <span class="site-state-item-count">33</span>
+              <span class="site-state-item-name">tags</span>
+              </a>
+          </div>
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/BlankCat" target="_blank">GitHub</a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/u/2624219073" target="_blank">Weibo</a>
+              </span>
+            
+          
+        </div>
+
+        <div class="links-of-friendly motion-element">
+          
+        </div>
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap sidebar-panel-active">
+          <div class="post-toc-indicator-top post-toc-indicator"></div>
+          <div class="post-toc">
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#JWT"><span class="nav-number">1.</span> <span class="nav-text">JWT</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Spring-Boot集成"><span class="nav-number">2.</span> <span class="nav-text">Spring Boot集成</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Spring-Security"><span class="nav-number">3.</span> <span class="nav-text">Spring Security</span></a></li></ol></div>
+            
+          </div>
+          <div class="post-toc-indicator-bottom post-toc-indicator"></div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner"> <div class="copyright" >
+  
+  &copy; &nbsp; 
+  <span itemprop="copyrightYear">2017
+  </span>
+  <span class="with-love">
+    <i class="icon-next-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">BlankCat
+  </span>
+</div>
+
+<div class="powered-by">
+  Powered by <a class="theme-link" href="http://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme by <a class="theme-link" href="http://blog.idhyt.com">idhyt</a>.<a class="theme-link" href="https://github.com/idhyt/hexo-theme-next/tree/magiclamp">Mala</a>
+</div>
+
+<!-- busuanzi -->
+
+
+
+ </div>
+    </footer>
+
+    <div class="back-to-top"></div>
+  </div>
+
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  
+  
+    
+    
+
+  
+
+
+  
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+  <script type="text/javascript" src="/js/fancy-box.js?v=0.4.5.1"></script>
+
+
+  <script type="text/javascript" src="/js/helpers.js?v=0.4.5.1"></script>
+  
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+  <script type="text/javascript" src="/js/motion_global.js?v=0.4.5.1" id="motion.global"></script>
+
+
+
+
+  <script type="text/javascript" src="/js/nav-toggle.js?v=0.4.5.1"></script>
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  
+<script type="text/javascript" src="/js/bootstrap.scrollspy.js?v=0.4.5.1" id="bootstrap.scrollspy.custom"></script>
+
+
+<script type="text/javascript" id="sidebar.toc.highlight">
+  $(document).ready(function () {
+    var tocSelector = '.post-toc';
+    var $tocSelector = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocSelector
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+
+        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+      })
+      .on('clear.bs.scrollspy', function () {
+        removeCurrentActiveClass();
+      });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
+    }
+
+    function processTOC () {
+      getTOCMaxHeight();
+      toggleTOCOverflowIndicators();
+    }
+
+    function getTOCMaxHeight () {
+      var height = $('.sidebar').height() -
+                   $tocSelector.position().top -
+                   $('.post-toc-indicator-bottom').height();
+
+      $tocSelector.css('height', height);
+
+      return height;
+    }
+
+    function toggleTOCOverflowIndicators () {
+      tocOverflowIndicator(
+        '.post-toc-indicator-top',
+        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
+      );
+
+      tocOverflowIndicator(
+        '.post-toc-indicator-bottom',
+        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
+      )
+    }
+
+    $(document).on('sidebar.motion.complete', function () {
+      processTOC();
+    });
+
+    $('body').scrollspy({ target: tocSelector });
+    $(window).on('resize', function () {
+      if ( $('.sidebar').hasClass('sidebar-active') ) {
+        processTOC();
+      }
+    });
+
+    onScroll($tocSelector);
+
+    function onScroll (element) {
+      element.on('mousewheel DOMMouseScroll', function (event) {
+          var oe = event.originalEvent;
+          var delta = oe.wheelDelta || -oe.detail;
+
+          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          event.preventDefault();
+
+          toggleTOCOverflowIndicators();
+      });
+    }
+
+    function tocOverflowIndicator (indicator, action) {
+      var $indicator = $(indicator);
+      var opacity = action === 'show' ? 0.4 : 0;
+      $indicator.velocity ?
+        $indicator.velocity('stop').velocity({
+          opacity: opacity
+        }, { duration: 100 }) :
+        $indicator.stop().animate({
+          opacity: opacity
+        }, 100);
+    }
+
+  });
+</script>
+
+<script type="text/javascript" id="sidebar.nav">
+  $(document).ready(function () {
+    var html = $('html');
+    var TAB_ANIMATE_DURATION = 200;
+    var hasVelocity = $.isFunction(html.velocity);
+
+    $('.sidebar-nav li').on('click', function () {
+      var item = $(this);
+      var activeTabClassName = 'sidebar-nav-active';
+      var activePanelClassName = 'sidebar-panel-active';
+      if (item.hasClass(activeTabClassName)) {
+        return;
+      }
+
+      var currentTarget = $('.' + activePanelClassName);
+      var target = $('.' + item.data('target'));
+
+      hasVelocity ?
+        currentTarget.velocity('transition.slideUpOut', TAB_ANIMATE_DURATION, function () {
+          target
+            .velocity('stop')
+            .velocity('transition.slideDownIn', TAB_ANIMATE_DURATION)
+            .addClass(activePanelClassName);
+        }) :
+        currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, function () {
+          currentTarget.hide();
+          target
+            .stop()
+            .css({'opacity': 0, 'display': 'block'})
+            .animate({ opacity: 1 }, TAB_ANIMATE_DURATION, function () {
+              currentTarget.removeClass(activePanelClassName);
+              target.addClass(activePanelClassName);
+            });
+        });
+
+      item.siblings().removeClass(activeTabClassName);
+      item.addClass(activeTabClassName);
+    });
+
+    $('.post-toc a').on('click', function (e) {
+      e.preventDefault();
+      var targetSelector = escapeSelector(this.getAttribute('href'));
+      var offset = $(targetSelector).offset().top;
+      hasVelocity ?
+        html.velocity('stop').velocity('scroll', {
+          offset: offset  + 'px',
+          mobileHA: false
+        }) :
+        $('html, body').stop().animate({
+          scrollTop: offset
+        }, 500);
+    });
+
+    // Expand sidebar on post detail page by default, when post has a toc.
+    var $tocContent = $('.post-toc-content');
+    if (isDesktop() && CONFIG.sidebar === 'post') {
+      if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
+        displaySidebar();
+      }
+    }
+  });
+</script>
+
+
+
+  <script type="text/javascript">
+    $(document).ready(function () {
+      if (CONFIG.sidebar === 'always') {
+        displaySidebar();
+      }
+      if (isMobile()) {
+        FastClick.attach(document.body);
+      }
+    });
+  </script>
+
+  
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/lazyload.js"></script>
+  <script type="text/javascript">
+    $(function () {
+      $("#posts").find('img').lazyload({
+        placeholder: "/images/loading.gif",
+        effect: "fadeIn"
+      });
+    });
+  </script>
+</body>
+</html>
