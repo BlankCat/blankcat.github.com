@@ -3390,6 +3390,90 @@
           
           
             
+              <a class="post-title-link" href="/2016/11/25/JVM11/" itemprop="url">
+                JVM11-Java内存模型与线程
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          Posted on
+          <time itemprop="dateCreated" datetime="2016-11-25T09:33:11+08:00" content="2016-11-25">
+            2016-11-25
+          </time>
+        </span>
+
+        
+          <span class="post-category" >
+            &nbsp; | &nbsp; In
+            
+              <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                <a href="/categories/JVM/" itemprop="url" rel="index">
+                  <span itemprop="name">JVM</span>
+                </a>
+              </span>
+
+              
+              
+
+            
+          </span>
+        
+
+        
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <p>「内存模型」可以理解为在特定的操作协议下，对特定的内存或高速缓存进行读写访问的过程抽象。</p>
+<h2 id="Java内存模型"><a href="#Java内存模型" class="headerlink" title="Java内存模型"></a>Java内存模型</h2><p>Java虚拟机规范中试图定义一种Java内存模型来屏蔽掉各种硬件和操作系统内存访问差异，以实现让Java程序在各种平台下都能达到一致的内存访问效果。在此之前，主流程序语言（如C/C++等）直接使用物理硬件和操作系统的内存模型，因此，会由于不同平台上内存模型的差异，有可能导致程序在一套平台上并发完全正常，而在另外一台平台上并发访问却经常出错，因此在某些场景就必须针对不同的平台来编写程序。</p>
+<h3 id="主内存与工作内存"><a href="#主内存与工作内存" class="headerlink" title="主内存与工作内存"></a>主内存与工作内存</h3><p>Java内存模型的主要目标是定义程序中各个变量的访问规则，即在虚拟机中将变量存储到内存和从内存中取出变量这样的底层细节。此处的变量与Java变成中所说的变量有所区别，它包括了实例字段、静态字段和构成数组对象的元素，但不包括局部变量与方法参数，因为后者是线程私有的，不会被共享，自然不存在竞争问题。</p>
+<p>Java内存模型规定了所有的变量都存储在主内存中，每条线程还有自己的私有工作内存，线程的工作内存中保存了被该线程使用到的变量的主内存副本拷贝，线程对变量的所有操作都必须在工作内存中进行。不同的线程之间也无法直接访问对方工作内存中的变量，线程间变量值的传递均需要通过主内存来完成。（这很好的诠释了volatile关键字的作用和原理）<br>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/11/25/JVM11/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
               <a class="post-title-link" href="/2016/11/20/Editor-tool/" itemprop="url">
                 Editor-tool
               </a>
@@ -3774,6 +3858,92 @@ keytool百科
           
           
             
+              <a class="post-title-link" href="/2016/11/19/net/" itemprop="url">
+                net 网络知识
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          Posted on
+          <time itemprop="dateCreated" datetime="2016-11-19T10:13:28+08:00" content="2016-11-19">
+            2016-11-19
+          </time>
+        </span>
+
+        
+          <span class="post-category" >
+            &nbsp; | &nbsp; In
+            
+              <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                <a href="/categories/net/" itemprop="url" rel="index">
+                  <span itemprop="name">net</span>
+                </a>
+              </span>
+
+              
+              
+
+            
+          </span>
+        
+
+        
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody">
+            
+            I am BlankCat，welcome to my blog；
+技术要点123456789101112131415161718192021222324252627282930ipv4私网地址 百度一下IPV4 地址分类 A B C D Ehttp://blog.csdn.net/ylqmf/ar
+            ...
+          </span>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/11/19/net/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
               <a class="post-title-link" href="/2016/11/19/hexo/" itemprop="url">
                 hexo技术总结
               </a>
@@ -3946,178 +4116,6 @@ keytool百科
           
           
             
-              <a class="post-title-link" href="/2016/11/19/cmd/" itemprop="url">
-                cmd 命令
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          Posted on
-          <time itemprop="dateCreated" datetime="2016-11-19T10:13:28+08:00" content="2016-11-19">
-            2016-11-19
-          </time>
-        </span>
-
-        
-          <span class="post-category" >
-            &nbsp; | &nbsp; In
-            
-              <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                <a href="/categories/Windows/" itemprop="url" rel="index">
-                  <span itemprop="name">Windows</span>
-                </a>
-              </span>
-
-              
-              
-
-            
-          </span>
-        
-
-        
-          
-        
-      </div>
-    </header>
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <span itemprop="articleBody">
-            
-            I am BlankCat ，welcome to my blog；
-技术要点12345678910111213141516171819202122232425The nexus service is already running with status: RUNNING端口号被占用1查看所有端口
-            ...
-          </span>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/11/19/cmd/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      
-      
-        <h1 class="post-title" itemprop="name headline">
-          
-          
-            
-              <a class="post-title-link" href="/2016/11/19/net/" itemprop="url">
-                net 网络知识
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          Posted on
-          <time itemprop="dateCreated" datetime="2016-11-19T10:13:28+08:00" content="2016-11-19">
-            2016-11-19
-          </time>
-        </span>
-
-        
-          <span class="post-category" >
-            &nbsp; | &nbsp; In
-            
-              <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                <a href="/categories/net/" itemprop="url" rel="index">
-                  <span itemprop="name">net</span>
-                </a>
-              </span>
-
-              
-              
-
-            
-          </span>
-        
-
-        
-          
-        
-      </div>
-    </header>
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <span itemprop="articleBody">
-            
-            I am BlankCat，welcome to my blog；
-技术要点123456789101112131415161718192021222324252627282930ipv4私网地址 百度一下IPV4 地址分类 A B C D Ehttp://blog.csdn.net/ylqmf/ar
-            ...
-          </span>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/11/19/net/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      
-      
-        <h1 class="post-title" itemprop="name headline">
-          
-          
-            
               <a class="post-title-link" href="/2016/11/19/adb/" itemprop="url">
                 adb
               </a>
@@ -4204,8 +4202,8 @@ keytool百科
           
           
             
-              <a class="post-title-link" href="/2016/11/17/JVM10/" itemprop="url">
-                JVM10-运行期优化
+              <a class="post-title-link" href="/2016/11/19/cmd/" itemprop="url">
+                cmd 命令
               </a>
             
           
@@ -4215,8 +4213,8 @@ keytool百科
       <div class="post-meta">
         <span class="post-time">
           Posted on
-          <time itemprop="dateCreated" datetime="2016-11-17T17:01:49+08:00" content="2016-11-17">
-            2016-11-17
+          <time itemprop="dateCreated" datetime="2016-11-19T10:13:28+08:00" content="2016-11-19">
+            2016-11-19
           </time>
         </span>
 
@@ -4225,8 +4223,8 @@ keytool百科
             &nbsp; | &nbsp; In
             
               <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                <a href="/categories/JVM/" itemprop="url" rel="index">
-                  <span itemprop="name">JVM</span>
+                <a href="/categories/Windows/" itemprop="url" rel="index">
+                  <span itemprop="name">Windows</span>
                 </a>
               </span>
 
@@ -4250,14 +4248,14 @@ keytool百科
 
       
         
-          <p>Java程序最初是通过解释器进行解释执行的，当虚拟机发现某个方法或代码块的运行特别频繁时，就会把这些代码认定为『热点代码』。为了提高热点代码的执行效率，在运行时，虚拟机将会把这些代码编译成与本地平台相关的机器码，并进行各种层次的优化，完成这个任务的编译器称为即时编译器。</p>
-<h2 id="HotSpot虚拟机内的即时编译器"><a href="#HotSpot虚拟机内的即时编译器" class="headerlink" title="HotSpot虚拟机内的即时编译器"></a>HotSpot虚拟机内的即时编译器</h2><h3 id="解释器与编译器"><a href="#解释器与编译器" class="headerlink" title="解释器与编译器"></a>解释器与编译器</h3><p>HotSpot虚拟机是采用解释器与编译器并存的架构。解释器和编译器各有优势：当程序需要迅速启动和执行的时候，解释器可以首先发挥作用，省去编译的时间，立即执行。在程序运行后，随着时间的推移，编译器初见发挥作用，把越来越多的代码编译成本地代码之后，可以获取更高的执行效率。</p>
-<h3 id="编译对象与触发条件"><a href="#编译对象与触发条件" class="headerlink" title="编译对象与触发条件"></a>编译对象与触发条件</h3><p>在运行过程中被即时编译器编译的『热点代码』有两类：</p>
-<ul>
-<li>被多次调用的方法</li>
-<li>被多次执行的循环体
+          <span itemprop="articleBody">
+            
+            I am BlankCat ，welcome to my blog；
+技术要点12345678910111213141516171819202122232425The nexus service is already running with status: RUNNING端口号被占用1查看所有端口
+            ...
+          </span>
           <div class="post-more-link text-center">
-            <a class="btn" href="/2016/11/17/JVM10/#more" rel="contents">
+            <a class="btn" href="/2016/11/19/cmd/#more" rel="contents">
               Read more &raquo;
             </a>
           </div>
@@ -4317,7 +4315,7 @@ keytool百科
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">61</span>
+              <span class="site-state-item-count">62</span>
               <span class="site-state-item-name">posts</span>
             </a>
           </div>

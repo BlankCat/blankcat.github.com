@@ -3390,6 +3390,92 @@
           
           
             
+              <a class="post-title-link" href="/2016/07/21/Java获取URL上的参数/" itemprop="url">
+                Java获取URL上的参数
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          Posted on
+          <time itemprop="dateCreated" datetime="2016-07-21T11:18:24+08:00" content="2016-07-21">
+            2016-07-21
+          </time>
+        </span>
+
+        
+          <span class="post-category" >
+            &nbsp; | &nbsp; In
+            
+              <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                <a href="/categories/Java/" itemprop="url" rel="index">
+                  <span itemprop="name">Java</span>
+                </a>
+              </span>
+
+              
+              
+
+            
+          </span>
+        
+
+        
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody">
+            
+            最近遇到一个需求需要在获取URL字符串上的kv键值对，我们都知道Java Web在请求是直接用request来获取值的。如果是字符串呢，就需要正则表达式来自己截取了。自己写代码是比较麻烦的，下面推荐用Guava工具包，2行代码就可以解决这个需求了。
+12345private String getPa
+            ...
+          </span>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/07/21/Java获取URL上的参数/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
               <a class="post-title-link" href="/2016/07/15/Spring-cloudt-EnableOAuth2Client/" itemprop="url">
                 Spring cloud @EnableOAuth2Client
               </a>
@@ -4146,97 +4232,6 @@
 
 
     
-      
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      
-      
-        <h1 class="post-title" itemprop="name headline">
-          
-          
-            
-              <a class="post-title-link" href="/2015/12/08/centos-6-5-安装docker/" itemprop="url">
-                centos 6.5 安装docker
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          Posted on
-          <time itemprop="dateCreated" datetime="2015-12-08T12:33:43+08:00" content="2015-12-08">
-            2015-12-08
-          </time>
-        </span>
-
-        
-          <span class="post-category" >
-            &nbsp; | &nbsp; In
-            
-              <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                <a href="/categories/centos/" itemprop="url" rel="index">
-                  <span itemprop="name">centos</span>
-                </a>
-              </span>
-
-              
-              
-
-            
-          </span>
-        
-
-        
-          
-        
-      </div>
-    </header>
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <p>先试试把开环境用docker来部署。</p>
-<p><a href="http://docs.docker.com/engine/installation/centos/">http://docs.docker.com/engine/installation/centos/</a><br>直接按照这里安装就可以了，不过我在这里遇到了一点问题。<br>我是centos6.5，内核在 3.8 以上<br>通过以下命令查看您的 CentOS 内核：  </p>
-<pre><code>uname -r
-</code></pre><p>如果执行以上命令后，输出的内核版本号低于 3.8，请参考下面的方法来来升级您的 Linux 内核。  </p>
-<p>对于 CentOS 6.5 而言，内核版本默认是 2.6。首先，可通过以下命令安装最新内核：  </p>
-<pre><code>rpm --import https://www.elrepo.org/RPM-GPG-KEY-elrepo.org
-rpm -ivh http://www.elrepo.org/elrepo-release-6-5.el6.elrepo.noarch.rpm
-yum -y --enablerepo=elrepo-kernel install kernel-lt
-</code></pre><p>随后，编辑以下配置文件：  </p>
-<pre><code>vi /etc/grub.conf
-</code></pre><p>将<code>default=1</code>修改为<code>default=0</code>。<br>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2015/12/08/centos-6-5-安装docker/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -4275,7 +4270,7 @@ yum -y --enablerepo=elrepo-kernel install kernel-lt
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">61</span>
+              <span class="site-state-item-count">62</span>
               <span class="site-state-item-name">posts</span>
             </a>
           </div>
