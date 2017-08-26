@@ -27,7 +27,7 @@
 <link rel="stylesheet" type="text/css" href="/css/main.css?v=0.4.5.1"/>
 
 
-    <meta name="description" content="Each man is the architect of his own fate." />
+    <meta name="description" content="I love my wife, I love my family." />
 
 
 
@@ -40,15 +40,15 @@
   <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.1" />
 
 
-<meta name="description" content="Each man is the architect of his own fate.">
+<meta name="description" content="I love my wife, I love my family.">
 <meta property="og:type" content="website">
 <meta property="og:title" content="BlankCat">
 <meta property="og:url" content="https://blankcat.github.io/page/4/index.html">
 <meta property="og:site_name" content="BlankCat">
-<meta property="og:description" content="Each man is the architect of his own fate.">
+<meta property="og:description" content="I love my wife, I love my family.">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="BlankCat">
-<meta name="twitter:description" content="Each man is the architect of his own fate.">
+<meta name="twitter:description" content="I love my wife, I love my family.">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -3390,6 +3390,88 @@
           
           
             
+              <a class="post-title-link" href="/2016/11/15/JVM9/" itemprop="url">
+                JVM9-虚拟机字节码执行引擎
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          Posted on
+          <time itemprop="dateCreated" datetime="2016-11-15T16:53:50+08:00" content="2016-11-15">
+            2016-11-15
+          </time>
+        </span>
+
+        
+          <span class="post-category" >
+            &nbsp; | &nbsp; In
+            
+              <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                <a href="/categories/JVM/" itemprop="url" rel="index">
+                  <span itemprop="name">JVM</span>
+                </a>
+              </span>
+
+              
+              
+
+            
+          </span>
+        
+
+        
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <p>执行引擎是Java虚拟机最核心的组成部分之一，本章将主要从概念模型的角度来讲解虚拟机的方法调用和字节码执行。</p>
+<h2 id="运行时栈帧结构"><a href="#运行时栈帧结构" class="headerlink" title="运行时栈帧结构"></a>运行时栈帧结构</h2><p>栈帧（Stack Frame）是用于支持虚拟机进行方法代用和方法执行的数据结构，它是虚拟机运行时数据区中的<a href="http://sail-y.github.io/2016/10/28/JVM2/#Java虚拟机栈">虚拟机栈</a>的栈元素。栈帧存储了局部变量表、操作数栈、动态链接、方法出口等信息。每一个方法从调用开始至执行完成的过程，都对应着一个栈帧在虚拟机里面从入栈到出栈的过程。对于执行引擎来说，在活动线程中，只有位于栈顶的栈帧才是有效的，称为当前栈帧，与这个栈帧相关联的方法称为当前方法，执行引擎运行的所有字节码指令都只针对当前栈帧进行操作，在概念模型上，典型的栈帧结构图如下：<br>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/11/15/JVM9/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
               <a class="post-title-link" href="/2016/11/07/JVM8/" itemprop="url">
                 JVM8-类加载机制
               </a>
@@ -4140,95 +4222,11 @@
 
 
     
-      
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      
-      
-        <h1 class="post-title" itemprop="name headline">
-          
-          
-            
-              <a class="post-title-link" href="/2016/07/15/Spring-cloudt-EnableOAuth2Client/" itemprop="url">
-                Spring cloud @EnableOAuth2Client
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          Posted on
-          <time itemprop="dateCreated" datetime="2016-07-15T13:55:11+08:00" content="2016-07-15">
-            2016-07-15
-          </time>
-        </span>
-
-        
-          <span class="post-category" >
-            &nbsp; | &nbsp; In
-            
-              <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                <a href="/categories/spring/" itemprop="url" rel="index">
-                  <span itemprop="name">spring</span>
-                </a>
-              </span>
-
-              
-              
-
-            
-          </span>
-        
-
-        
-          
-        
-      </div>
-    </header>
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <p>Spring Cloud oauth2 开启客户端功能，并启用LoadBalanced</p>
-<p>如果不添加以下配置，只添加<code>@EnableOAuth2Client</code>注解，spring cloud默认是在web环境下使用的<code>AuthorizationCodeResourceDetails</code>。</p>
-<p>具体代码在<code>OAuth2RestOperationsConfiguration</code>类中。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">@Configuration</div><div class="line">@ConditionalOnBean(OAuth2ClientConfiguration.class)</div><div class="line">@ConditionalOnWebApplication</div><div class="line">protected static class SessionScopedConfiguration &#123;</div><div class="line"></div><div class="line">	@Bean</div><div class="line">	@ConfigurationProperties(&quot;security.oauth2.client&quot;)</div><div class="line">	@Primary</div><div class="line">	public AuthorizationCodeResourceDetails oauth2RemoteResource() &#123;</div><div class="line">		AuthorizationCodeResourceDetails details = new AuthorizationCodeResourceDetails();</div><div class="line">		return details;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	@Bean</div><div class="line">	public FilterRegistrationBean oauth2ClientFilterRegistration(</div><div class="line">			OAuth2ClientContextFilter filter, SecurityProperties security) &#123;</div><div class="line">		FilterRegistrationBean registration = new FilterRegistrationBean();</div><div class="line">		registration.setFilter(filter);</div><div class="line">		registration.setOrder(security.getFilterOrder() - 10);</div><div class="line">		return registration;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	@Configuration</div><div class="line">	protected static class ClientContextConfiguration &#123;</div><div class="line"></div><div class="line">		@Resource</div><div class="line">		@Qualifier(&quot;accessTokenRequest&quot;)</div><div class="line">		protected AccessTokenRequest accessTokenRequest;</div><div class="line"></div><div class="line">		@Bean</div><div class="line">		@Scope(value = &quot;session&quot;, proxyMode = ScopedProxyMode.INTERFACES)</div><div class="line">		public DefaultOAuth2ClientContext oauth2ClientContext() &#123;</div><div class="line">			return new DefaultOAuth2ClientContext(this.accessTokenRequest);</div><div class="line">		&#125;</div><div class="line"></div><div class="line">	&#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/07/15/Spring-cloudt-EnableOAuth2Client/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/3/">&laquo;</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/5/">&raquo;</a>
+    <a class="extend prev" rel="prev" href="/page/3/">&laquo;</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/5/">&raquo;</a>
   </nav>
 
  </div>
@@ -4258,25 +4256,25 @@
           <img class="site-author-image" src="/images/default_avatar.jpg" alt="BlankCat" itemprop="image"/>
           <p class="site-author-name" itemprop="name">BlankCat</p>
         </div>
-        <p class="site-description motion-element" itemprop="description">Each man is the architect of his own fate.</p>
+        <p class="site-description motion-element" itemprop="description">I love my wife, I love my family.</p>
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">60</span>
+              <span class="site-state-item-count">61</span>
               <span class="site-state-item-name">posts</span>
             </a>
           </div>
 
           <div class="site-state-item site-state-categories">
             <a href="/categories">
-              <span class="site-state-item-count">16</span>
+              <span class="site-state-item-count">17</span>
               <span class="site-state-item-name">categories</span>
               </a>
           </div>
 
           <div class="site-state-item site-state-tags">
             <a href="/tags">
-              <span class="site-state-item-count">33</span>
+              <span class="site-state-item-count">34</span>
               <span class="site-state-item-name">tags</span>
               </a>
           </div>

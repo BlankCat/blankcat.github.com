@@ -21,15 +21,17 @@
 
 
 
+  <link href='//fonts.googleapis.com/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+
 
 <link rel="stylesheet" type="text/css" href="/css/main.css?v=0.4.5.1"/>
 
 
-    <meta name="description" content="我们相爱一生，一生还是太短。" />
+    <meta name="description" content="I love my wife, I love my family." />
 
 
 
-  <meta name="keywords" content="blog," />
+  <meta name="keywords" content="git," />
 
 
 
@@ -38,19 +40,28 @@
   <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.1" />
 
 
-<meta name="description" content="I am BlankCat，welcome to my blog；
-技术要点123456789dubug命令hexo s --debug创建新文章hexo new post 文章名字发布文章hexo ghexo d">
+<meta name="description" content="查看远程分支
+1git branch -va
+切换远程分支12git checkout -t origin/2.0.0git checkout -t origin/gh-pages
+发布静态网页
+add -&amp;gt; commit -&amp;gt; push这里要注意一下，我是直接新建的库，然后发布的，所以，没有master分支，只有gh-pages分支，github只会将你的gh-pages分支部署上去">
 <meta property="og:type" content="article">
-<meta property="og:title" content="发布hexo博文命令">
-<meta property="og:url" content="https://blankcat.github.io/2016/11/19/发布hexo博文命令/index.html">
+<meta property="og:title" content="gitpage-push">
+<meta property="og:url" content="https://blankcat.github.io/2017/08/26/gitpage-push/index.html">
 <meta property="og:site_name" content="BlankCat">
-<meta property="og:description" content="I am BlankCat，welcome to my blog；
-技术要点123456789dubug命令hexo s --debug创建新文章hexo new post 文章名字发布文章hexo ghexo d">
-<meta property="og:updated_time" content="2016-11-19T05:29:45.799Z">
+<meta property="og:description" content="查看远程分支
+1git branch -va
+切换远程分支12git checkout -t origin/2.0.0git checkout -t origin/gh-pages
+发布静态网页
+add -&amp;gt; commit -&amp;gt; push这里要注意一下，我是直接新建的库，然后发布的，所以，没有master分支，只有gh-pages分支，github只会将你的gh-pages分支部署上去">
+<meta property="og:updated_time" content="2017-08-26T08:06:44.371Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="发布hexo博文命令">
-<meta name="twitter:description" content="I am BlankCat，welcome to my blog；
-技术要点123456789dubug命令hexo s --debug创建新文章hexo new post 文章名字发布文章hexo ghexo d">
+<meta name="twitter:title" content="gitpage-push">
+<meta name="twitter:description" content="查看远程分支
+1git branch -va
+切换远程分支12git checkout -t origin/2.0.0git checkout -t origin/gh-pages
+发布静态网页
+add -&amp;gt; commit -&amp;gt; push这里要注意一下，我是直接新建的库，然后发布的，所以，没有master分支，只有gh-pages分支，github只会将你的gh-pages分支部署上去">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -60,10 +71,10 @@
   };
 </script>
 
-  <title> 发布hexo博文命令 | BlankCat </title>
+  <title> gitpage-push | BlankCat </title>
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
 
   <!--[if lte IE 8]>
   <div style=' clear: both; height: 59px; padding:0 0 0 15px; position: relative;margin:0 auto;'>
@@ -111,7 +122,7 @@
         <li class="menu-item menu-item-home">
           <a href="/" rel="section">
             <i class="menu-item-icon icon-next-home"></i> <br />
-            首页
+            Home
           </a>
         </li>
       
@@ -119,7 +130,7 @@
         <li class="menu-item menu-item-categories">
           <a href="/categories" rel="section">
             <i class="menu-item-icon icon-next-categories"></i> <br />
-            分类
+            Categories
           </a>
         </li>
       
@@ -127,7 +138,7 @@
         <li class="menu-item menu-item-archives">
           <a href="/archives" rel="section">
             <i class="menu-item-icon icon-next-archives"></i> <br />
-            归档
+            Archives
           </a>
         </li>
       
@@ -135,7 +146,7 @@
         <li class="menu-item menu-item-tags">
           <a href="/tags" rel="section">
             <i class="menu-item-icon icon-next-tags"></i> <br />
-            标签
+            Tags
           </a>
         </li>
       
@@ -143,7 +154,7 @@
         <li class="menu-item menu-item-about">
           <a href="/about" rel="section">
             <i class="menu-item-icon icon-next-about"></i> <br />
-            关于
+            About
           </a>
         </li>
       
@@ -310,7 +321,7 @@
           
           
             
-              发布hexo博文命令
+              gitpage-push
             
           
         </h1>
@@ -318,19 +329,19 @@
 
       <div class="post-meta">
         <span class="post-time">
-          发表于
-          <time itemprop="dateCreated" datetime="2016-11-19T13:28:26+08:00" content="2016-11-19">
-            2016-11-19
+          Posted on
+          <time itemprop="dateCreated" datetime="2017-08-26T15:39:02+08:00" content="2017-08-26">
+            2017-08-26
           </time>
         </span>
 
         
           <span class="post-category" >
-            &nbsp; | &nbsp; 分类于
+            &nbsp; | &nbsp; In
             
               <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                <a href="/categories/blog/" itemprop="url" rel="index">
-                  <span itemprop="name">blog</span>
+                <a href="/categories/git/" itemprop="url" rel="index">
+                  <span itemprop="name">git</span>
                 </a>
               </span>
 
@@ -353,9 +364,16 @@
       
 
       
-        <span itemprop="articleBody"><p>I am BlankCat，welcome to my blog；</p>
-<h3 id="技术要点"><a href="#技术要点" class="headerlink" title="技术要点"></a>技术要点</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">dubug命令</div><div class="line">hexo s --debug</div><div class="line"></div><div class="line">创建新文章</div><div class="line">hexo new post 文章名字</div><div class="line"></div><div class="line">发布文章</div><div class="line">hexo g</div><div class="line">hexo d</div></pre></td></tr></table></figure>
-<hr>
+        <span itemprop="articleBody"><p>查看远程分支</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git branch -va</div></pre></td></tr></table></figure>
+<p>切换远程分支<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">git checkout -t origin/2.0.0</div><div class="line">git checkout -t origin/gh-pages</div></pre></td></tr></table></figure></p>
+<p>发布静态网页</p>
+<p>add -&gt; commit -&gt; push<br>这里要注意一下，我是直接新建的库，然后发布的，所以，没有master分支，只有gh-pages分支，github只会将你的gh-pages分支部署上去，不会动你的其他分支的东西。所以，我们要将改动提交到gh-pages分支上，再push。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">myindex$ git branch</div><div class="line">        * gh-pages</div><div class="line">myindex$ git commit -a -m &quot;first commit&quot;</div><div class="line">myindex$ git push origin gh-pages</div></pre></td></tr></table></figure>
+<p>总结<br>github创建静态页面发布静态页面<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">1查看远程分支</div><div class="line">git branch -va</div><div class="line"></div><div class="line">2切换远程分支</div><div class="line">git checkout -t origin/gh-pages</div><div class="line"></div><div class="line">3发布静态网页</div><div class="line">add -&gt; commit -&gt; push</div></pre></td></tr></table></figure></p>
+<p>步骤<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">1查看当前分支</div><div class="line">git branch</div><div class="line">   * gh-pages</div><div class="line"></div><div class="line">2添加文件到库中</div><div class="line">git commit -a -m &quot;first commit&quot;</div><div class="line"></div><div class="line">3提交代码到远程分支</div><div class="line">git push origin gh-pages</div></pre></td></tr></table></figure></p>
+<p>git 提交代码步骤<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"> 创建文件夹</div><div class="line"></div><div class="line"> git init</div><div class="line"> </div><div class="line"> git add README.md</div><div class="line"> </div><div class="line"> git remote add origin</div><div class="line"> </div><div class="line"> https://git.coding.net/BlankCat/elephant-blog-api.git</div><div class="line"> </div><div class="line"> git push -u origin master</div><div class="line"> </div><div class="line">第二次</div><div class="line"></div><div class="line">git add *</div><div class="line">git commit -m “zjf”</div><div class="line">git push</div><div class="line"></div><div class="line">`</div></pre></td></tr></table></figure></p>
+<p> <a href="http://www.barretlee.com/blog/2014/04/30/switch-branch-in-git/" target="_blank" rel="external">参考链接</a></p>
 </span>
       
     </div>
@@ -364,7 +382,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/blog/" rel="tag">#blog</a>
+            <a href="/tags/git/" rel="tag">#git</a>
           
         </div>
       
@@ -373,13 +391,11 @@
         <div class="post-nav">
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/11/19/code-sign/" rel="prev">code_sign</a>
-            
           </div>
 
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/11/19/Bigdata/" rel="next">Big data</a>
+              <a href="/2017/03/06/hexo-black-them/" rel="next">hexo-black-them</a>
             
           </div>
         </div>
@@ -472,16 +488,16 @@
         <div id="donate_guide" class="donate_bar center hidden">
             <!--
             
-                <a href="http://o7keinrz4.bkt.clouddn.com/alipay.jpg" title="支付宝打赏" class="fancybox" rel="article0" 
+                <a href="https://blankcat.github.io/myself/images/alipay.jpg" title="支付宝打赏" class="fancybox" rel="article0" 
                     style="float:left;margin-left:25%;margin-right:10px;">
-                    <img src="http://o7keinrz4.bkt.clouddn.com/alipay.jpg" title="" height="164px" width="164px">
+                    <img src="https://blankcat.github.io/myself/images/alipay.jpg" title="" height="164px" width="164px">
                 </a> 
               
 
             
-                <a href="http://o7keinrz4.bkt.clouddn.com/wechat.jpg" title="微信打赏" class="fancybox" rel="article0"
+                <a href="https://blankcat.github.io/myself/images/wechat.jpg" title="微信打赏" class="fancybox" rel="article0"
                     style="margin-right:30%">
-                    <img src="http://o7keinrz4.bkt.clouddn.com/wechat.jpg" title="" height="164px" width="164px">
+                    <img src="https://blankcat.github.io/myself/images/wechat.jpg" title="" height="164px" width="164px">
                 </a>
             
             -->
@@ -489,17 +505,17 @@
                 <tr>
                     <td>
                         
-                            <a href="http://o7keinrz4.bkt.clouddn.com/alipay.jpg" title="支付宝打赏" class="fancybox" rel="article0" 
+                            <a href="https://blankcat.github.io/myself/images/alipay.jpg" title="支付宝打赏" class="fancybox" rel="article0" 
                                 style="float:left;margin-left:25%;margin-right:10px;">
-                                <img src="http://o7keinrz4.bkt.clouddn.com/alipay.jpg" title="" height="164px" width="164px">
+                                <img src="https://blankcat.github.io/myself/images/alipay.jpg" title="" height="164px" width="164px">
                             </a> 
                          
                     </td>
                     <td>
                         
-                            <a href="http://o7keinrz4.bkt.clouddn.com/wechat.jpg" title="微信打赏" class="fancybox" rel="article0"
+                            <a href="https://blankcat.github.io/myself/images/wechat.jpg" title="微信打赏" class="fancybox" rel="article0"
                                 style="margin-right:30%">
-                                <img src="http://o7keinrz4.bkt.clouddn.com/wechat.jpg" title="" height="164px" width="164px">
+                                <img src="https://blankcat.github.io/myself/images/wechat.jpg" title="" height="164px" width="164px">
                             </a>
                         
                     </td>
@@ -570,10 +586,10 @@
       
         <ul class="sidebar-nav motion-element">
           <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            文章目录
+            Table Of Contents
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview">
-            站点概览
+            Overview
           </li>
         </ul>
       
@@ -583,26 +599,26 @@
           <img class="site-author-image" src="/images/default_avatar.jpg" alt="BlankCat" itemprop="image"/>
           <p class="site-author-name" itemprop="name">BlankCat</p>
         </div>
-        <p class="site-description motion-element" itemprop="description">我们相爱一生，一生还是太短。</p>
+        <p class="site-description motion-element" itemprop="description">I love my wife, I love my family.</p>
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">11</span>
-              <span class="site-state-item-name">日志</span>
+              <span class="site-state-item-count">61</span>
+              <span class="site-state-item-name">posts</span>
             </a>
           </div>
 
           <div class="site-state-item site-state-categories">
             <a href="/categories">
-              <span class="site-state-item-count">9</span>
-              <span class="site-state-item-name">分类</span>
+              <span class="site-state-item-count">17</span>
+              <span class="site-state-item-name">categories</span>
               </a>
           </div>
 
           <div class="site-state-item site-state-tags">
             <a href="/tags">
-              <span class="site-state-item-count">9</span>
-              <span class="site-state-item-name">标签</span>
+              <span class="site-state-item-count">34</span>
+              <span class="site-state-item-name">tags</span>
               </a>
           </div>
 
@@ -639,7 +655,7 @@
           <div class="post-toc">
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#技术要点"><span class="nav-number">1.</span> <span class="nav-text">技术要点</span></a></li></ol></div>
+              <p class="post-toc-empty">This post does not have a Table Of Contents</p>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>

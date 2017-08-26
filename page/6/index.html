@@ -27,7 +27,7 @@
 <link rel="stylesheet" type="text/css" href="/css/main.css?v=0.4.5.1"/>
 
 
-    <meta name="description" content="Each man is the architect of his own fate." />
+    <meta name="description" content="I love my wife, I love my family." />
 
 
 
@@ -40,15 +40,15 @@
   <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.1" />
 
 
-<meta name="description" content="Each man is the architect of his own fate.">
+<meta name="description" content="I love my wife, I love my family.">
 <meta property="og:type" content="website">
 <meta property="og:title" content="BlankCat">
 <meta property="og:url" content="https://blankcat.github.io/page/6/index.html">
 <meta property="og:site_name" content="BlankCat">
-<meta property="og:description" content="Each man is the architect of his own fate.">
+<meta property="og:description" content="I love my wife, I love my family.">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="BlankCat">
-<meta name="twitter:description" content="Each man is the architect of his own fate.">
+<meta name="twitter:description" content="I love my wife, I love my family.">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -3390,6 +3390,88 @@
           
           
             
+              <a class="post-title-link" href="/2015/10/29/gitlab替换nginx服务/" itemprop="url">
+                gitlab替换nginx服务
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          Posted on
+          <time itemprop="dateCreated" datetime="2015-10-29T16:29:10+08:00" content="2015-10-29">
+            2015-10-29
+          </time>
+        </span>
+
+        
+          <span class="post-category" >
+            &nbsp; | &nbsp; In
+            
+              <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                <a href="/categories/centos/" itemprop="url" rel="index">
+                  <span itemprop="name">centos</span>
+                </a>
+              </span>
+
+              
+              
+
+            
+          </span>
+        
+
+        
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <p>之前在自己服务器上搭建服务器，这是之前的文章<br><a href="http://sail-y.github.io/2015/02/06/centos-6-5-%E5%AE%89%E8%A3%85gitlab%E5%AE%89%E8%A3%85%E9%9C%80%E6%B3%A8%E6%84%8F%E7%9A%84%E9%97%AE%E9%A2%98/">gitlab安装需要注意的问题</a></p>
+<p>后来在按照官网上替换自带服务器上的nginx的时候出现了一点问题。也是找了很久才找到这么一篇帖子，我在这里把nginx的部分转载过来一下。<br>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2015/10/29/gitlab替换nginx服务/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
               <a class="post-title-link" href="/2015/04/22/-转-Twitter的分布式自增ID算法Snowflake实现分析及其Java、Php和Python版/" itemprop="url">
                 [转]Twitter的分布式自增ID算法Snowflake实现分析及其Java、Php和Python版
               </a>
@@ -4143,95 +4225,11 @@
 
 
     
-      
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      
-      
-        <h1 class="post-title" itemprop="name headline">
-          
-          
-            
-              <a class="post-title-link" href="/2015/01/30/fastjson序列化枚举属性/" itemprop="url">
-                fastjson序列化枚举属性
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          Posted on
-          <time itemprop="dateCreated" datetime="2015-01-30T23:19:19+08:00" content="2015-01-30">
-            2015-01-30
-          </time>
-        </span>
-
-        
-          <span class="post-category" >
-            &nbsp; | &nbsp; In
-            
-              <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                <a href="/categories/Java/" itemprop="url" rel="index">
-                  <span itemprop="name">Java</span>
-                </a>
-              </span>
-
-              
-              
-
-            
-          </span>
-        
-
-        
-          
-        
-      </div>
-    </header>
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <p>我的实体类里面有一个属性是枚举类型的，但是我在转换的时候我不希望取它的name，而是它的索引值0,1,2,3,搜索一番后发现这个回答</p>
-<blockquote>
-<p><a href="http://zhidao.baidu.com/link?url=5_N_6oaQaN6s-JLAZzwy-Fdbt93qC7VmzIfLvifZk463bKCwh7xBweUgBlJLczgHF9y7kjqNktsJmEVUuPlNkCw4sjfLaXq9ITfz9ieQH5u">fastjson enum 枚举 反序列化</a><br>为了方便大家查看，我把内容贴过来<br>看fastjson源码，SerializeWriter<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">writeEnum</span><span class="params">( Enum &lt; ?&gt;value, <span class="keyword">char</span> c )</span></div><div class="line"></span>&#123;</div><div class="line">	<span class="keyword">if</span> ( value == <span class="keyword">null</span> )</div><div class="line">	&#123;</div><div class="line">		writeNull(); 　</div><div class="line">		write( <span class="string">','</span> ); 　</div><div class="line">		<span class="keyword">return</span>; 　</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	</div><div class="line">	<span class="keyword">if</span> ( isEnabled( SerializerFeature.WriteEnumUsingToString ) )</div><div class="line">	&#123;</div><div class="line">		<span class="keyword">if</span> ( isEnabled( SerializerFeature.UseSingleQuotes ) )</div><div class="line">		&#123;</div><div class="line">			write( <span class="string">'\''</span> ); 　</div><div class="line">			write( value.name() ); 　</div><div class="line">			write( <span class="string">'\''</span> ); 　</div><div class="line">			write( c );</div><div class="line">		&#125; <span class="keyword">else</span> &#123;</div><div class="line">			write( <span class="string">'\"'</span> ); 　</div><div class="line">			write( value.name() ); 　</div><div class="line">			write( <span class="string">'\"'</span> ); 　</div><div class="line">			write( c ); 　</div><div class="line">		&#125; 　</div><div class="line">		<span class="keyword">return</span>; 　</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	writeIntAndChar( value.ordinal(), c ); 　</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-</blockquote>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2015/01/30/fastjson序列化枚举属性/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/5/">&laquo;</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span>
+    <a class="extend prev" rel="prev" href="/page/5/">&laquo;</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/7/">&raquo;</a>
   </nav>
 
  </div>
@@ -4261,25 +4259,25 @@
           <img class="site-author-image" src="/images/default_avatar.jpg" alt="BlankCat" itemprop="image"/>
           <p class="site-author-name" itemprop="name">BlankCat</p>
         </div>
-        <p class="site-description motion-element" itemprop="description">Each man is the architect of his own fate.</p>
+        <p class="site-description motion-element" itemprop="description">I love my wife, I love my family.</p>
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">60</span>
+              <span class="site-state-item-count">61</span>
               <span class="site-state-item-name">posts</span>
             </a>
           </div>
 
           <div class="site-state-item site-state-categories">
             <a href="/categories">
-              <span class="site-state-item-count">16</span>
+              <span class="site-state-item-count">17</span>
               <span class="site-state-item-name">categories</span>
               </a>
           </div>
 
           <div class="site-state-item site-state-tags">
             <a href="/tags">
-              <span class="site-state-item-count">33</span>
+              <span class="site-state-item-count">34</span>
               <span class="site-state-item-name">tags</span>
               </a>
           </div>
