@@ -3390,8 +3390,8 @@
           
           
             
-              <a class="post-title-link" href="/2015/12/08/centos-6-5-安装docker/" itemprop="url">
-                centos 6.5 安装docker
+              <a class="post-title-link" href="/2016/11/02/JVM6/" itemprop="url">
+                JVM6-虚拟机性能监控与故障处理工具
               </a>
             
           
@@ -3401,8 +3401,8 @@
       <div class="post-meta">
         <span class="post-time">
           Posted on
-          <time itemprop="dateCreated" datetime="2015-12-08T12:33:43+08:00" content="2015-12-08">
-            2015-12-08
+          <time itemprop="dateCreated" datetime="2016-11-02T15:24:35+08:00" content="2016-11-02">
+            2016-11-02
           </time>
         </span>
 
@@ -3411,8 +3411,8 @@
             &nbsp; | &nbsp; In
             
               <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                <a href="/categories/centos/" itemprop="url" rel="index">
-                  <span itemprop="name">centos</span>
+                <a href="/categories/JVM/" itemprop="url" rel="index">
+                  <span itemprop="name">JVM</span>
                 </a>
               </span>
 
@@ -3436,19 +3436,11 @@
 
       
         
-          <p>先试试把开环境用docker来部署。</p>
-<p><a href="http://docs.docker.com/engine/installation/centos/">http://docs.docker.com/engine/installation/centos/</a><br>直接按照这里安装就可以了，不过我在这里遇到了一点问题。<br>我是centos6.5，内核在 3.8 以上<br>通过以下命令查看您的 CentOS 内核：  </p>
-<pre><code>uname -r
-</code></pre><p>如果执行以上命令后，输出的内核版本号低于 3.8，请参考下面的方法来来升级您的 Linux 内核。  </p>
-<p>对于 CentOS 6.5 而言，内核版本默认是 2.6。首先，可通过以下命令安装最新内核：  </p>
-<pre><code>rpm --import https://www.elrepo.org/RPM-GPG-KEY-elrepo.org
-rpm -ivh http://www.elrepo.org/elrepo-release-6-5.el6.elrepo.noarch.rpm
-yum -y --enablerepo=elrepo-kernel install kernel-lt
-</code></pre><p>随后，编辑以下配置文件：  </p>
-<pre><code>vi /etc/grub.conf
-</code></pre><p>将<code>default=1</code>修改为<code>default=0</code>。<br>
+          <p>给一个系统定位问题的时候，知识、经验是关键基础，数据是依据，工具是运用知识处理数据的手段。这里说的数据包括：运行日志、异常堆栈、GC日志、线程快照(threaddump/javacore文件)、堆转储快照(heapdump/hprof文件)等。经常使用适当的虚拟机监控和分析的工具可以加快我们分析数据、定位问题的速度。</p>
+<h2 id="JDK的命令行工具"><a href="#JDK的命令行工具" class="headerlink" title="JDK的命令行工具"></a>JDK的命令行工具</h2><p>JDK的安装目录bin下提供了很多工具，这些工具其实是jdk/lib/tools.jar的包装而已。</p>
+<h3 id="jps：虚拟机进城状况工具"><a href="#jps：虚拟机进城状况工具" class="headerlink" title="jps：虚拟机进城状况工具"></a>jps：虚拟机进城状况工具</h3><p>jps(JVM Process Status Tool):可以列出正在运行的虚拟机进城，并显示虚拟机执行主类以及这些进城的本地虚拟机唯一ID(Local Virtual Machine IIdentifier, LVMID)，这个LVMID跟系统里的PID是一致的。<br>
           <div class="post-more-link text-center">
-            <a class="btn" href="/2015/12/08/centos-6-5-安装docker/#more" rel="contents">
+            <a class="btn" href="/2016/11/02/JVM6/#more" rel="contents">
               Read more &raquo;
             </a>
           </div>
@@ -3481,8 +3473,8 @@ yum -y --enablerepo=elrepo-kernel install kernel-lt
           
           
             
-              <a class="post-title-link" href="/2015/10/29/gitlab替换nginx服务/" itemprop="url">
-                gitlab替换nginx服务
+              <a class="post-title-link" href="/2016/11/01/JVM5/" itemprop="url">
+                JVM5-内存分配与回收策略
               </a>
             
           
@@ -3492,8 +3484,8 @@ yum -y --enablerepo=elrepo-kernel install kernel-lt
       <div class="post-meta">
         <span class="post-time">
           Posted on
-          <time itemprop="dateCreated" datetime="2015-10-29T16:29:10+08:00" content="2015-10-29">
-            2015-10-29
+          <time itemprop="dateCreated" datetime="2016-11-01T13:51:44+08:00" content="2016-11-01">
+            2016-11-01
           </time>
         </span>
 
@@ -3502,8 +3494,8 @@ yum -y --enablerepo=elrepo-kernel install kernel-lt
             &nbsp; | &nbsp; In
             
               <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                <a href="/categories/centos/" itemprop="url" rel="index">
-                  <span itemprop="name">centos</span>
+                <a href="/categories/JVM/" itemprop="url" rel="index">
+                  <span itemprop="name">JVM</span>
                 </a>
               </span>
 
@@ -3527,10 +3519,10 @@ yum -y --enablerepo=elrepo-kernel install kernel-lt
 
       
         
-          <p>之前在自己服务器上搭建服务器，这是之前的文章<br><a href="http://sail-y.github.io/2015/02/06/centos-6-5-%E5%AE%89%E8%A3%85gitlab%E5%AE%89%E8%A3%85%E9%9C%80%E6%B3%A8%E6%84%8F%E7%9A%84%E9%97%AE%E9%A2%98/">gitlab安装需要注意的问题</a></p>
-<p>后来在按照官网上替换自带服务器上的nginx的时候出现了一点问题。也是找了很久才找到这么一篇帖子，我在这里把nginx的部分转载过来一下。<br>
+          <h2 id="内存分配"><a href="#内存分配" class="headerlink" title="内存分配"></a>内存分配</h2><p>之前讲了垃圾回收器体系以及运作原理，现在来看看对象内存分配那点事儿。对象的内存分配，往大方向讲就是在堆上分配，对象主要分配在新生代的Eden区上，也可能直接分配在老年代中，并不固定，取决于使用的哪一种垃圾收集器以及虚拟机参数设置。</p>
+<h3 id="对象优先在Eden分配"><a href="#对象优先在Eden分配" class="headerlink" title="对象优先在Eden分配"></a>对象优先在Eden分配</h3><p>大多数情况下，对象在新生代Eden区中分配。当Eden区没有足够的空间进行分配时，虚拟机会发一起一次Minor GC。<br>
           <div class="post-more-link text-center">
-            <a class="btn" href="/2015/10/29/gitlab替换nginx服务/#more" rel="contents">
+            <a class="btn" href="/2016/11/01/JVM5/#more" rel="contents">
               Read more &raquo;
             </a>
           </div>
@@ -3563,8 +3555,8 @@ yum -y --enablerepo=elrepo-kernel install kernel-lt
           
           
             
-              <a class="post-title-link" href="/2015/04/22/-转-Twitter的分布式自增ID算法Snowflake实现分析及其Java、Php和Python版/" itemprop="url">
-                [转]Twitter的分布式自增ID算法Snowflake实现分析及其Java、Php和Python版
+              <a class="post-title-link" href="/2016/10/31/JVM4/" itemprop="url">
+                JVM4-垃圾收集器
               </a>
             
           
@@ -3574,8 +3566,8 @@ yum -y --enablerepo=elrepo-kernel install kernel-lt
       <div class="post-meta">
         <span class="post-time">
           Posted on
-          <time itemprop="dateCreated" datetime="2015-04-22T09:47:54+08:00" content="2015-04-22">
-            2015-04-22
+          <time itemprop="dateCreated" datetime="2016-10-31T15:32:44+08:00" content="2016-10-31">
+            2016-10-31
           </time>
         </span>
 
@@ -3584,8 +3576,8 @@ yum -y --enablerepo=elrepo-kernel install kernel-lt
             &nbsp; | &nbsp; In
             
               <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                <a href="/categories/Java/" itemprop="url" rel="index">
-                  <span itemprop="name">Java</span>
+                <a href="/categories/JVM/" itemprop="url" rel="index">
+                  <span itemprop="name">JVM</span>
                 </a>
               </span>
 
@@ -3609,16 +3601,11 @@ yum -y --enablerepo=elrepo-kernel install kernel-lt
 
       
         
-          <p>转载：<a href="http://www.dengchuanhua.com/132.html">http://www.dengchuanhua.com/132.html</a></p>
-<p>在分布式系统中，需要生成全局UID的场合还是比较多的，twitter的snowflake解决了这种需求，实现也还是很简单的，除去配置信息，核心代码就是毫秒级时间41位+机器ID 10位+毫秒内序列12位。</p>
-<p>该项目地址为：<a href="https://github.com/twitter/snowflake是用Scala实现的。">https://github.com/twitter/snowflake是用Scala实现的。</a></p>
-<p>python版详见开源项目<a href="https://github.com/erans/pysnowflake。">https://github.com/erans/pysnowflake。</a></p>
-<p>核心代码为其IdWorker这个类实现，其原理结构如下，我分别用一个0表示一位，用—分割开部分的作用：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">0---0000000000 0000000000 0000000000 0000000000 0 --- 00000 ---00000 ---0000000000 00</div></pre></td></tr></table></figure>
-<p>在上面的字符串中，第一位为未使用（实际上也可作为long的符号位），接下来的41位为毫秒级时间，然后5位datacenter标识位，5位机器ID（并不算标识符，实际是为线程标识），然后12位该毫秒内的当前毫秒内的计数，加起来刚好64位，为一个Long型。</p>
-<p>这样的好处是，整体上按照时间自增排序，并且整个分布式系统内不会产生ID碰撞（由datacenter和机器ID作区分），并且效率较高，经测试，snowflake每秒能够产生26万ID左右，完全满足需要。<br>
+          <h2 id="哪些内存需要回收？"><a href="#哪些内存需要回收？" class="headerlink" title="哪些内存需要回收？"></a>哪些内存需要回收？</h2><p>程序计数器、虚拟机栈、本地方法栈3个区域随线程而生，随线程而灭，方法或者线程结束的时候内存自然就跟着回收了，所以不需要考虑过多回收的问题。而<strong>Java堆</strong>和<strong>方法区</strong>就不一样了，这部分内存的<em>分配</em>和<em>回收</em>都是动态的。</p>
+<h3 id="Java堆内存回收"><a href="#Java堆内存回收" class="headerlink" title="Java堆内存回收"></a>Java堆内存回收</h3><p>因为堆就是放对象的地方，要回收内存，首先要知道哪些对象是不可能再被任何途径使用的</p>
+<h4 id="引用计数法"><a href="#引用计数法" class="headerlink" title="引用计数法"></a>引用计数法</h4><p>这个算法的实现是：给对象中添加一个引用计数器，每当有一个地方引用它时，计数器+1，当引用失效时，计数器-1。Object-C就是使用的这种方式，Java没有选用引用计数算法来管理内存，因为它很难解决对象之间相互循环引用的问题。例子如下</p>
           <div class="post-more-link text-center">
-            <a class="btn" href="/2015/04/22/-转-Twitter的分布式自增ID算法Snowflake实现分析及其Java、Php和Python版/#more" rel="contents">
+            <a class="btn" href="/2016/10/31/JVM4/#more" rel="contents">
               Read more &raquo;
             </a>
           </div>
@@ -3651,8 +3638,8 @@ yum -y --enablerepo=elrepo-kernel install kernel-lt
           
           
             
-              <a class="post-title-link" href="/2015/03/31/Spring-MVC-接口版本管理/" itemprop="url">
-                Spring MVC 接口版本管理
+              <a class="post-title-link" href="/2016/10/31/JVM3/" itemprop="url">
+                JVM3-内存溢出异常实战
               </a>
             
           
@@ -3662,8 +3649,8 @@ yum -y --enablerepo=elrepo-kernel install kernel-lt
       <div class="post-meta">
         <span class="post-time">
           Posted on
-          <time itemprop="dateCreated" datetime="2015-03-31T10:06:12+08:00" content="2015-03-31">
-            2015-03-31
+          <time itemprop="dateCreated" datetime="2016-10-31T12:25:33+08:00" content="2016-10-31">
+            2016-10-31
           </time>
         </span>
 
@@ -3672,8 +3659,8 @@ yum -y --enablerepo=elrepo-kernel install kernel-lt
             &nbsp; | &nbsp; In
             
               <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                <a href="/categories/spring/" itemprop="url" rel="index">
-                  <span itemprop="name">spring</span>
+                <a href="/categories/JVM/" itemprop="url" rel="index">
+                  <span itemprop="name">JVM</span>
                 </a>
               </span>
 
@@ -3697,21 +3684,187 @@ yum -y --enablerepo=elrepo-kernel install kernel-lt
 
       
         
-          <p>随着我们的应用后台不断的发版，因为改动导致了数据结构的变化，这个时候就需要对HTTP API进行版本控制了。对原有的客户端进行兼容，搜索一番后找到一个方法。<br>先看这个文章，提供了一个解决方案。<br><a href="http://www.cnblogs.com/jcli/p/springmvc_restful_version.html">http://www.cnblogs.com/jcli/p/springmvc_restful_version.html</a></p>
-<p>Spring MVC通过在方法上使用<code>RequestMapping</code>来确认应该使用哪个方法来响应相应的请求，而RequestMapping又通过各种RequestCondition的实现来完成各种过滤（比如：consumes，headers，methods，params，produces以及value等）。在Spring MVC框架中使用RequestConditionHolder和RequestMappingInfo这两个实现。</p>
-<h6 id="自定义RequestCondition"><a href="#自定义RequestCondition" class="headerlink" title="自定义RequestCondition"></a>自定义RequestCondition</h6><ul>
-<li>实现RequestCondition接口</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">package</span> org.springframework.web.servlet.mvc.condition;</div><div class="line"></div><div class="line"><span class="keyword">import</span> javax.servlet.http.HttpServletRequest;</div><div class="line"><span class="keyword">import</span> org.springframework.web.bind.annotation.RequestMapping;</div><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">RequestCondition</span>&lt;<span class="title">T</span>&gt; </span>&#123;</div><div class="line">  <span class="function">T <span class="title">combine</span><span class="params">(T other)</span></span>;</div><div class="line">  <span class="function">T <span class="title">getMatchingCondition</span><span class="params">(HttpServletRequest request)</span></span>;</div><div class="line">  <span class="function"><span class="keyword">int</span> <span class="title">compareTo</span><span class="params">(T other, HttpServletRequest request)</span></span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+          <p>在Java虚拟机规范的描述中，除了程序计数器，其他几个运行时区域都有发生OutOfMemoryError异常的可能。本文有两个目的：</p>
+<ol>
+<li>通过代码验证Java虚拟机规范中描述的各个运行时区域存储的内容。</li>
+<li>希望我们在工作中遇到问题的时候能迅速判断是哪个区域的内存溢出，知道什么样的代码会导致这些区域溢出，以及出现这些异常后该如何处理。</li>
+</ol>
+<p>这个图展示了如何在Idea中设置VM参数。<br>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/10/31/JVM3/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
+              <a class="post-title-link" href="/2016/10/28/JVM2/" itemprop="url">
+                JVM2-Java内存区域
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          Posted on
+          <time itemprop="dateCreated" datetime="2016-10-28T17:29:15+08:00" content="2016-10-28">
+            2016-10-28
+          </time>
+        </span>
+
+        
+          <span class="post-category" >
+            &nbsp; | &nbsp; In
+            
+              <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                <a href="/categories/JVM/" itemprop="url" rel="index">
+                  <span itemprop="name">JVM</span>
+                </a>
+              </span>
+
+              
+              
+
+            
+          </span>
+        
+
+        
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <p>#Java内存区域</p>
+<p>下面从概念上介绍Java虚拟机内存的各个区域，讲解这些区域的作用、服务对象以及其中可能产生的问题，这是翻越虚拟机内存管理这堵围墙的第一步。</p>
+<h2 id="运行时数据区域"><a href="#运行时数据区域" class="headerlink" title="运行时数据区域"></a>运行时数据区域</h2><p>Java虚拟机在执行Java程序的过程中会把她所管理的内存划分为若干个不同的数据区域，包含以下几个运行时数据区域。<br>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/10/28/JVM2/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
+              <a class="post-title-link" href="/2016/10/28/JVM1/" itemprop="url">
+                JVM1-Java介绍
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          Posted on
+          <time itemprop="dateCreated" datetime="2016-10-28T13:30:50+08:00" content="2016-10-28">
+            2016-10-28
+          </time>
+        </span>
+
+        
+          <span class="post-category" >
+            &nbsp; | &nbsp; In
+            
+              <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                <a href="/categories/JVM/" itemprop="url" rel="index">
+                  <span itemprop="name">JVM</span>
+                </a>
+              </span>
+
+              
+              
+
+            
+          </span>
+        
+
+        
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <p>今天开写JVM系列的学习笔记，书籍为周志明的《深入理解Java虚拟机》</p>
+<h2 id="走进Java"><a href="#走进Java" class="headerlink" title="走进Java"></a>走进Java</h2><h3 id="Java技术体系"><a href="#Java技术体系" class="headerlink" title="Java技术体系"></a>Java技术体系</h3><p>Sun官方所定义的技术体系包括以下几个组成部分。</p>
 <ul>
-<li>继承RequestMappingHandlerMapping<ul>
-<li>getCustomTypeCondition方法根据对应的Handler类返回类级别的condition</li>
-<li>getCustomMethodCondition方法根据对应的Handler方法返回方法级别的condition</li>
+<li>Java程序设计语言</li>
+<li>各种硬件平台上的Java虚拟机</li>
+<li>Class文件格式</li>
+<li>Java API类库</li>
+<li>来自商业机构和开源社区的第三方Java类库        </li>
 </ul>
-</li>
-</ul>
+<p>我们把Java程序设计语言、Java虚拟机、Java API类库这三部分统称为<code>JDK</code>，JDK是用于支持Java程序开发的最小环境。Java API类库中的Java SE API子集和Java虚拟机这两部分统称为<code>JRE</code>，JRE是支持Java程序运行的标准环境。下图展示了Java技术体系所包含的内容，以及JDK和JRE所覆盖的范围。</p>
           <div class="post-more-link text-center">
-            <a class="btn" href="/2015/03/31/Spring-MVC-接口版本管理/#more" rel="contents">
+            <a class="btn" href="/2016/10/28/JVM1/#more" rel="contents">
               Read more &raquo;
             </a>
           </div>
@@ -3744,8 +3897,8 @@ yum -y --enablerepo=elrepo-kernel install kernel-lt
           
           
             
-              <a class="post-title-link" href="/2015/03/10/发现tomcat的一个bug/" itemprop="url">
-                发现tomcat的一个bug
+              <a class="post-title-link" href="/2016/07/21/Java获取URL上的参数/" itemprop="url">
+                Java获取URL上的参数
               </a>
             
           
@@ -3755,8 +3908,8 @@ yum -y --enablerepo=elrepo-kernel install kernel-lt
       <div class="post-meta">
         <span class="post-time">
           Posted on
-          <time itemprop="dateCreated" datetime="2015-03-10T14:01:15+08:00" content="2015-03-10">
-            2015-03-10
+          <time itemprop="dateCreated" datetime="2016-07-21T11:18:24+08:00" content="2016-07-21">
+            2016-07-21
           </time>
         </span>
 
@@ -3792,11 +3945,12 @@ yum -y --enablerepo=elrepo-kernel install kernel-lt
         
           <span itemprop="articleBody">
             
-            在做项目的时候出现一个错误，看了半天没看出来是什么问题1234567891011121314151617181920212223242526272829root causejava.util.NoSuchElementException	java.util.ArrayList$Itr.next(Ar
+            最近遇到一个需求需要在获取URL字符串上的kv键值对，我们都知道Java Web在请求是直接用request来获取值的。如果是字符串呢，就需要正则表达式来自己截取了。自己写代码是比较麻烦的，下面推荐用Guava工具包，2行代码就可以解决这个需求了。
+12345private String getPa
             ...
           </span>
           <div class="post-more-link text-center">
-            <a class="btn" href="/2015/03/10/发现tomcat的一个bug/#more" rel="contents">
+            <a class="btn" href="/2016/07/21/Java获取URL上的参数/#more" rel="contents">
               Read more &raquo;
             </a>
           </div>
@@ -3829,8 +3983,8 @@ yum -y --enablerepo=elrepo-kernel install kernel-lt
           
           
             
-              <a class="post-title-link" href="/2015/03/06/Spring-Mvc-3-1-之后如何配置messageConverters/" itemprop="url">
-                Spring Mvc 3.1 之后如何配置messageConverters
+              <a class="post-title-link" href="/2016/07/15/Spring-cloudt-EnableOAuth2Client/" itemprop="url">
+                Spring cloud @EnableOAuth2Client
               </a>
             
           
@@ -3840,8 +3994,8 @@ yum -y --enablerepo=elrepo-kernel install kernel-lt
       <div class="post-meta">
         <span class="post-time">
           Posted on
-          <time itemprop="dateCreated" datetime="2015-03-06T22:15:41+08:00" content="2015-03-06">
-            2015-03-06
+          <time itemprop="dateCreated" datetime="2016-07-15T13:55:11+08:00" content="2016-07-15">
+            2016-07-15
           </time>
         </span>
 
@@ -3875,14 +4029,12 @@ yum -y --enablerepo=elrepo-kernel install kernel-lt
 
       
         
-          <p><code>&lt;mvc:annotation-driven /&gt;</code> 是一种简写形式，完全可以手动配置替代这种简写形式，简写形式可以让初学都快速应用默认配置方案。<code>&lt;mvc:annotation-driven /&gt;</code> 会自动注册<code>DefaultAnnotationHandlerMapping</code>与<code>AnnotationMethodHandlerAdapter</code> 两个bean,是spring MVC为@Controllers分发请求所必须的。</p>
-<p>这句话我在很多帖子都看到过，我自己的项目本身使用的Spring MVC 3.2，实际上在3.1之后，<mvc:annotation-driven />注册的类发生了变化</p>
-<blockquote>
-<p>Spring Framework 3.1 introduces a new set of support classes for processing requests with annotated controllers:</p>
-<p>RequestMappingHandlerMapping<br>RequestMappingHandlerAdapter<br>ExceptionHandlerExceptionResolver<br>These classes are a replacement for the existing:</p>
-<p>DefaultAnnotationHandlerMapping<br>AnnotationMethodHandlerAdapter<br>AnnotationMethodHandlerExceptionResolver<br>
+          <p>Spring Cloud oauth2 开启客户端功能，并启用LoadBalanced</p>
+<p>如果不添加以下配置，只添加<code>@EnableOAuth2Client</code>注解，spring cloud默认是在web环境下使用的<code>AuthorizationCodeResourceDetails</code>。</p>
+<p>具体代码在<code>OAuth2RestOperationsConfiguration</code>类中。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">@Configuration</div><div class="line">@ConditionalOnBean(OAuth2ClientConfiguration.class)</div><div class="line">@ConditionalOnWebApplication</div><div class="line">protected static class SessionScopedConfiguration &#123;</div><div class="line"></div><div class="line">	@Bean</div><div class="line">	@ConfigurationProperties(&quot;security.oauth2.client&quot;)</div><div class="line">	@Primary</div><div class="line">	public AuthorizationCodeResourceDetails oauth2RemoteResource() &#123;</div><div class="line">		AuthorizationCodeResourceDetails details = new AuthorizationCodeResourceDetails();</div><div class="line">		return details;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	@Bean</div><div class="line">	public FilterRegistrationBean oauth2ClientFilterRegistration(</div><div class="line">			OAuth2ClientContextFilter filter, SecurityProperties security) &#123;</div><div class="line">		FilterRegistrationBean registration = new FilterRegistrationBean();</div><div class="line">		registration.setFilter(filter);</div><div class="line">		registration.setOrder(security.getFilterOrder() - 10);</div><div class="line">		return registration;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	@Configuration</div><div class="line">	protected static class ClientContextConfiguration &#123;</div><div class="line"></div><div class="line">		@Resource</div><div class="line">		@Qualifier(&quot;accessTokenRequest&quot;)</div><div class="line">		protected AccessTokenRequest accessTokenRequest;</div><div class="line"></div><div class="line">		@Bean</div><div class="line">		@Scope(value = &quot;session&quot;, proxyMode = ScopedProxyMode.INTERFACES)</div><div class="line">		public DefaultOAuth2ClientContext oauth2ClientContext() &#123;</div><div class="line">			return new DefaultOAuth2ClientContext(this.accessTokenRequest);</div><div class="line">		&#125;</div><div class="line"></div><div class="line">	&#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
           <div class="post-more-link text-center">
-            <a class="btn" href="/2015/03/06/Spring-Mvc-3-1-之后如何配置messageConverters/#more" rel="contents">
+            <a class="btn" href="/2016/07/15/Spring-cloudt-EnableOAuth2Client/#more" rel="contents">
               Read more &raquo;
             </a>
           </div>
@@ -3915,8 +4067,8 @@ yum -y --enablerepo=elrepo-kernel install kernel-lt
           
           
             
-              <a class="post-title-link" href="/2015/03/06/CentOS-Jenkins-Sonar-Nexus-环境搭建/" itemprop="url">
-                CentOS Jenkins + Sonar + Nexus 环境搭建
+              <a class="post-title-link" href="/2016/04/21/spring-cloud-OAuth2RestTemplate-loadBalanced/" itemprop="url">
+                spring cloud OAuth2RestTemplate loadBalanced
               </a>
             
           
@@ -3926,8 +4078,8 @@ yum -y --enablerepo=elrepo-kernel install kernel-lt
       <div class="post-meta">
         <span class="post-time">
           Posted on
-          <time itemprop="dateCreated" datetime="2015-03-06T21:43:05+08:00" content="2015-03-06">
-            2015-03-06
+          <time itemprop="dateCreated" datetime="2016-04-21T16:52:45+08:00" content="2016-04-21">
+            2016-04-21
           </time>
         </span>
 
@@ -3936,8 +4088,8 @@ yum -y --enablerepo=elrepo-kernel install kernel-lt
             &nbsp; | &nbsp; In
             
               <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                <a href="/categories/CI/" itemprop="url" rel="index">
-                  <span itemprop="name">CI</span>
+                <a href="/categories/spring/" itemprop="url" rel="index">
+                  <span itemprop="name">spring</span>
                 </a>
               </span>
 
@@ -3961,14 +4113,12 @@ yum -y --enablerepo=elrepo-kernel install kernel-lt
 
       
         
-          <h1 id="Nexus篇"><a href="#Nexus篇" class="headerlink" title="Nexus篇"></a>Nexus篇</h1><p>在Centos上安装</p>
-<p>如果机器上是JDK1.6的话，nexus-2.5.1是最后一个支持JDK1.6的版本。</p>
-<p>下载地址：<a href="http://www.sonatype.org/nexus/archived">http://www.sonatype.org/nexus/archived</a></p>
-<p>我这里使用FTP工具上传到服务器上。执行命令的时候如果遇到没有权限的地方用chmod改变文件权限。</p>
-<p>设置为系统自启动服务（使用root用户）<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">cd</span> /etc/init.d/</div><div class="line">cp /usr/<span class="built_in">local</span>/jdk/nexus-2.5.1-01/bin/jsw/linux-x86-64/nexus nexus</div></pre></td></tr></table></figure></p>
-<p>编辑<code>/etc/init.d/nexus</code>文件，添加以下变量定义：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">NEXUS_HOME=/usr/<span class="built_in">local</span>/jdk/nexus-2.5.1-01</div><div class="line">PLATFORM=linux-x86-64</div><div class="line">PLATFORM_DIR=<span class="string">"<span class="variable">$&#123;NEXUS_HOME&#125;</span>/bin/jsw/<span class="variable">$&#123;PLATFORM&#125;</span>"</span></div></pre></td></tr></table></figure></p>
+          <p>在项目中访问另一个微服务的时候我们可以这样用RestTemplate来调用其他服务:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">@Autowired</div><div class="line">private RestTemplate restTemplate;</div><div class="line">RestResponse response = restTemplate.postForObject(&quot;http://user-service/user/getUser&quot;, para, User.class);</div></pre></td></tr></table></figure>
+<p>在spring cloud环境下，这个注入的restTemplate是具备了客户端负载均衡功能的，也会用到eureka服务发现功能，<code>user-service</code>就是服务的名称。<br>我的项目启用了oauth2认证。spring cloud也提供了一个<code>OAuth2RestTemplate</code>来很方便的调用其他服务。但是在我测试的时候一直报错<code>UnknownHost</code>，我猜测他肯定是没有用到loadBalanced和eureka的服务发现功能。我翻遍了官方文档也没有找到相关的说明。</p>
+<p>Google搜了大半天后，看了作者在git也讨论过这个类loadBalanced功能之类的，还翻到一个没有什么用 @LoadBalanced<a href="https://github.com/spring-cloud/spring-cloud-security/issues/51">注解</a>，翻了半天源码后终于在<code>OAuth2LoadBalancerClientAutoConfiguration</code>这样一个类中发现了一点蛛丝马迹。</p>
           <div class="post-more-link text-center">
-            <a class="btn" href="/2015/03/06/CentOS-Jenkins-Sonar-Nexus-环境搭建/#more" rel="contents">
+            <a class="btn" href="/2016/04/21/spring-cloud-OAuth2RestTemplate-loadBalanced/#more" rel="contents">
               Read more &raquo;
             </a>
           </div>
@@ -4001,8 +4151,8 @@ yum -y --enablerepo=elrepo-kernel install kernel-lt
           
           
             
-              <a class="post-title-link" href="/2015/02/06/centos-6-5-安装gitlab安装需注意的问题/" itemprop="url">
-                centos 6.5 安装gitlab安装需注意的问题
+              <a class="post-title-link" href="/2016/03/31/Spring-cloud-OAuth2-0配置/" itemprop="url">
+                Spring-cloud OAuth2.0配置
               </a>
             
           
@@ -4012,8 +4162,8 @@ yum -y --enablerepo=elrepo-kernel install kernel-lt
       <div class="post-meta">
         <span class="post-time">
           Posted on
-          <time itemprop="dateCreated" datetime="2015-02-06T23:30:50+08:00" content="2015-02-06">
-            2015-02-06
+          <time itemprop="dateCreated" datetime="2016-03-31T16:13:49+08:00" content="2016-03-31">
+            2016-03-31
           </time>
         </span>
 
@@ -4022,8 +4172,8 @@ yum -y --enablerepo=elrepo-kernel install kernel-lt
             &nbsp; | &nbsp; In
             
               <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                <a href="/categories/centos/" itemprop="url" rel="index">
-                  <span itemprop="name">centos</span>
+                <a href="/categories/spring/" itemprop="url" rel="index">
+                  <span itemprop="name">spring</span>
                 </a>
               </span>
 
@@ -4047,173 +4197,12 @@ yum -y --enablerepo=elrepo-kernel install kernel-lt
 
       
         
-          <p>安装gitlab<br>首先按照官网进行操作，环境为centos 6.5<br><a href="https://about.gitlab.com/downloads/">https://about.gitlab.com/downloads/</a><br>注意安装过程中执行命令<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo gitlab-ctl reconfigure</div></pre></td></tr></table></figure></p>
-<p>出现错误，在<code>/etc/gitlab/gitlab.rb</code>中修改域名后再执行一次方可启动成功<br><img src="http://img.blog.csdn.net/20141207182607301?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQveWZpc2Fib3k=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center" alt="image"><br>
+          <p>在spring cloud项目环境中配置oauth2.0认证。<br><img src="http://callistaenterprise.se/assets/blogg/build-microservices-part-3/system-landscape.png" alt="">    </p>
+<p><a href="http://callistaenterprise.se/blogg/teknik/2015/04/27/building-microservices-part-3-secure-APIs-with-OAuth/">http://callistaenterprise.se/blogg/teknik/2015/04/27/building-microservices-part-3-secure-APIs-with-OAuth/</a><br>可以先看看这篇文章。</p>
+<p>我花了不少时间才把这个调通，spring cloud的版本和文档也存在不一致的地方。<br>以下所有的操作都基于Brixton.RC1搭建，须保持所有相关项目都引用此parent。否则会出现各种莫名其妙的错误。</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">parent</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.cloud<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-cloud-starter-parent<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>Brixton.RC1<span class="tag">&lt;/<span class="name">version</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">relativePath</span>/&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">parent</span>&gt;</span></div></pre></td></tr></table></figure>
           <div class="post-more-link text-center">
-            <a class="btn" href="/2015/02/06/centos-6-5-安装gitlab安装需注意的问题/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      
-      
-        <h1 class="post-title" itemprop="name headline">
-          
-          
-            
-              <a class="post-title-link" href="/2015/02/06/mybatis-memcached框架配置/" itemprop="url">
-                mybatis-memcached框架配置
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          Posted on
-          <time itemprop="dateCreated" datetime="2015-02-06T23:22:37+08:00" content="2015-02-06">
-            2015-02-06
-          </time>
-        </span>
-
-        
-          <span class="post-category" >
-            &nbsp; | &nbsp; In
-            
-              <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                <a href="/categories/Java/" itemprop="url" rel="index">
-                  <span itemprop="name">Java</span>
-                </a>
-              </span>
-
-              
-              
-
-            
-          </span>
-        
-
-        
-          
-        
-      </div>
-    </header>
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <p>官方放出了mybatis和memcached的整合包，先附上官方文档地址<br><a href="http://mybatis.github.io/memcached-cache/">http://mybatis.github.io/memcached-cache/</a><br>文档很简洁，事实证明使用起来也很简单<br>memcached的安装我这里就不再讲了，网上很容易找到<br>在项目中引入<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.mybatis.caches<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>mybatis-memcached<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.0.0<span class="tag">&lt;/<span class="name">version</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></div></pre></td></tr></table></figure></p>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2015/02/06/mybatis-memcached框架配置/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      
-      
-        <h1 class="post-title" itemprop="name headline">
-          
-          
-            
-              <a class="post-title-link" href="/2015/01/31/centos6-5使用yum安装mysql/" itemprop="url">
-                centos6.5使用yum安装mysql
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          Posted on
-          <time itemprop="dateCreated" datetime="2015-01-31T17:41:07+08:00" content="2015-01-31">
-            2015-01-31
-          </time>
-        </span>
-
-        
-          <span class="post-category" >
-            &nbsp; | &nbsp; In
-            
-              <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                <a href="/categories/centos/" itemprop="url" rel="index">
-                  <span itemprop="name">centos</span>
-                </a>
-              </span>
-
-              
-              
-
-            
-          </span>
-        
-
-        
-          
-        
-      </div>
-    </header>
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <p>要使用yum 安装mysql，要使用mysql的yum仓库，先从官网下载适合你系统的仓库<br><a href="http://dev.mysql.com/downloads/repo/yum/">http://dev.mysql.com/downloads/repo/yum/</a><br>centos 6.5 对应的是mysql-community-release-el6-5.noarch.rpm<br>然后安装一下这个仓库列表<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo yum localinstall mysql-community-release-el6-5.noarch.rpm</div></pre></td></tr></table></figure></p>
-<p>执行这个命令后就能看到可安装的mysql<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">yum repolist enabled | grep <span class="string">"mysql.*-community.*"</span></div></pre></td></tr></table></figure></p>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2015/01/31/centos6-5使用yum安装mysql/#more" rel="contents">
+            <a class="btn" href="/2016/03/31/Spring-cloud-OAuth2-0配置/#more" rel="contents">
               Read more &raquo;
             </a>
           </div>
@@ -4239,7 +4228,7 @@ yum -y --enablerepo=elrepo-kernel install kernel-lt
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/5/">&laquo;</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/7/">&raquo;</a>
+    <a class="extend prev" rel="prev" href="/page/5/">&laquo;</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/page/7/">7</a><a class="page-number" href="/page/8/">8</a><a class="extend next" rel="next" href="/page/7/">&raquo;</a>
   </nav>
 
  </div>
@@ -4273,21 +4262,21 @@ yum -y --enablerepo=elrepo-kernel install kernel-lt
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">62</span>
+              <span class="site-state-item-count">78</span>
               <span class="site-state-item-name">posts</span>
             </a>
           </div>
 
           <div class="site-state-item site-state-categories">
             <a href="/categories">
-              <span class="site-state-item-count">17</span>
+              <span class="site-state-item-count">24</span>
               <span class="site-state-item-name">categories</span>
               </a>
           </div>
 
           <div class="site-state-item site-state-tags">
             <a href="/tags">
-              <span class="site-state-item-count">34</span>
+              <span class="site-state-item-count">44</span>
               <span class="site-state-item-name">tags</span>
               </a>
           </div>

@@ -3390,8 +3390,8 @@
           
           
             
-              <a class="post-title-link" href="/2016/07/21/Java获取URL上的参数/" itemprop="url">
-                Java获取URL上的参数
+              <a class="post-title-link" href="/2016/11/19/hexo-command/" itemprop="url">
+                发布hexo博文命令
               </a>
             
           
@@ -3401,8 +3401,8 @@
       <div class="post-meta">
         <span class="post-time">
           Posted on
-          <time itemprop="dateCreated" datetime="2016-07-21T11:18:24+08:00" content="2016-07-21">
-            2016-07-21
+          <time itemprop="dateCreated" datetime="2016-11-19T13:28:26+08:00" content="2016-11-19">
+            2016-11-19
           </time>
         </span>
 
@@ -3411,8 +3411,8 @@
             &nbsp; | &nbsp; In
             
               <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                <a href="/categories/Java/" itemprop="url" rel="index">
-                  <span itemprop="name">Java</span>
+                <a href="/categories/blog/" itemprop="url" rel="index">
+                  <span itemprop="name">blog</span>
                 </a>
               </span>
 
@@ -3438,12 +3438,12 @@
         
           <span itemprop="articleBody">
             
-            最近遇到一个需求需要在获取URL字符串上的kv键值对，我们都知道Java Web在请求是直接用request来获取值的。如果是字符串呢，就需要正则表达式来自己截取了。自己写代码是比较麻烦的，下面推荐用Guava工具包，2行代码就可以解决这个需求了。
-12345private String getPa
+            I am BlankCat，welcome to my blog；
+技术要点1234567891011121314dubug命令hexo s --debug创建新文章(文章名字小写)hexo new post 文章名字发布文章hexo ghexo dhexo  cleandubug命令hexo s 
             ...
           </span>
           <div class="post-more-link text-center">
-            <a class="btn" href="/2016/07/21/Java获取URL上的参数/#more" rel="contents">
+            <a class="btn" href="/2016/11/19/hexo-command/#more" rel="contents">
               Read more &raquo;
             </a>
           </div>
@@ -3476,8 +3476,8 @@
           
           
             
-              <a class="post-title-link" href="/2016/07/15/Spring-cloudt-EnableOAuth2Client/" itemprop="url">
-                Spring cloud @EnableOAuth2Client
+              <a class="post-title-link" href="/2016/11/19/cmd/" itemprop="url">
+                cmd 命令
               </a>
             
           
@@ -3487,8 +3487,8 @@
       <div class="post-meta">
         <span class="post-time">
           Posted on
-          <time itemprop="dateCreated" datetime="2016-07-15T13:55:11+08:00" content="2016-07-15">
-            2016-07-15
+          <time itemprop="dateCreated" datetime="2016-11-19T10:13:28+08:00" content="2016-11-19">
+            2016-11-19
           </time>
         </span>
 
@@ -3497,8 +3497,8 @@
             &nbsp; | &nbsp; In
             
               <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                <a href="/categories/spring/" itemprop="url" rel="index">
-                  <span itemprop="name">spring</span>
+                <a href="/categories/Windows/" itemprop="url" rel="index">
+                  <span itemprop="name">Windows</span>
                 </a>
               </span>
 
@@ -3522,12 +3522,14 @@
 
       
         
-          <p>Spring Cloud oauth2 开启客户端功能，并启用LoadBalanced</p>
-<p>如果不添加以下配置，只添加<code>@EnableOAuth2Client</code>注解，spring cloud默认是在web环境下使用的<code>AuthorizationCodeResourceDetails</code>。</p>
-<p>具体代码在<code>OAuth2RestOperationsConfiguration</code>类中。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">@Configuration</div><div class="line">@ConditionalOnBean(OAuth2ClientConfiguration.class)</div><div class="line">@ConditionalOnWebApplication</div><div class="line">protected static class SessionScopedConfiguration &#123;</div><div class="line"></div><div class="line">	@Bean</div><div class="line">	@ConfigurationProperties(&quot;security.oauth2.client&quot;)</div><div class="line">	@Primary</div><div class="line">	public AuthorizationCodeResourceDetails oauth2RemoteResource() &#123;</div><div class="line">		AuthorizationCodeResourceDetails details = new AuthorizationCodeResourceDetails();</div><div class="line">		return details;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	@Bean</div><div class="line">	public FilterRegistrationBean oauth2ClientFilterRegistration(</div><div class="line">			OAuth2ClientContextFilter filter, SecurityProperties security) &#123;</div><div class="line">		FilterRegistrationBean registration = new FilterRegistrationBean();</div><div class="line">		registration.setFilter(filter);</div><div class="line">		registration.setOrder(security.getFilterOrder() - 10);</div><div class="line">		return registration;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	@Configuration</div><div class="line">	protected static class ClientContextConfiguration &#123;</div><div class="line"></div><div class="line">		@Resource</div><div class="line">		@Qualifier(&quot;accessTokenRequest&quot;)</div><div class="line">		protected AccessTokenRequest accessTokenRequest;</div><div class="line"></div><div class="line">		@Bean</div><div class="line">		@Scope(value = &quot;session&quot;, proxyMode = ScopedProxyMode.INTERFACES)</div><div class="line">		public DefaultOAuth2ClientContext oauth2ClientContext() &#123;</div><div class="line">			return new DefaultOAuth2ClientContext(this.accessTokenRequest);</div><div class="line">		&#125;</div><div class="line"></div><div class="line">	&#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+          <span itemprop="articleBody">
+            
+            I am BlankCat ，welcome to my blog；
+技术要点12345678910111213141516171819202122232425The nexus service is already running with status: RUNNING端口号被占用1查看所有端口
+            ...
+          </span>
           <div class="post-more-link text-center">
-            <a class="btn" href="/2016/07/15/Spring-cloudt-EnableOAuth2Client/#more" rel="contents">
+            <a class="btn" href="/2016/11/19/cmd/#more" rel="contents">
               Read more &raquo;
             </a>
           </div>
@@ -3560,8 +3562,8 @@
           
           
             
-              <a class="post-title-link" href="/2016/04/21/spring-cloud-OAuth2RestTemplate-loadBalanced/" itemprop="url">
-                spring cloud OAuth2RestTemplate loadBalanced
+              <a class="post-title-link" href="/2016/11/19/adb/" itemprop="url">
+                adb
               </a>
             
           
@@ -3571,8 +3573,8 @@
       <div class="post-meta">
         <span class="post-time">
           Posted on
-          <time itemprop="dateCreated" datetime="2016-04-21T16:52:45+08:00" content="2016-04-21">
-            2016-04-21
+          <time itemprop="dateCreated" datetime="2016-11-19T10:13:28+08:00" content="2016-11-19">
+            2016-11-19
           </time>
         </span>
 
@@ -3581,8 +3583,8 @@
             &nbsp; | &nbsp; In
             
               <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                <a href="/categories/spring/" itemprop="url" rel="index">
-                  <span itemprop="name">spring</span>
+                <a href="/categories/Android/" itemprop="url" rel="index">
+                  <span itemprop="name">Android</span>
                 </a>
               </span>
 
@@ -3606,12 +3608,17 @@
 
       
         
-          <p>在项目中访问另一个微服务的时候我们可以这样用RestTemplate来调用其他服务:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">@Autowired</div><div class="line">private RestTemplate restTemplate;</div><div class="line">RestResponse response = restTemplate.postForObject(&quot;http://user-service/user/getUser&quot;, para, User.class);</div></pre></td></tr></table></figure>
-<p>在spring cloud环境下，这个注入的restTemplate是具备了客户端负载均衡功能的，也会用到eureka服务发现功能，<code>user-service</code>就是服务的名称。<br>我的项目启用了oauth2认证。spring cloud也提供了一个<code>OAuth2RestTemplate</code>来很方便的调用其他服务。但是在我测试的时候一直报错<code>UnknownHost</code>，我猜测他肯定是没有用到loadBalanced和eureka的服务发现功能。我翻遍了官方文档也没有找到相关的说明。</p>
-<p>Google搜了大半天后，看了作者在git也讨论过这个类loadBalanced功能之类的，还翻到一个没有什么用 @LoadBalanced<a href="https://github.com/spring-cloud/spring-cloud-security/issues/51">注解</a>，翻了半天源码后终于在<code>OAuth2LoadBalancerClientAutoConfiguration</code>这样一个类中发现了一点蛛丝马迹。</p>
+          <span itemprop="articleBody">
+            
+            
+《刘瑜写给女儿的信：愿你慢慢长大 》小布谷，愿你慢慢长大。愿你有好运气，如果没有，愿你在不幸中学会慈悲。愿你被很多人爱，如果没有，愿你在寂寞中学会宽容。愿你一生一世每天都可以睡到自然醒。 
+
+I am BlankCat ，welcome to my blog；
+技术要点12345678910111
+            ...
+          </span>
           <div class="post-more-link text-center">
-            <a class="btn" href="/2016/04/21/spring-cloud-OAuth2RestTemplate-loadBalanced/#more" rel="contents">
+            <a class="btn" href="/2016/11/19/adb/#more" rel="contents">
               Read more &raquo;
             </a>
           </div>
@@ -3644,8 +3651,8 @@
           
           
             
-              <a class="post-title-link" href="/2016/03/31/Spring-cloud-OAuth2-0配置/" itemprop="url">
-                Spring-cloud OAuth2.0配置
+              <a class="post-title-link" href="/2016/11/19/Bigdata/" itemprop="url">
+                Big data
               </a>
             
           
@@ -3655,8 +3662,8 @@
       <div class="post-meta">
         <span class="post-time">
           Posted on
-          <time itemprop="dateCreated" datetime="2016-03-31T16:13:49+08:00" content="2016-03-31">
-            2016-03-31
+          <time itemprop="dateCreated" datetime="2016-11-19T10:13:28+08:00" content="2016-11-19">
+            2016-11-19
           </time>
         </span>
 
@@ -3665,8 +3672,8 @@
             &nbsp; | &nbsp; In
             
               <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                <a href="/categories/spring/" itemprop="url" rel="index">
-                  <span itemprop="name">spring</span>
+                <a href="/categories/大数据/" itemprop="url" rel="index">
+                  <span itemprop="name">大数据</span>
                 </a>
               </span>
 
@@ -3690,12 +3697,17 @@
 
       
         
-          <p>在spring cloud项目环境中配置oauth2.0认证。<br><img src="http://callistaenterprise.se/assets/blogg/build-microservices-part-3/system-landscape.png" alt="">    </p>
-<p><a href="http://callistaenterprise.se/blogg/teknik/2015/04/27/building-microservices-part-3-secure-APIs-with-OAuth/">http://callistaenterprise.se/blogg/teknik/2015/04/27/building-microservices-part-3-secure-APIs-with-OAuth/</a><br>可以先看看这篇文章。</p>
-<p>我花了不少时间才把这个调通，spring cloud的版本和文档也存在不一致的地方。<br>以下所有的操作都基于Brixton.RC1搭建，须保持所有相关项目都引用此parent。否则会出现各种莫名其妙的错误。</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">parent</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.cloud<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-cloud-starter-parent<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>Brixton.RC1<span class="tag">&lt;/<span class="name">version</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">relativePath</span>/&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">parent</span>&gt;</span></div></pre></td></tr></table></figure>
+          <span itemprop="articleBody">
+            
+            
+《刘瑜写给女儿的信：愿你慢慢长大 》小布谷，愿你慢慢长大。愿你有好运气，如果没有，愿你在不幸中学会慈悲。愿你被很多人爱，如果没有，愿你在寂寞中学会宽容。愿你一生一世每天都可以睡到自然醒。 
+
+I am BlankCat ，welcome to my blog；
+技术要点12345678910111
+            ...
+          </span>
           <div class="post-more-link text-center">
-            <a class="btn" href="/2016/03/31/Spring-cloud-OAuth2-0配置/#more" rel="contents">
+            <a class="btn" href="/2016/11/19/Bigdata/#more" rel="contents">
               Read more &raquo;
             </a>
           </div>
@@ -3728,8 +3740,8 @@
           
           
             
-              <a class="post-title-link" href="/2016/03/22/Spring-cloud项目实践-三/" itemprop="url">
-                Spring cloud项目实践(三)
+              <a class="post-title-link" href="/2016/11/19/hexo/" itemprop="url">
+                hexo技术总结
               </a>
             
           
@@ -3739,8 +3751,8 @@
       <div class="post-meta">
         <span class="post-time">
           Posted on
-          <time itemprop="dateCreated" datetime="2016-03-22T08:22:18+08:00" content="2016-03-22">
-            2016-03-22
+          <time itemprop="dateCreated" datetime="2016-11-19T10:13:28+08:00" content="2016-11-19">
+            2016-11-19
           </time>
         </span>
 
@@ -3749,8 +3761,8 @@
             &nbsp; | &nbsp; In
             
               <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                <a href="/categories/spring/" itemprop="url" rel="index">
-                  <span itemprop="name">spring</span>
+                <a href="/categories/blog/" itemprop="url" rel="index">
+                  <span itemprop="name">blog</span>
                 </a>
               </span>
 
@@ -3774,10 +3786,17 @@
 
       
         
-          <h1 id="持续集成"><a href="#持续集成" class="headerlink" title="持续集成"></a>持续集成</h1><p>配置jenkins构建项目，自动build出docker镜像，发布到docker私库中，或者从目标服务器中启动容器。</p>
-<h2 id="Maven的Docker插件"><a href="#Maven的Docker插件" class="headerlink" title="Maven的Docker插件"></a>Maven的Docker插件</h2><p><a href="http://www.cnblogs.com/skyblog/p/5163691.html">http://www.cnblogs.com/skyblog/p/5163691.html</a> 有讲到如何用Dockerfile构建，下面是采用Maven插件的方式构建，插件的文档在<a href="https://github.com/spotify/docker-maven-plugin">这里</a><br>
+          <span itemprop="articleBody">
+            
+            
+《愿你慢慢长大 》小布谷，愿你慢慢长大。愿你有好运气，如果没有，愿你在不幸中学会慈悲。愿你被很多人爱，如果没有，愿你在寂寞中学会宽容。愿你一生一世每天都可以睡到自然醒。 
+
+I am BlankCat，welcome to my blog；
+技术要点123456789101112131415161
+            ...
+          </span>
           <div class="post-more-link text-center">
-            <a class="btn" href="/2016/03/22/Spring-cloud项目实践-三/#more" rel="contents">
+            <a class="btn" href="/2016/11/19/hexo/#more" rel="contents">
               Read more &raquo;
             </a>
           </div>
@@ -3810,8 +3829,8 @@
           
           
             
-              <a class="post-title-link" href="/2016/03/21/Spring-cloud项目实践-二/" itemprop="url">
-                Spring cloud项目实践(二)
+              <a class="post-title-link" href="/2016/11/19/net/" itemprop="url">
+                net 网络知识
               </a>
             
           
@@ -3821,8 +3840,8 @@
       <div class="post-meta">
         <span class="post-time">
           Posted on
-          <time itemprop="dateCreated" datetime="2016-03-21T21:44:07+08:00" content="2016-03-21">
-            2016-03-21
+          <time itemprop="dateCreated" datetime="2016-11-19T10:13:28+08:00" content="2016-11-19">
+            2016-11-19
           </time>
         </span>
 
@@ -3831,8 +3850,8 @@
             &nbsp; | &nbsp; In
             
               <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                <a href="/categories/spring/" itemprop="url" rel="index">
-                  <span itemprop="name">spring</span>
+                <a href="/categories/net/" itemprop="url" rel="index">
+                  <span itemprop="name">net</span>
                 </a>
               </span>
 
@@ -3856,13 +3875,14 @@
 
       
         
-          <h1 id="配置中心和服务注册中心"><a href="#配置中心和服务注册中心" class="headerlink" title="配置中心和服务注册中心"></a>配置中心和服务注册中心</h1><p>我们先把配置中心和服务注册中心跑起来，这个先照着之前的教程做，很简单没什么变动。<br>就是git仓库需要密码的话加入下面的配置就好。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">server:</div><div class="line">  port: 8888</div><div class="line"></div><div class="line">eureka:</div><div class="line">  instance:</div><div class="line">    hostname: configserver</div><div class="line">  client:</div><div class="line">    registerWithEureka: true</div><div class="line">    fetchRegistry: true</div><div class="line">    serviceUrl:</div><div class="line">      defaultZone: http://$&#123;config.host:192.168.99.100&#125;:8761/eureka/</div><div class="line"></div><div class="line">spring:</div><div class="line">  cloud:</div><div class="line">    config:</div><div class="line">      server:</div><div class="line">        git:</div><div class="line">          uri: yourgiturl</div><div class="line">          password: ****</div><div class="line">          username: ****</div></pre></td></tr></table></figure>
-<p>这里的<code>${config.host:192.168.99.100}</code>表示没有读到config.host就用192.168.99.100这个值。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">java -jar cloud-simple-service-1.0.0.jar --config.host=localhost</div></pre></td></tr></table></figure>
-<p>这个用法就很灵活了，后面配合Dockerfile可以根据不同的环境来启动不同的配置。<br>
+          <span itemprop="articleBody">
+            
+            I am BlankCat，welcome to my blog；
+技术要点123456789101112131415161718192021222324252627282930ipv4私网地址 百度一下IPV4 地址分类 A B C D Ehttp://blog.csdn.net/ylqmf/ar
+            ...
+          </span>
           <div class="post-more-link text-center">
-            <a class="btn" href="/2016/03/21/Spring-cloud项目实践-二/#more" rel="contents">
+            <a class="btn" href="/2016/11/19/net/#more" rel="contents">
               Read more &raquo;
             </a>
           </div>
@@ -3895,8 +3915,8 @@
           
           
             
-              <a class="post-title-link" href="/2016/03/21/Spring-cloud项目实践/" itemprop="url">
-                Spring cloud项目实践(一)
+              <a class="post-title-link" href="/2016/11/17/JVM10/" itemprop="url">
+                JVM10-运行期优化
               </a>
             
           
@@ -3906,8 +3926,8 @@
       <div class="post-meta">
         <span class="post-time">
           Posted on
-          <time itemprop="dateCreated" datetime="2016-03-21T20:58:33+08:00" content="2016-03-21">
-            2016-03-21
+          <time itemprop="dateCreated" datetime="2016-11-17T17:01:49+08:00" content="2016-11-17">
+            2016-11-17
           </time>
         </span>
 
@@ -3916,8 +3936,8 @@
             &nbsp; | &nbsp; In
             
               <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                <a href="/categories/spring/" itemprop="url" rel="index">
-                  <span itemprop="name">spring</span>
+                <a href="/categories/JVM/" itemprop="url" rel="index">
+                  <span itemprop="name">JVM</span>
                 </a>
               </span>
 
@@ -3941,276 +3961,264 @@
 
       
         
-          <h1 id="基本概念和重要组件"><a href="#基本概念和重要组件" class="headerlink" title="基本概念和重要组件"></a>基本概念和重要组件</h1><p>最近看了一篇<a href="https://mp.weixin.qq.com/s?__biz=MjM5MDE0Mjc4MA==&amp;mid=400645575&amp;idx=1&amp;sn=da55d75db55117046c520de88dde1123&amp;scene=1&amp;srcid=0315vVImLcHZpO2tTRVKg1w8&amp;key=710a5d99946419d9ff6bc76720229c7216fbcf348001d543434dfad7944207441ed01f44e57b0d87a834f8e8b6f673b7&amp;ascene=0">文章</a>，了解到微服务架构的组成部分和概念，以前有看过一点dubbo，文章里介绍到Netflix这么一个公司：</p>
-<blockquote>
-<p>Netflix是一家成功实践微服务架构的互联网公司，几年前，Netflix就把它的几乎整个微服务框架栈开源贡献给了社区，这些框架和组件包括</p>
-</blockquote>
+          <p>Java程序最初是通过解释器进行解释执行的，当虚拟机发现某个方法或代码块的运行特别频繁时，就会把这些代码认定为『热点代码』。为了提高热点代码的执行效率，在运行时，虚拟机将会把这些代码编译成与本地平台相关的机器码，并进行各种层次的优化，完成这个任务的编译器称为即时编译器。</p>
+<h2 id="HotSpot虚拟机内的即时编译器"><a href="#HotSpot虚拟机内的即时编译器" class="headerlink" title="HotSpot虚拟机内的即时编译器"></a>HotSpot虚拟机内的即时编译器</h2><h3 id="解释器与编译器"><a href="#解释器与编译器" class="headerlink" title="解释器与编译器"></a>解释器与编译器</h3><p>HotSpot虚拟机是采用解释器与编译器并存的架构。解释器和编译器各有优势：当程序需要迅速启动和执行的时候，解释器可以首先发挥作用，省去编译的时间，立即执行。在程序运行后，随着时间的推移，编译器初见发挥作用，把越来越多的代码编译成本地代码之后，可以获取更高的执行效率。</p>
+<h3 id="编译对象与触发条件"><a href="#编译对象与触发条件" class="headerlink" title="编译对象与触发条件"></a>编译对象与触发条件</h3><p>在运行过程中被即时编译器编译的『热点代码』有两类：</p>
 <ul>
-<li>Eureka:　服务注册发现框架</li>
-<li>Zuul:　服务网关</li>
-<li>Karyon:　服务端框架</li>
-<li>Ribbon:　客户端框架</li>
-<li>Hystrix:    服务容错组件</li>
-<li>Archaius: 服务配置组件</li>
-<li>Servo: Metrics组件</li>
-<li>Blitz4j: 日志组件</li>
-</ul>
+<li>被多次调用的方法</li>
+<li>被多次执行的循环体
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/11/17/JVM10/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
+              <a class="post-title-link" href="/2016/11/15/JVM9/" itemprop="url">
+                JVM9-虚拟机字节码执行引擎
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          Posted on
+          <time itemprop="dateCreated" datetime="2016-11-15T16:53:50+08:00" content="2016-11-15">
+            2016-11-15
+          </time>
+        </span>
+
+        
+          <span class="post-category" >
+            &nbsp; | &nbsp; In
+            
+              <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                <a href="/categories/JVM/" itemprop="url" rel="index">
+                  <span itemprop="name">JVM</span>
+                </a>
+              </span>
+
+              
+              
+
+            
+          </span>
+        
+
+        
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <p>执行引擎是Java虚拟机最核心的组成部分之一，本章将主要从概念模型的角度来讲解虚拟机的方法调用和字节码执行。</p>
+<h2 id="运行时栈帧结构"><a href="#运行时栈帧结构" class="headerlink" title="运行时栈帧结构"></a>运行时栈帧结构</h2><p>栈帧（Stack Frame）是用于支持虚拟机进行方法代用和方法执行的数据结构，它是虚拟机运行时数据区中的<a href="http://sail-y.github.io/2016/10/28/JVM2/#Java虚拟机栈">虚拟机栈</a>的栈元素。栈帧存储了局部变量表、操作数栈、动态链接、方法出口等信息。每一个方法从调用开始至执行完成的过程，都对应着一个栈帧在虚拟机里面从入栈到出栈的过程。对于执行引擎来说，在活动线程中，只有位于栈顶的栈帧才是有效的，称为当前栈帧，与这个栈帧相关联的方法称为当前方法，执行引擎运行的所有字节码指令都只针对当前栈帧进行操作，在概念模型上，典型的栈帧结构图如下：<br>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/11/15/JVM9/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
+              <a class="post-title-link" href="/2016/11/07/JVM8/" itemprop="url">
+                JVM8-类加载机制
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          Posted on
+          <time itemprop="dateCreated" datetime="2016-11-07T16:30:13+08:00" content="2016-11-07">
+            2016-11-07
+          </time>
+        </span>
+
+        
+          <span class="post-category" >
+            &nbsp; | &nbsp; In
+            
+              <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                <a href="/categories/JVM/" itemprop="url" rel="index">
+                  <span itemprop="name">JVM</span>
+                </a>
+              </span>
+
+              
+              
+
+            
+          </span>
+        
+
+        
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <h1 id="类加载机制"><a href="#类加载机制" class="headerlink" title="类加载机制"></a>类加载机制</h1><p>虚拟机把描述类的数据从Class文件加载到内存，并对数据进行校验、转换解析和初始化，最终形成可以被虚拟机直接使用的Java类型，这就是虚拟机的类加载机制。</p>
+<h2 id="类加载的时机"><a href="#类加载的时机" class="headerlink" title="类加载的时机"></a>类加载的时机</h2><p>类被夹在到虚拟机内存中开始，到卸载出内存为止，它的整个生命周期包括：加载、验证、准备、解析、初始化、使用、卸载7个阶段。其中验证、准备、解析3个部分统称为连接，这个阶段的发生顺序如下图所示：<br>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/11/07/JVM8/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
+              <a class="post-title-link" href="/2016/11/04/JVM7/" itemprop="url">
+                JVM7-类文件结构
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          Posted on
+          <time itemprop="dateCreated" datetime="2016-11-04T09:25:26+08:00" content="2016-11-04">
+            2016-11-04
+          </time>
+        </span>
+
+        
+          <span class="post-category" >
+            &nbsp; | &nbsp; In
+            
+              <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                <a href="/categories/JVM/" itemprop="url" rel="index">
+                  <span itemprop="name">JVM</span>
+                </a>
+              </span>
+
+              
+              
+
+            
+          </span>
+        
+
+        
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <h2 id="Class类文件结构"><a href="#Class类文件结构" class="headerlink" title="Class类文件结构"></a>Class类文件结构</h2><p>本章说一下Java编译后的class文件结构。</p>
+<h3 id="魔数与Class文件的版本"><a href="#魔数与Class文件的版本" class="headerlink" title="魔数与Class文件的版本"></a>魔数与Class文件的版本</h3><p><img src="http://7xs4nh.com1.z0.glb.clouddn.com/jvm7.png" alt=""><br>我这里用sublime打开一个class文件，看到前面4个字节是十六进制0xCAFEBABE,这个是Class文件的魔数.</p>
 <blockquote>
-<p>Netflix的开源框架组件已经在Netflix的大规模分布式微服务环境中经过多年的生产实战验证，正逐步被社区接受为构造微服务框架的标准组件。Pivotal去年推出的Spring Cloud开源产品，主要是基于对Netflix开源组件的进一步封装，方便Spring开发人员构建微服务基础框架。对于一些打算构建微服务框架体系的公司来说，充分利用或参考借鉴Netflix的开源微服务组件(或Spring Cloud)，在此基础上进行必要的企业定制，无疑是通向微服务架构的捷径。</p>
+<p>很多文件存储标准中都使用魔数进行身份识别，因为扩展名可以更改，魔数就是确定这个文件是否为一个能被虚拟机接受的Class文件。</p>
 </blockquote>
-<p>Spring Cloud是微服务工具包，为开发者提供了在分布式系统的配置管理、服务发现、断路器、智能路由、微代理、控制总线等开发工具包。</p>
-<p>觉得挺不错的，就找找资料尝试实战一下。<br>在此记录和回顾一下过程中遇到的问题和实际项目中需要解决的一些问题。<br>
+<p>然后看0000 0034，转换成十进制是52，这个表示Java编译的版本号，相信大家在工作中也遇见过<code>Unsupported major.minor version 52.0</code>之类的错误，指的就是这个版本号，52对应的是JDK8。<br>
           <div class="post-more-link text-center">
-            <a class="btn" href="/2016/03/21/Spring-cloud项目实践/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      
-      
-        <h1 class="post-title" itemprop="name headline">
-          
-          
-            
-              <a class="post-title-link" href="/2015/12/15/jenkins配合docker持续集成/" itemprop="url">
-                jenkins配合docker持续集成
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          Posted on
-          <time itemprop="dateCreated" datetime="2015-12-15T12:53:45+08:00" content="2015-12-15">
-            2015-12-15
-          </time>
-        </span>
-
-        
-          <span class="post-category" >
-            &nbsp; | &nbsp; In
-            
-              <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                <a href="/categories/CI/" itemprop="url" rel="index">
-                  <span itemprop="name">CI</span>
-                </a>
-              </span>
-
-              
-              
-
-            
-          </span>
-        
-
-        
-          
-        
-      </div>
-    </header>
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <p>我这里用docker来做持续集成的思路和<a href="http://sail-y.github.io/2015/12/14/jenkins%E5%92%8Ctomcat%E7%9A%84%E6%8C%81%E7%BB%AD%E9%9B%86%E6%88%90/">jenkins和tomcat的持续集成</a>是一样的。都是用jenkins拉取git的代码然后打war包，只不过重启tomcat步骤换成了docker的重启。<br>直接展示一下docker的脚本吧。<br>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2015/12/15/jenkins配合docker持续集成/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      
-      
-        <h1 class="post-title" itemprop="name headline">
-          
-          
-            
-              <a class="post-title-link" href="/2015/12/14/jenkins和tomcat的持续集成/" itemprop="url">
-                jenkins和tomcat的持续集成
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          Posted on
-          <time itemprop="dateCreated" datetime="2015-12-14T17:26:16+08:00" content="2015-12-14">
-            2015-12-14
-          </time>
-        </span>
-
-        
-          <span class="post-category" >
-            &nbsp; | &nbsp; In
-            
-              <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                <a href="/categories/CI/" itemprop="url" rel="index">
-                  <span itemprop="name">CI</span>
-                </a>
-              </span>
-
-              
-              
-
-            
-          </span>
-        
-
-        
-          
-        
-      </div>
-    </header>
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <p>今天来说一下如何用jenkins做持续集成。<br>jenkins我这里就不介绍了，重点介绍一下如何用jenkins对tomcat进行持续集成。</p>
-<h1 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h1><p>流程是这样的：        </p>
-<ol>
-<li>jenkins从git(or svn)拉取代码，进行构建。        </li>
-<li>将打出来的war包用jenkins的插件(Publish over SSH)传到你要部署的服务器。        </li>
-<li>执行一个shell脚本，将正在运行的tomcat进程kill掉，把war包拷到tomcat目录的webapps下。然后在运行${TOMCAT_DIR}/bin/startup.sh。
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2015/12/14/jenkins和tomcat的持续集成/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      
-      
-        <h1 class="post-title" itemprop="name headline">
-          
-          
-            
-              <a class="post-title-link" href="/2015/12/11/Mybatis-枚举存储/" itemprop="url">
-                Mybatis 枚举存储
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          Posted on
-          <time itemprop="dateCreated" datetime="2015-12-11T15:10:44+08:00" content="2015-12-11">
-            2015-12-11
-          </time>
-        </span>
-
-        
-          <span class="post-category" >
-            &nbsp; | &nbsp; In
-            
-              <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                <a href="/categories/Java/" itemprop="url" rel="index">
-                  <span itemprop="name">Java</span>
-                </a>
-              </span>
-
-              
-              
-
-            
-          </span>
-        
-
-        
-          
-        
-      </div>
-    </header>
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <h2 id="枚举"><a href="#枚举" class="headerlink" title="枚举"></a>枚举</h2><p>我们在写程序的时候会遇到这种需求。就是我的对象里面有一个属性是一个枚举值，但是mybatis默认是不支持的，官方提供了一个typeHandler可以用枚举的ordinal()来进行存和取的自动转换。把它配置在<br><code>mybatis-configuration.xml</code>里。    </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;typeHandlers&gt;</div><div class="line">        &lt;typeHandler handler=&quot;org.apache.ibatis.type.EnumOrdinalTypeHandler&quot; javaType=&quot;com.xxx.user.UserType&quot;/&gt;</div><div class="line">&lt;/typeHandlers&gt;</div></pre></td></tr></table></figure>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2015/12/11/Mybatis-枚举存储/#more" rel="contents">
+            <a class="btn" href="/2016/11/04/JVM7/#more" rel="contents">
               Read more &raquo;
             </a>
           </div>
@@ -4236,7 +4244,7 @@
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/4/">&laquo;</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/6/">&raquo;</a>
+    <a class="extend prev" rel="prev" href="/page/4/">&laquo;</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><a class="extend next" rel="next" href="/page/6/">&raquo;</a>
   </nav>
 
  </div>
@@ -4270,21 +4278,21 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">62</span>
+              <span class="site-state-item-count">78</span>
               <span class="site-state-item-name">posts</span>
             </a>
           </div>
 
           <div class="site-state-item site-state-categories">
             <a href="/categories">
-              <span class="site-state-item-count">17</span>
+              <span class="site-state-item-count">24</span>
               <span class="site-state-item-name">categories</span>
               </a>
           </div>
 
           <div class="site-state-item site-state-tags">
             <a href="/tags">
-              <span class="site-state-item-count">34</span>
+              <span class="site-state-item-count">44</span>
               <span class="site-state-item-name">tags</span>
               </a>
           </div>

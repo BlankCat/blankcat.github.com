@@ -40,19 +40,25 @@
   <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.1" />
 
 
-<meta name="description" content="I am BlankCat ，welcome to my blog；
-技术要点123456789101112131415161718192021222324252627282930313233343536373839404142434445464748集群分3种负载均衡：分发机制，也会用到主从概念，咱们访问wwww.baidu.com时候，百度会对应着一个服务器	  这个服务ip不是对应真正的请求">
+<meta name="description" content="《刘瑜写给女儿的信：愿你慢慢长大 》小布谷，愿你慢慢长大。愿你有好运气，如果没有，愿你在不幸中学会慈悲。愿你被很多人爱，如果没有，愿你在寂寞中学会宽容。愿你一生一世每天都可以睡到自然醒。 
+
+I am BlankCat ，welcome to my blog；
+技术要点1234567891011121314151617181920212223242526272829303132333435363">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Big data">
 <meta property="og:url" content="https://blankcat.github.io/2016/11/19/Bigdata/index.html">
 <meta property="og:site_name" content="BlankCat">
-<meta property="og:description" content="I am BlankCat ，welcome to my blog；
-技术要点123456789101112131415161718192021222324252627282930313233343536373839404142434445464748集群分3种负载均衡：分发机制，也会用到主从概念，咱们访问wwww.baidu.com时候，百度会对应着一个服务器	  这个服务ip不是对应真正的请求">
-<meta property="og:updated_time" content="2016-11-19T02:27:59.392Z">
+<meta property="og:description" content="《刘瑜写给女儿的信：愿你慢慢长大 》小布谷，愿你慢慢长大。愿你有好运气，如果没有，愿你在不幸中学会慈悲。愿你被很多人爱，如果没有，愿你在寂寞中学会宽容。愿你一生一世每天都可以睡到自然醒。 
+
+I am BlankCat ，welcome to my blog；
+技术要点1234567891011121314151617181920212223242526272829303132333435363">
+<meta property="og:updated_time" content="2017-12-19T14:31:00.160Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Big data">
-<meta name="twitter:description" content="I am BlankCat ，welcome to my blog；
-技术要点123456789101112131415161718192021222324252627282930313233343536373839404142434445464748集群分3种负载均衡：分发机制，也会用到主从概念，咱们访问wwww.baidu.com时候，百度会对应着一个服务器	  这个服务ip不是对应真正的请求">
+<meta name="twitter:description" content="《刘瑜写给女儿的信：愿你慢慢长大 》小布谷，愿你慢慢长大。愿你有好运气，如果没有，愿你在不幸中学会慈悲。愿你被很多人爱，如果没有，愿你在寂寞中学会宽容。愿你一生一世每天都可以睡到自然醒。 
+
+I am BlankCat ，welcome to my blog；
+技术要点1234567891011121314151617181920212223242526272829303132333435363">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -355,7 +361,10 @@
       
 
       
-        <span itemprop="articleBody"><p>I am BlankCat ，welcome to my blog；</p>
+        <span itemprop="articleBody"><blockquote>
+<p>《刘瑜写给女儿的信：愿你慢慢长大 》<br>小布谷，愿你慢慢长大。<br>愿你有好运气，如果没有，愿你在不幸中学会慈悲。<br>愿你被很多人爱，如果没有，愿你在寂寞中学会宽容。<br>愿你一生一世每天都可以睡到自然醒。 </p>
+</blockquote>
+<p>I am BlankCat ，welcome to my blog；</p>
 <h3 id="技术要点"><a href="#技术要点" class="headerlink" title="技术要点"></a>技术要点</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div></pre></td><td class="code"><pre><div class="line">集群分3种</div><div class="line">负载均衡：分发机制，也会用到主从概念，咱们访问wwww.baidu.com时候，百度会对应着一个服务器</div><div class="line">	  这个服务ip不是对应真正的请求服务，而是做了一层分发，这样用户请求多了，可以保证减轻服务的压力</div><div class="line">	  负载均衡机制都是通过算法计算，然后完成；</div><div class="line"></div><div class="line">高可用：针对服务概念，访问一个比较重要的服务，把服务做成高可用模式</div><div class="line">	把服务写成分解成多个，主服务和从服务（服务的总数必须是奇数个，方便投票机制），</div><div class="line">	服务与服务之间通过心跳机制去沟通，发消息，每秒钟发一次；</div><div class="line">	服务与服务之间通过投票机制产生主服务。把服务拓展成性能比较高的服务</div><div class="line">	这叫高可用服务。</div><div class="line">并行计算，针对任务，一个大任务分成几个小任务，最后做汇总，hadoop并行计算（百度一下）</div><div class="line">	  业务场景，统计（天气预报）全国的天气预报，需要每天每分钟做定时统计，这里设计业务很复杂的计算</div><div class="line">	  为了完成一个任务，会把大的任务分解成一个小的任务，把小任务的结果进行汇总，完成任务的并行计算。</div><div class="line"></div><div class="line">================================</div><div class="line">5个九，保一年内证宕机几分钟？</div><div class="line">5个 9的是可用性，服务的可用性，高可用性 (服务器的高可用性)</div><div class="line">什么是“5个9”(99.999%)的可靠性？（GG一下,你就知道）</div><div class="line"></div><div class="line"></div><div class="line">================================</div><div class="line"></div><div class="line"></div><div class="line">cluster</div><div class="line">LB: load balancing : 负载均衡，提高并发处理能力</div><div class="line">    health check: 健康检测</div><div class="line">HA:hight availability: 高可用集群，检测心跳，提升服务在线能力（服务可用性）</div><div class="line">			在线时间/（在线时间+故障处理时间）</div><div class="line">HP:hight performance : 高性能集群，并行计算集群，处理复杂计算，科学计算集群</div><div class="line">			分布式文件系统</div><div class="line">			将大任务切割成小任务，分别进行处理的机制</div><div class="line"></div><div class="line"></div><div class="line">================================</div><div class="line"></div><div class="line">数据库主从（读写分离）</div><div class="line">http://www.cnblogs.com/panxuejun/p/5887118.html</div><div class="line">主数据库master（在往<span class="built_in">log</span>日志里面写的时候会先锁住），插入数据库的记录会进入等待，</div><div class="line">从数据库slave，会开启两个线程（单进程多线程模式），一个io线程，一个sql线程，io读取主数据的binlog日志，</div><div class="line">sql线程执行sql，同步数据，完成数据库的同步；</div><div class="line"></div><div class="line"></div><div class="line">================================</div><div class="line">cURL是一个利用URL语法在命令行下工作的文件传输工具，1997年首次发行。</div><div class="line">它支持文件上传和下载，所以是综合传输工具，</div><div class="line">但按传统，习惯称cURL为下载工具。cURL还包含了用于程序开发的libcurl</div><div class="line">官网 https://curl.haxx.se/</div><div class="line">curl 命令行下载工具使用方法小结 http://www.jb51.net/softjc/26483.html</div></pre></td></tr></table></figure>
 <hr>
 </span>
@@ -375,13 +384,13 @@
         <div class="post-nav">
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/11/19/net/" rel="prev">net 网络知识</a>
+              <a href="/2016/11/19/adb/" rel="prev">adb</a>
             
           </div>
 
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/11/19/adb/" rel="next">adb</a>
+              <a href="/2016/11/19/hexo/" rel="next">hexo技术总结</a>
             
           </div>
         </div>
@@ -589,21 +598,21 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">62</span>
+              <span class="site-state-item-count">78</span>
               <span class="site-state-item-name">posts</span>
             </a>
           </div>
 
           <div class="site-state-item site-state-categories">
             <a href="/categories">
-              <span class="site-state-item-count">17</span>
+              <span class="site-state-item-count">24</span>
               <span class="site-state-item-name">categories</span>
               </a>
           </div>
 
           <div class="site-state-item site-state-tags">
             <a href="/tags">
-              <span class="site-state-item-count">34</span>
+              <span class="site-state-item-count">44</span>
               <span class="site-state-item-name">tags</span>
               </a>
           </div>
