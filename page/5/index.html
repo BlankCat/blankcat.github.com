@@ -300,6 +300,525 @@
             
               
                 
+                <a class="post-title-link" href="/2016/12/01/concurrency1/" itemprop="url">
+                  并发编程1-介绍
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2016-12-01T16:30:50+08:00" content="2016-12-01">
+              2016-12-01
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/并发/" itemprop="url" rel="index">
+                    <span itemprop="name">并发</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>在看完了《深入理解Java虚拟机》之后，继续看《Java并发编程实战一书》。<br>相信在了解虚拟机之后，再来看并发相关知识，能理解得更透彻，书中也讲到，对Java内存模型理解得越深入，就对并发编程掌握得越好。顺道说一下，关于JDK里线程和并发相关类的使用，我主要是通过《Think in Java》学习的，这里就不再介绍基本使用方法了。</p>
+<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>线程也被称为轻量级进程（这一部分在《深入理解Java虚拟机》中提到过，<a href="http://sail-y.github.io/2016/11/25/JVM11/#线程的实现">点击查看</a>）。在大多数现代操作系统中， 都是以线程为基本的调度单位，而不是进程。</p>
+<h2 id="线程的优势"><a href="#线程的优势" class="headerlink" title="线程的优势"></a>线程的优势</h2><p>要想充分发挥多处理器系统的强大计算能力，线程可以有效的降低程序的开发和维护成本，同时提升复杂应用程序的性能。<br>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/12/01/concurrency1/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/11/25/JVM12/" itemprop="url">
+                  JVM12-线程安全与锁优化
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2016-11-25T15:12:24+08:00" content="2016-11-25">
+              2016-11-25
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/JVM/" itemprop="url" rel="index">
+                    <span itemprop="name">JVM</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h2 id="线程安全"><a href="#线程安全" class="headerlink" title="线程安全"></a>线程安全</h2><p>当多个线程访问一个对象时，如果不用考虑这些线程在运行时环境下的调度和交替执行，也不需要进行额外的同步，或者在调用方进行任何其他的协调操作，调用这个对象的行为都可以获得正确的结果，那这个对象就是线程安全的。</p>
+<h3 id="Java语言中的线程安全"><a href="#Java语言中的线程安全" class="headerlink" title="Java语言中的线程安全"></a>Java语言中的线程安全</h3><p>讨论线程安全，就限定于<strong>多个线程之间存在共享数据访问</strong>这个前提，因为如果一段代码根本不会与其他线程共享数据，那么从线程安全的角度来看，程序是串行执行还是多线程执行对它来说是完全没有区别的。我们将Java语言中各种操作共享的数据分为以下5类：不可变、绝对线程安全、相对线程安全、线程兼容和线程独立。<br>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/11/25/JVM12/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/11/25/JVM11/" itemprop="url">
+                  JVM11-Java内存模型与线程
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2016-11-25T09:33:11+08:00" content="2016-11-25">
+              2016-11-25
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/JVM/" itemprop="url" rel="index">
+                    <span itemprop="name">JVM</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>「内存模型」可以理解为在特定的操作协议下，对特定的内存或高速缓存进行读写访问的过程抽象。</p>
+<h2 id="Java内存模型"><a href="#Java内存模型" class="headerlink" title="Java内存模型"></a>Java内存模型</h2><p>Java虚拟机规范中试图定义一种Java内存模型来屏蔽掉各种硬件和操作系统内存访问差异，以实现让Java程序在各种平台下都能达到一致的内存访问效果。在此之前，主流程序语言（如C/C++等）直接使用物理硬件和操作系统的内存模型，因此，会由于不同平台上内存模型的差异，有可能导致程序在一套平台上并发完全正常，而在另外一台平台上并发访问却经常出错，因此在某些场景就必须针对不同的平台来编写程序。</p>
+<h3 id="主内存与工作内存"><a href="#主内存与工作内存" class="headerlink" title="主内存与工作内存"></a>主内存与工作内存</h3><p>Java内存模型的主要目标是定义程序中各个变量的访问规则，即在虚拟机中将变量存储到内存和从内存中取出变量这样的底层细节。此处的变量与Java变成中所说的变量有所区别，它包括了实例字段、静态字段和构成数组对象的元素，但不包括局部变量与方法参数，因为后者是线程私有的，不会被共享，自然不存在竞争问题。</p>
+<p>Java内存模型规定了所有的变量都存储在主内存中，每条线程还有自己的私有工作内存，线程的工作内存中保存了被该线程使用到的变量的主内存副本拷贝，线程对变量的所有操作都必须在工作内存中进行。不同的线程之间也无法直接访问对方工作内存中的变量，线程间变量值的传递均需要通过主内存来完成。（这很好的诠释了volatile关键字的作用和原理）<br>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/11/25/JVM11/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/11/20/Editor-tool/" itemprop="url">
+                  Editor-tool
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2016-11-20T18:02:51+08:00" content="2016-11-20">
+              2016-11-20
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/工具/" itemprop="url" rel="index">
+                    <span itemprop="name">工具</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>##文章链接</p>
+<ul>
+<li><a href="http://www.williamlong.info/archives/4319.html" target="_blank" rel="external">编辑器介绍</a></li>
+</ul>
+<hr>
+<p>##好用的Markdown编辑器一览</p>
+<ul>
+<li><p><a href="http://dillinger.io/" target="_blank" rel="external">dillinger</a></p>
+</li>
+<li><p><a href="http://mahua.jser.me/" target="_blank" rel="external">MaHua</a></p>
+</li>
+<li><p><a href="http://www.jianshu.com/" target="_blank" rel="external">简书</a></p>
+</li>
+<li><p><a href="http://soft.xiaoshujiang.com/" target="_blank" rel="external">小书匠编辑器</a></p>
+</li>
+<li><p><a href="https://www.zybuluo.com/mdeditor" target="_blank" rel="external">Cmd Markdown</a></p>
+</li>
+<li><p><a href="http://www.jianshu.com/" target="_blank" rel="external">简书</a></p>
+</li>
+</ul>
+<p>##Chrome插件</p>
+<ul>
+<li><p><a href="http://marxi.co/" target="_blank" rel="external">Marxico</a></p>
+</li>
+<li><p><a href="https://maxiang.io/" target="_blank" rel="external">马克飞象</a></p>
+</li>
+<li><p><a href="https://www.farbox.com/" target="_blank" rel="external">FarBox</a></p>
+</li>
+<li><p><a href="https://www.zybuluo.com/mdeditor" target="_blank" rel="external">Cmd Markdown</a></p>
+</li>
+<li><p><a href="http://soft.xiaoshujiang.com/" target="_blank" rel="external">小书匠编辑器</a></p>
+</li>
+<li><p><a href="http://www.sublimetext.com/" target="_blank" rel="external">Sublime Text</a></p>
+</li>
+<li><p><a href="https://atom.io/" target="_blank" rel="external">Atom</a></p>
+</li>
+<li><p><a href="http://git.oschina.net/elerao/Smark" target="_blank" rel="external">Smark</a></p>
+</li>
+<li><p><a href="hhttp://www.mdcharm.com/" target="_blank" rel="external">MdCharm</a></p>
+</li>
+<li><p><a href="http://www.appinn.com/miu-markdown-editor/" target="_blank" rel="external">Miu</a></p>
+</li>
+<li><p><a href="http://25.io/mou/" target="_blank" rel="external">Mou</a></p>
+</li>
+<li><p><a href="http://typora.io/" target="_blank" rel="external">Typora</a></p>
+</li>
+<li><p><a href="http://macdown.uranusjr.com/" target="_blank" rel="external">MacDown</a></p>
+</li>
+<li><p><a href="https://bywordapp.com/" target="_blank" rel="external">Byword</a></p>
+</li>
+<li><p><a href="https://ia.net/writer/ios" target="_blank" rel="external">iA Writer</a></p>
+</li>
+<li><p><a href="https://ulyssesapp.com/" target="_blank" rel="external">Ulysses</a></p>
+</li>
+<li><a href="https://realmacsoftware.com/typed/" target="_blank" rel="external">Typed</a></li>
+</ul>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/11/20/React-Native-打包apk/" itemprop="url">
                   React-Native-打包apk
                 </a>
@@ -688,242 +1207,6 @@
             
               
                 
-                <a class="post-title-link" href="/2016/11/19/Bigdata/" itemprop="url">
-                  Big data
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">Posted on</span>
-            <time itemprop="dateCreated" datetime="2016-11-19T10:13:28+08:00" content="2016-11-19">
-              2016-11-19
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/大数据/" itemprop="url" rel="index">
-                    <span itemprop="name">大数据</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <blockquote>
-<p>《刘瑜写给女儿的信：愿你慢慢长大 》<br>小布谷，愿你慢慢长大。<br>愿你有好运气，如果没有，愿你在不幸中学会慈悲。<br>愿你被很多人爱，如果没有，愿你在寂寞中学会宽容。<br>愿你一生一世每天都可以睡到自然醒。 </p>
-</blockquote>
-<p>I am BlankCat ，welcome to my blog；</p>
-<h3 id="技术要点"><a href="#技术要点" class="headerlink" title="技术要点"></a>技术要点</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div></pre></td><td class="code"><pre><div class="line">集群分3种</div><div class="line">负载均衡：分发机制，也会用到主从概念，咱们访问wwww.baidu.com时候，百度会对应着一个服务器</div><div class="line">	  这个服务ip不是对应真正的请求服务，而是做了一层分发，这样用户请求多了，可以保证减轻服务的压力</div><div class="line">	  负载均衡机制都是通过算法计算，然后完成；</div><div class="line"></div><div class="line">高可用：针对服务概念，访问一个比较重要的服务，把服务做成高可用模式</div><div class="line">	把服务写成分解成多个，主服务和从服务（服务的总数必须是奇数个，方便投票机制），</div><div class="line">	服务与服务之间通过心跳机制去沟通，发消息，每秒钟发一次；</div><div class="line">	服务与服务之间通过投票机制产生主服务。把服务拓展成性能比较高的服务</div><div class="line">	这叫高可用服务。</div><div class="line">并行计算，针对任务，一个大任务分成几个小任务，最后做汇总，hadoop并行计算（百度一下）</div><div class="line">	  业务场景，统计（天气预报）全国的天气预报，需要每天每分钟做定时统计，这里设计业务很复杂的计算</div><div class="line">	  为了完成一个任务，会把大的任务分解成一个小的任务，把小任务的结果进行汇总，完成任务的并行计算。</div><div class="line"></div><div class="line">================================</div><div class="line">5个九，保一年内证宕机几分钟？</div><div class="line">5个 9的是可用性，服务的可用性，高可用性 (服务器的高可用性)</div><div class="line">什么是“5个9”(99.999%)的可靠性？（GG一下,你就知道）</div><div class="line"></div><div class="line"></div><div class="line">================================</div><div class="line"></div><div class="line"></div><div class="line">cluster</div><div class="line">LB: load balancing : 负载均衡，提高并发处理能力</div><div class="line">    health check: 健康检测</div><div class="line">HA:hight availability: 高可用集群，检测心跳，提升服务在线能力（服务可用性）</div><div class="line">			在线时间/（在线时间+故障处理时间）</div><div class="line">HP:hight performance : 高性能集群，并行计算集群，处理复杂计算，科学计算集群</div><div class="line">			分布式文件系统</div><div class="line">			将大任务切割成小任务，分别进行处理的机制</div><div class="line"></div><div class="line"></div><div class="line">================================</div><div class="line"></div><div class="line">数据库主从（读写分离）</div><div class="line">http://www.cnblogs.com/panxuejun/p/5887118.html</div><div class="line">主数据库master（在往<span class="built_in">log</span>日志里面写的时候会先锁住），插入数据库的记录会进入等待，</div><div class="line">从数据库slave，会开启两个线程（单进程多线程模式），一个io线程，一个sql线程，io读取主数据的binlog日志，</div><div class="line">sql线程执行sql，同步数据，完成数据库的同步；</div><div class="line"></div><div class="line"></div><div class="line">================================</div><div class="line">cURL是一个利用URL语法在命令行下工作的文件传输工具，1997年首次发行。</div><div class="line">它支持文件上传和下载，所以是综合传输工具，</div><div class="line">但按传统，习惯称cURL为下载工具。cURL还包含了用于程序开发的libcurl</div><div class="line">官网 https://curl.haxx.se/</div><div class="line">curl 命令行下载工具使用方法小结 http://www.jb51.net/softjc/26483.html</div></pre></td></tr></table></figure>
-<hr>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/11/19/hexo/" itemprop="url">
-                  hexo技术总结
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">Posted on</span>
-            <time itemprop="dateCreated" datetime="2016-11-19T10:13:28+08:00" content="2016-11-19">
-              2016-11-19
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/blog/" itemprop="url" rel="index">
-                    <span itemprop="name">blog</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <blockquote>
-<p>《愿你慢慢长大 》<br>小布谷，愿你慢慢长大。<br>愿你有好运气，如果没有，愿你在不幸中学会慈悲。<br>愿你被很多人爱，如果没有，愿你在寂寞中学会宽容。<br>愿你一生一世每天都可以睡到自然醒。 </p>
-</blockquote>
-<p>I am BlankCat，welcome to my blog；</p>
-<h3 id="技术要点"><a href="#技术要点" class="headerlink" title="技术要点"></a>技术要点</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div></pre></td><td class="code"><pre><div class="line">半个小时搭建一个个人博客</div><div class="line">hexo个人博客</div><div class="line">http://blog.csdn.net/v123411739/article/details/44964065</div><div class="line"></div><div class="line">搭建个人博客</div><div class="line">http://www.cnblogs.com/zhcncn/p/4097881.html</div><div class="line"></div><div class="line">搭建个人博客（重点）</div><div class="line">http://blog.csdn.net/jzooo/article/details/46781805</div><div class="line"></div><div class="line">个人博客搭建（知乎）</div><div class="line">https://www.zhihu.com/question/20962496</div><div class="line"></div><div class="line">hexo+github+多说</div><div class="line">http://blog.netpi.me/%E5%AE%9E%E7%94%A8/hexo/</div><div class="line"></div><div class="line"></div><div class="line">如何搭建一个个人博客（附文注册域名，维护站点）</div><div class="line">http://cnfeat.com/blog/2014/05/10/how-to-build<span class="_">-a</span>-blog/</div><div class="line"></div><div class="line">mycat分库分表</div><div class="line">http://blog.csdn.net/leipeng321123/article/details/50401376</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">搭建个人博客（****）</div><div class="line">http://blog.csdn.net/jzooo/article/details/46781805</div><div class="line"></div><div class="line">hexo上传失败解决</div><div class="line">http://www.cnblogs.com/xsilence/p/6001938.html</div><div class="line"></div><div class="line">博客主题</div><div class="line">http://blog.xinspace.space/2016/04/11/%E8%87%AA%E5%AE%9A%E4%B9%89Hexo%E5%8D%9A%E5%AE%A2%E7%9A%84%E6%96%87%E7%AB%A0%E3%80%81%E8%8D%89%E7%A8%BF%E5%92%8C%E9%A1%B5%E9%9D%A2%E7%9A%84%E6%A8%A1%E6%9D%BF/</div><div class="line">炫酷主题</div><div class="line">https://github.com/iissnan/hexo-theme-next</div><div class="line"></div><div class="line">使用文档</div><div class="line">http://theme-next.iissnan.com/</div><div class="line"></div><div class="line">hexo+next主题</div><div class="line">http://www.jianshu.com/p/f66103553c45</div><div class="line"></div><div class="line">hexo+github 总结</div><div class="line">https://zhuanlan.zhihu.com/p/22632478</div><div class="line"></div><div class="line">搭建博客（******）</div><div class="line">http://www.jianshu.com/p/f66103553c45</div><div class="line">$ hexo s --debug</div><div class="line"></div><div class="line">优化</div><div class="line">http://www.jeyzhang.com/hexo-next-add-post-views.html<span class="comment">#</span></div><div class="line">http://michaelxiang.me/2015/11/30/hexo-next-optimize/</div><div class="line"></div><div class="line"></div><div class="line">发布博客</div><div class="line">git config --global user.name <span class="string">""</span></div><div class="line">git config --global user.email <span class="string">""</span></div><div class="line">hexo d -g</div><div class="line"></div><div class="line">发布文章</div><div class="line">hexo上传失败解决</div><div class="line">http://www.cnblogs.com/xsilence/p/6001938.html</div><div class="line">$ hexo g</div><div class="line">$ hexo d</div></pre></td></tr></table></figure>
-<hr>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
                 <a class="post-title-link" href="/2016/11/19/net/" itemprop="url">
                   net 网络知识
                 </a>
@@ -1154,8 +1437,8 @@
             
               
                 
-                <a class="post-title-link" href="/2016/11/19/adb/" itemprop="url">
-                  adb
+                <a class="post-title-link" href="/2016/11/19/Bigdata/" itemprop="url">
+                  Big data
                 </a>
               
             
@@ -1182,8 +1465,8 @@
               <span class="post-meta-item-text">In</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Android/" itemprop="url" rel="index">
-                    <span itemprop="name">Android</span>
+                  <a href="/categories/大数据/" itemprop="url" rel="index">
+                    <span itemprop="name">大数据</span>
                   </a>
                 </span>
 
@@ -1221,245 +1504,10 @@
 <p>《刘瑜写给女儿的信：愿你慢慢长大 》<br>小布谷，愿你慢慢长大。<br>愿你有好运气，如果没有，愿你在不幸中学会慈悲。<br>愿你被很多人爱，如果没有，愿你在寂寞中学会宽容。<br>愿你一生一世每天都可以睡到自然醒。 </p>
 </blockquote>
 <p>I am BlankCat ，welcome to my blog；</p>
-<h3 id="技术要点"><a href="#技术要点" class="headerlink" title="技术要点"></a>技术要点</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div><div class="line">124</div><div class="line">125</div><div class="line">126</div><div class="line">127</div><div class="line">128</div><div class="line">129</div><div class="line">130</div><div class="line">131</div><div class="line">132</div><div class="line">133</div><div class="line">134</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">原文地址：</div><div class="line"></div><div class="line">http://blog.csdn.net/gaojinshan/article/details/9382953</div><div class="line"></div><div class="line">有时候ADB不能用，</div><div class="line"></div><div class="line">并且会报以下的错误：</div><div class="line"></div><div class="line">C:\Users\gaojs&gt;adb devices</div><div class="line"></div><div class="line">adb server is out of date. killing...</div><div class="line"></div><div class="line">ADB server didn<span class="string">'t ACK</span></div><div class="line"></div><div class="line">* failed to start daemon *</div><div class="line"></div><div class="line">error: unknown host service</div><div class="line"></div><div class="line">用如下的命令，发现5037的端口被占用：</div><div class="line"></div><div class="line">C:\Users\gaojs&gt;adb nodaemon server</div><div class="line"></div><div class="line">cannot bind 'tcp:5037<span class="string">'</span></div><div class="line"></div><div class="line">用如下的命令，能查到什么进程占用了这个端口：</div><div class="line"></div><div class="line">C:\Users\gaojs&gt;netstat -ano | findstr "5037"</div><div class="line"></div><div class="line"> TCP 127.0.0.1:5037 0.0.0.0:0 LISTENING 21152</div><div class="line"></div><div class="line"> TCP 127.0.0.1:5037 127.0.0.1:62629 ESTABLISHED 21152</div><div class="line"></div><div class="line"> TCP 127.0.0.1:5037 127.0.0.1:63942 TIME_WAIT 0</div><div class="line"></div><div class="line"> TCP 127.0.0.1:5037 127.0.0.1:63943 TIME_WAIT 0</div><div class="line"></div><div class="line"> TCP 127.0.0.1:5037 127.0.0.1:63944 TIME_WAIT 0</div><div class="line"></div><div class="line"> TCP 127.0.0.1:62629 127.0.0.1:5037 ESTABLISHED 2980</div><div class="line"></div><div class="line">用如下命令，可以看到上述PID的进程，到底是什么了：</div><div class="line"></div><div class="line">C:\Users\gaojs&gt;tasklist | findstr "2980"</div><div class="line"></div><div class="line">QQ.exe 2980 Console 4 60,712 K</div><div class="line"></div><div class="line">C:\Users\gaojs&gt;tasklist | findstr "21152"</div><div class="line"></div><div class="line">tadb.exe 21152 Console 4 2,136 K</div><div class="line"></div><div class="line">原来是腾讯这个无耻的家伙（tadb就是Tencent Adb）！</div><div class="line"></div><div class="line">用如下的命令，将tadb.exe（PID:21152）杀掉：</div><div class="line"></div><div class="line">C:\Users\gaojs&gt;taskkill /f /pid 21152</div><div class="line"></div><div class="line">然后，再试，就可以了：</div><div class="line"></div><div class="line">C:\Users\gaojs&gt;adb devices</div><div class="line"></div><div class="line">* daemon not running. starting it now on port 5037 *</div><div class="line"></div><div class="line">* daemon started successfully *</div><div class="line"></div><div class="line">List of devices attached</div><div class="line"></div><div class="line">4dfadcb86b00cf05 device</div><div class="line"></div><div class="line">=============================查询进程号命令=========================</div><div class="line"></div><div class="line">3.输入：</div><div class="line"></div><div class="line">tasklist | findstr 端口(获取步骤2里面的端口，实际就是拿到了pid)</div><div class="line"></div><div class="line">=============================杀死进程号命令=========================</div><div class="line"></div><div class="line">4.taskkill /pid 端口（步骤3里面的端口） /F</div><div class="line"></div><div class="line">杀死进程</div><div class="line"></div><div class="line">http://blog.csdn.net/diaoruiqing/article/details/7851001</div><div class="line"></div><div class="line">假如这个进程占用了你的端口号，那么用这个方法干掉它。</div><div class="line"></div><div class="line">用Ctrl+Alt+Delete调出windows任务管理器窗口，</div><div class="line"></div><div class="line">可以直接通过名称找到这个占用的进程，然后选择结束进程。</div><div class="line"></div><div class="line">也可以通过PID号找到这个进程。</div><div class="line"></div><div class="line">点击&lt;查看&gt;-&gt;&lt;选择列&gt;，勾选&lt;PID(进程标识符号)&gt;，找到并结束进程。</div><div class="line"></div><div class="line">另外一个方法就是继续使用命令：</div><div class="line"></div><div class="line">C:\&gt;taskkill /f /t /javaw.exe</div><div class="line"></div><div class="line">========================================================</div><div class="line"></div><div class="line">执行命令</div><div class="line"></div><div class="line">http://blog.csdn.net/u012842688/article/details/50916802</div><div class="line"></div><div class="line">adb链接不到设备</div><div class="line"></div><div class="line">adb devices</div><div class="line"></div><div class="line">adb kill-server</div><div class="line"></div><div class="line">adb start-server</div><div class="line"></div><div class="line">adb device</div><div class="line"></div><div class="line">固定命令（神模拟器）</div><div class="line"></div><div class="line">adb connect 127.0.0.1:62001</div><div class="line"></div><div class="line">adb device</div><div class="line"></div><div class="line">原文地址</div><div class="line"></div><div class="line">http://bbs.pediy.com/showthread.php?t=206396</div><div class="line"></div><div class="line">=====================================================</div><div class="line"></div><div class="line">根据应用进程id查看端口</div><div class="line"></div><div class="line">任务管理器里面查找进程 pid</div><div class="line"></div><div class="line">执行命令，找到对应的端口号</div><div class="line"></div><div class="line">netstat -ano</div><div class="line"></div><div class="line">======================================================</div></pre></td></tr></table></figure>
+<h3 id="技术要点"><a href="#技术要点" class="headerlink" title="技术要点"></a>技术要点</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div></pre></td><td class="code"><pre><div class="line">集群分3种</div><div class="line">负载均衡：分发机制，也会用到主从概念，咱们访问wwww.baidu.com时候，百度会对应着一个服务器</div><div class="line">	  这个服务ip不是对应真正的请求服务，而是做了一层分发，这样用户请求多了，可以保证减轻服务的压力</div><div class="line">	  负载均衡机制都是通过算法计算，然后完成；</div><div class="line"></div><div class="line">高可用：针对服务概念，访问一个比较重要的服务，把服务做成高可用模式</div><div class="line">	把服务写成分解成多个，主服务和从服务（服务的总数必须是奇数个，方便投票机制），</div><div class="line">	服务与服务之间通过心跳机制去沟通，发消息，每秒钟发一次；</div><div class="line">	服务与服务之间通过投票机制产生主服务。把服务拓展成性能比较高的服务</div><div class="line">	这叫高可用服务。</div><div class="line">并行计算，针对任务，一个大任务分成几个小任务，最后做汇总，hadoop并行计算（百度一下）</div><div class="line">	  业务场景，统计（天气预报）全国的天气预报，需要每天每分钟做定时统计，这里设计业务很复杂的计算</div><div class="line">	  为了完成一个任务，会把大的任务分解成一个小的任务，把小任务的结果进行汇总，完成任务的并行计算。</div><div class="line"></div><div class="line">================================</div><div class="line">5个九，保一年内证宕机几分钟？</div><div class="line">5个 9的是可用性，服务的可用性，高可用性 (服务器的高可用性)</div><div class="line">什么是“5个9”(99.999%)的可靠性？（GG一下,你就知道）</div><div class="line"></div><div class="line"></div><div class="line">================================</div><div class="line"></div><div class="line"></div><div class="line">cluster</div><div class="line">LB: load balancing : 负载均衡，提高并发处理能力</div><div class="line">    health check: 健康检测</div><div class="line">HA:hight availability: 高可用集群，检测心跳，提升服务在线能力（服务可用性）</div><div class="line">			在线时间/（在线时间+故障处理时间）</div><div class="line">HP:hight performance : 高性能集群，并行计算集群，处理复杂计算，科学计算集群</div><div class="line">			分布式文件系统</div><div class="line">			将大任务切割成小任务，分别进行处理的机制</div><div class="line"></div><div class="line"></div><div class="line">================================</div><div class="line"></div><div class="line">数据库主从（读写分离）</div><div class="line">http://www.cnblogs.com/panxuejun/p/5887118.html</div><div class="line">主数据库master（在往<span class="built_in">log</span>日志里面写的时候会先锁住），插入数据库的记录会进入等待，</div><div class="line">从数据库slave，会开启两个线程（单进程多线程模式），一个io线程，一个sql线程，io读取主数据的binlog日志，</div><div class="line">sql线程执行sql，同步数据，完成数据库的同步；</div><div class="line"></div><div class="line"></div><div class="line">================================</div><div class="line">cURL是一个利用URL语法在命令行下工作的文件传输工具，1997年首次发行。</div><div class="line">它支持文件上传和下载，所以是综合传输工具，</div><div class="line">但按传统，习惯称cURL为下载工具。cURL还包含了用于程序开发的libcurl</div><div class="line">官网 https://curl.haxx.se/</div><div class="line">curl 命令行下载工具使用方法小结 http://www.jb51.net/softjc/26483.html</div></pre></td></tr></table></figure>
+<hr>
 
           
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/11/17/JVM10/" itemprop="url">
-                  JVM10-运行期优化
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">Posted on</span>
-            <time itemprop="dateCreated" datetime="2016-11-17T17:01:49+08:00" content="2016-11-17">
-              2016-11-17
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/JVM/" itemprop="url" rel="index">
-                    <span itemprop="name">JVM</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>Java程序最初是通过解释器进行解释执行的，当虚拟机发现某个方法或代码块的运行特别频繁时，就会把这些代码认定为『热点代码』。为了提高热点代码的执行效率，在运行时，虚拟机将会把这些代码编译成与本地平台相关的机器码，并进行各种层次的优化，完成这个任务的编译器称为即时编译器。</p>
-<h2 id="HotSpot虚拟机内的即时编译器"><a href="#HotSpot虚拟机内的即时编译器" class="headerlink" title="HotSpot虚拟机内的即时编译器"></a>HotSpot虚拟机内的即时编译器</h2><h3 id="解释器与编译器"><a href="#解释器与编译器" class="headerlink" title="解释器与编译器"></a>解释器与编译器</h3><p>HotSpot虚拟机是采用解释器与编译器并存的架构。解释器和编译器各有优势：当程序需要迅速启动和执行的时候，解释器可以首先发挥作用，省去编译的时间，立即执行。在程序运行后，随着时间的推移，编译器初见发挥作用，把越来越多的代码编译成本地代码之后，可以获取更高的执行效率。</p>
-<h3 id="编译对象与触发条件"><a href="#编译对象与触发条件" class="headerlink" title="编译对象与触发条件"></a>编译对象与触发条件</h3><p>在运行过程中被即时编译器编译的『热点代码』有两类：</p>
-<ul>
-<li>被多次调用的方法</li>
-<li>被多次执行的循环体
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/11/17/JVM10/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/11/15/JVM9/" itemprop="url">
-                  JVM9-虚拟机字节码执行引擎
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">Posted on</span>
-            <time itemprop="dateCreated" datetime="2016-11-15T16:53:50+08:00" content="2016-11-15">
-              2016-11-15
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/JVM/" itemprop="url" rel="index">
-                    <span itemprop="name">JVM</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>执行引擎是Java虚拟机最核心的组成部分之一，本章将主要从概念模型的角度来讲解虚拟机的方法调用和字节码执行。</p>
-<h2 id="运行时栈帧结构"><a href="#运行时栈帧结构" class="headerlink" title="运行时栈帧结构"></a>运行时栈帧结构</h2><p>栈帧（Stack Frame）是用于支持虚拟机进行方法代用和方法执行的数据结构，它是虚拟机运行时数据区中的<a href="http://sail-y.github.io/2016/10/28/JVM2/#Java虚拟机栈">虚拟机栈</a>的栈元素。栈帧存储了局部变量表、操作数栈、动态链接、方法出口等信息。每一个方法从调用开始至执行完成的过程，都对应着一个栈帧在虚拟机里面从入栈到出栈的过程。对于执行引擎来说，在活动线程中，只有位于栈顶的栈帧才是有效的，称为当前栈帧，与这个栈帧相关联的方法称为当前方法，执行引擎运行的所有字节码指令都只针对当前栈帧进行操作，在概念模型上，典型的栈帧结构图如下：<br>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/11/15/JVM9/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
         
       
     </div>
@@ -1490,7 +1538,7 @@
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/4/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><a class="extend next" rel="next" href="/page/6/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/page/4/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><a class="extend next" rel="next" href="/page/6/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1531,7 +1579,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">80</span>
+              <span class="site-state-item-count">84</span>
               <span class="site-state-item-name">posts</span>
             </a>
           </div>
@@ -1548,7 +1596,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">45</span>
+                <span class="site-state-item-count">46</span>
                 <span class="site-state-item-name">tags</span>
               </a>
             </div>
@@ -1576,6 +1624,24 @@
                     <i class="fa fa-fw fa-weibo"></i>
                   
                   Weibo
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.gitnavi.com/" target="_blank" title="开发导航">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  开发导航
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://blankcat.github.io/myIndex/" target="_blank" title="个人主页">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  个人主页
                 </a>
               </span>
             

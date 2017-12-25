@@ -300,6 +300,465 @@
             
               
                 
+                <a class="post-title-link" href="/2017/12/19/develop-windows-dos/" itemprop="url">
+                  develop-windows-dos
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2017-12-19T21:38:17+08:00" content="2017-12-19">
+              2017-12-19
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/开发技巧/" itemprop="url" rel="index">
+                    <span itemprop="name">开发技巧</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <blockquote>
+<p>《刘瑜写给女儿的信：愿你慢慢长大 》<br>小布谷，愿你慢慢长大。<br>愿你有好运气，如果没有，愿你在不幸中学会慈悲。<br>愿你被很多人爱，如果没有，愿你在寂寞中学会宽容。<br>愿你一生一世每天都可以睡到自然醒。 </p>
+</blockquote>
+<p>##常见windows命令<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div></pre></td><td class="code"><pre><div class="line">局域网查看工具(LanSee)V1.72破解版</div><div class="line">http://download.csdn.net/download/yanfei23/2317770</div><div class="line">http://z.download.csdn.net/download/zh830814/281895</div><div class="line"></div><div class="line"></div><div class="line">Windows下查看电脑信息的命令</div><div class="line">查看当前ip:  cmd-----&gt;ipconfig/all</div><div class="line">查看电脑配置    ----&gt;dxdiag</div><div class="line">查看注册表信息  ----&gt;regedit</div><div class="line">查看系统属性    ----&gt;sysdm.cpl</div><div class="line">查看系统信息    ----&gt;msinfo32</div><div class="line"> </div><div class="line"> </div><div class="line">查看网络     nbtstat  -aAn</div><div class="line">                      a 远程主机的名称，便可知NETBIOS</div><div class="line">                      A 远程主机的ip  便可知NETBIOS</div><div class="line">                      n 列出本地主机的NETBIOS</div><div class="line">查看网络状态 netstat  -ar</div><div class="line">                      a 查看本地机器的所有的端口 可以有效发现、防范木马，及知道机器所开的服务信息。用法 netstat -a IP</div><div class="line">                      r 列出当前的路由信息 告知本地机器的网关、子网掩码。 用法：netstat -r IP</div><div class="line">跟踪路由信息             tracert  IP</div><div class="line"> </div><div class="line"> </div><div class="line"> </div><div class="line">如果电脑的运行、控制面板、命令提示符被禁用了</div><div class="line">    一：---&gt;gpedit.msc---&gt;用户配置--&gt;管理模块--&gt;系统（单击选中）--&gt;右边找到“阻止访问命令提示符”，鼠标双击，弹出窗口，点选“未配置”--&gt;应用--确定</div><div class="line">    二：---&gt;gpedit.msc---&gt;用户配置--&gt;管理模块--&gt;控制面板（单击选中）--&gt;右边找到“禁止访问控制面板”，鼠标双击，弹出窗口，点选“未配置”--&gt;应用--确定</div><div class="line">    三：---&gt;c:\windows\regedit.exe,</div><div class="line">            HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer,在右边空白处右键，选择“新建”的“DWORD”,然后输入名字“NoRun”，然后双击它，</div><div class="line"></div><div class="line">=============================================================================</div><div class="line"></div><div class="line"></div><div class="line">查看局域网内所有IP ：arp -a</div><div class="line"></div><div class="line">查看局域网内所有主机名： net view</div><div class="line"></div><div class="line">查看IP地址对应的主机名和MAC地址： nststat -a 192.168.0.101</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">=============================================================================</div><div class="line">linux 查看系统信息命令(比较全)</div><div class="line"></div><div class="line"># uname -a # 查看内核/操作系统/CPU信息 </div><div class="line"># head -n 1 /etc/issue # 查看操作系统版本 </div><div class="line"># cat /proc/cpuinfo # 查看CPU信息 </div><div class="line"># hostname # 查看计算机名 </div><div class="line"># lspci -tv # 列出所有PCI设备 </div><div class="line"># lsusb -tv # 列出所有USB设备 </div><div class="line"># lsmod # 列出加载的内核模块 </div><div class="line"># env # 查看环境变量资源 </div><div class="line"># free -m # 查看内存使用量和交换区使用量 </div><div class="line"># df -h # 查看各分区使用情况 </div><div class="line"># du -sh &lt;目录名&gt; # 查看指定目录的大小 </div><div class="line"># grep MemTotal /proc/meminfo # 查看内存总量 </div><div class="line"># grep MemFree /proc/meminfo # 查看空闲内存量 </div><div class="line"># uptime # 查看系统运行时间、用户数、负载 </div><div class="line"># cat /proc/loadavg # 查看系统负载磁盘和分区 </div><div class="line"># mount | column -t # 查看挂接的分区状态 </div><div class="line"># fdisk -l # 查看所有分区 </div><div class="line"># swapon -s # 查看所有交换分区 </div><div class="line"># hdparm -i /dev/hda # 查看磁盘参数(仅适用于IDE设备) </div><div class="line"># dmesg | grep IDE # 查看启动时IDE设备检测状况网络 </div><div class="line"># ifconfig # 查看所有网络接口的属性 </div><div class="line"># iptables -L # 查看防火墙设置 </div><div class="line"># route -n # 查看路由表 </div><div class="line"># netstat -lntp # 查看所有监听端口 </div><div class="line"># netstat -antp # 查看所有已经建立的连接 </div><div class="line"># netstat -s # 查看网络统计信息进程 </div><div class="line"># ps -ef # 查看所有进程 </div><div class="line"># top # 实时显示进程状态用户 </div><div class="line"># w # 查看活动用户 </div><div class="line"># id &lt;用户名&gt; # 查看指定用户信息 </div><div class="line"># last # 查看用户登录日志 </div><div class="line"># cut -d: -f1 /etc/passwd # 查看系统所有用户 </div><div class="line"># cut -d: -f1 /etc/group # 查看系统所有组 </div><div class="line"># crontab -l # 查看当前用户的计划任务服务 </div><div class="line"># chkconfig –list # 列出所有系统服务 </div><div class="line"># chkconfig –list | grep on # 列出所有启动的系统服务程序 </div><div class="line"># rpm -qa # 查看所有安装的软件包</div></pre></td></tr></table></figure></p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/12/19/pdf-book-resource-url/" itemprop="url">
+                  pdf-book-resource-url
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2017-12-19T21:30:38+08:00" content="2017-12-19">
+              2017-12-19
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/java/" itemprop="url" rel="index">
+                    <span itemprop="name">java</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="pdf-资源下载"><a href="#pdf-资源下载" class="headerlink" title="pdf 资源下载"></a>pdf 资源下载</h2><p><a href="http://www.bestcbooks.com/" target="_blank" rel="external">bestcbooks.com</a><br><a href="http://www.java1234.com" target="_blank" rel="external">java1234.com</a></p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/12/19/develop-apache-kafka-frame-work/" itemprop="url">
+                  develop-apache-kafka-frame-work
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2017-12-19T21:22:25+08:00" content="2017-12-19">
+              2017-12-19
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/framework/" itemprop="url" rel="index">
+                    <span itemprop="name">framework</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <blockquote>
+<p>《刘瑜写给女儿的信：愿你慢慢长大 》<br>小布谷，愿你慢慢长大。<br>愿你有好运气，如果没有，愿你在不幸中学会慈悲。<br>愿你被很多人爱，如果没有，愿你在寂寞中学会宽容。<br>愿你一生一世每天都可以睡到自然醒。 </p>
+</blockquote>
+<p>##apache kafka 资源总结<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div></pre></td><td class="code"><pre><div class="line">kafka资源整理</div><div class="line">https://yq.aliyun.com/articles/69501</div><div class="line"></div><div class="line">kafka中文教程</div><div class="line">http://www.orchome.com/kafka/index?spm=5176.100239.blogcont69501.5.5zZkfX</div><div class="line"></div><div class="line"></div><div class="line">kafka英文版:</div><div class="line">https://kafka.apache.org/0100/documentation.html?spm=5176.100239.blogcont69501.6.5zZkfX</div><div class="line"></div><div class="line"></div><div class="line">https://kafka.apache.org/0100/documentation.html?spm=5176.100239.blogcont69501.7.5zZkfX#streamsapi</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">kafka 0.10新特性</div><div class="line"></div><div class="line">https://www.iteblog.com/archives/1677.html</div><div class="line"></div><div class="line">kafka 机制:</div><div class="line"></div><div class="line">     http://blog.arganzheng.me/posts/kafka-in-action.html</div><div class="line"></div><div class="line">     http://www.infoq.com/cn/profile/%E9%83%AD%E4%BF%8A</div><div class="line"></div><div class="line">     https://www.oschina.net/translate/kafka-design</div><div class="line"></div><div class="line">kafka优化：</div><div class="line"></div><div class="line">     http://www.infoq.com/cn/articles/linkedIn-improving-kafka</div><div class="line"></div><div class="line">kafka技术内幕:</div><div class="line"></div><div class="line">http://zqhxuyuan.github.io/2017/01/01/Kafka-Code-Index/</div><div class="line"></div><div class="line">kafka文件存储机制:</div><div class="line"></div><div class="line">http://tech.meituan.com/kafka-fs-design-theory.html</div><div class="line"></div><div class="line">kafka zookeeper存储结构:</div><div class="line"></div><div class="line">http://blog.csdn.net/lizhitao/article/details/23744675</div><div class="line"></div><div class="line">kafka源码解析:</div><div class="line"></div><div class="line">http://zqhxuyuan.github.io/tags/kafka/</div><div class="line"></div><div class="line">https://zqhxuyuan1.gitbooks.io/kafka/content/index.html</div><div class="line"></div><div class="line"></div><div class="line">身份认证和安全机制:</div><div class="line"></div><div class="line">https://wangzzu.github.io/2016/07/29/sasl-plain-kafka/</div><div class="line"></div><div class="line">优秀博客:</div><div class="line"></div><div class="line">http://www.jasongj.com/tags/Kafka/</div><div class="line"></div><div class="line">https://my.oschina.net/ielts0909</div><div class="line"></div><div class="line">http://dongxicheng.org/search-engine/kafka/</div><div class="line"></div><div class="line">https://my.oschina.net/ielts0909/blog/117489</div><div class="line"></div><div class="line">https://my.oschina.net/u/591402/blog/145090</div><div class="line"></div><div class="line">http://rockybean.github.io/2012/07/30/jafka-design/</div><div class="line"></div><div class="line">http://www.cnblogs.com/cyfonly/p/5954614.html</div><div class="line"></div><div class="line">优秀博文</div><div class="line">http://www.jasongj.com/2015/01/02/Kafka%E6%B7%B1%E5%BA%A6%E8%A7%A3%E6%9E%90/</div><div class="line"></div><div class="line">kakfa kafka message delivery guarantee:</div><div class="line"></div><div class="line">http://blog.csdn.net/odailidong/article/details/49735475</div><div class="line"></div><div class="line">kakfa ISR:</div><div class="line"></div><div class="line">http://zqhxuyuan.github.io/2016/01/14/2016-01-14-Kafka-ISR/</div><div class="line"></div><div class="line">http://www.cnblogs.com/fxjwind/p/4972244.html</div><div class="line"></div><div class="line">http://zqhxuyuan.github.io/2016/01/13/2016-01-13-Kafka-Picture/</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">Kafka实战：从RDBMS到Hadoop，七步实现实时传输</div><div class="line">http://geek.csdn.net/news/detail/97941</div></pre></td></tr></table></figure></p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/12/19/develop-tool-register-code/" itemprop="url">
+                  develop-tool-register-code
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2017-12-19T21:14:44+08:00" content="2017-12-19">
+              2017-12-19
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/工具/" itemprop="url" rel="index">
+                    <span itemprop="name">工具</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><a href="https://www.iteblog.com/idea/" target="_blank" rel="external">idea注册码</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">http://idea.lanyus.com/</div><div class="line">   https://www.iteblog.com/archives/1542.html</div><div class="line">   http://idea.iteblog.com/key.php</div></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2017/12/19/develop-language-scala/" itemprop="url">
                   develop-language-scala
                 </a>
@@ -480,8 +939,10 @@
         
           
             <blockquote>
-<p>《刘瑜写给女儿的信：愿你慢慢长大 》<br>小布谷，愿你慢慢长大。<br>愿你有好运气，如果没有，愿你在不幸中学会慈悲。<br>愿你被很多人爱，如果没有，愿你在寂寞中学会宽容。<br>愿你一生一世每天都可以睡到自然醒。 </p>
+<p>windows 的一些操作，dos命令<br>帮助快速开发，提高工作效率！</p>
 </blockquote>
+<h2 id="管理员的方式启动电脑"><a href="#管理员的方式启动电脑" class="headerlink" title="管理员的方式启动电脑"></a>管理员的方式启动电脑</h2><p><img src="http://blankcat.top/img/windows/2015827992015586.jpg" alt="1"><br><img src="http://blankcat.top/img/windows/2015827993336324.jpg" alt="2"><br><img src="http://blankcat.top/img/windows/2015827994557426.jpg" alt="3"><br><img src="http://blankcat.top/img/windows/2015827910080487.jpg" alt="4"><br><img src="http://blankcat.top/img/windows/20158279101290422.jpg" alt="5"><br><img src="http://blankcat.top/img/windows/20158279101290422.jpg" alt="6"></p>
+<h3 id="管理员方式启动电脑dos"><a href="#管理员方式启动电脑dos" class="headerlink" title="管理员方式启动电脑dos"></a>管理员方式启动电脑dos</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">compmgmt.msc</div><div class="line">系统工具→本地用户和组→用户</div><div class="line"></div><div class="line"></div><div class="line">Win+Break</div><div class="line">系统属性</div></pre></td></tr></table></figure>
 <p>##开发常用的xshell命令<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div><div class="line">124</div><div class="line">125</div><div class="line">126</div><div class="line">127</div><div class="line">128</div><div class="line">129</div><div class="line">130</div><div class="line">131</div><div class="line">132</div><div class="line">133</div><div class="line">134</div><div class="line">135</div><div class="line">136</div><div class="line">137</div><div class="line">138</div><div class="line">139</div><div class="line">140</div><div class="line">141</div><div class="line">142</div><div class="line">143</div><div class="line">144</div><div class="line">145</div><div class="line">146</div><div class="line">147</div><div class="line">148</div><div class="line">149</div><div class="line">150</div><div class="line">151</div><div class="line">152</div><div class="line">153</div><div class="line">154</div><div class="line">155</div><div class="line">156</div><div class="line">157</div><div class="line">158</div><div class="line">159</div><div class="line">160</div><div class="line">161</div><div class="line">162</div><div class="line">163</div><div class="line">164</div><div class="line">165</div><div class="line">166</div><div class="line">167</div><div class="line">168</div><div class="line">169</div><div class="line">170</div><div class="line">171</div><div class="line">172</div><div class="line">173</div><div class="line">174</div><div class="line">175</div><div class="line">176</div><div class="line">177</div><div class="line">178</div><div class="line">179</div><div class="line">180</div><div class="line">181</div><div class="line">182</div><div class="line">183</div><div class="line">184</div><div class="line">185</div><div class="line">186</div><div class="line">187</div><div class="line">188</div><div class="line">189</div><div class="line">190</div><div class="line">191</div><div class="line">192</div><div class="line">193</div><div class="line">194</div><div class="line">195</div><div class="line">196</div><div class="line">197</div><div class="line">198</div><div class="line">199</div><div class="line">200</div><div class="line">201</div><div class="line">202</div><div class="line">203</div><div class="line">204</div><div class="line">205</div><div class="line">206</div><div class="line">207</div><div class="line">208</div><div class="line">209</div><div class="line">210</div><div class="line">211</div><div class="line">212</div><div class="line">213</div><div class="line">214</div><div class="line">215</div><div class="line">216</div><div class="line">217</div><div class="line">218</div><div class="line">219</div><div class="line">220</div><div class="line">221</div><div class="line">222</div><div class="line">223</div><div class="line">224</div><div class="line">225</div><div class="line">226</div><div class="line">227</div><div class="line">228</div><div class="line">229</div><div class="line">230</div><div class="line">231</div><div class="line">232</div><div class="line">233</div><div class="line">234</div><div class="line">235</div><div class="line">236</div><div class="line">237</div><div class="line">238</div><div class="line">239</div><div class="line">240</div><div class="line">241</div><div class="line">242</div><div class="line">243</div><div class="line">244</div><div class="line">245</div><div class="line">246</div><div class="line">247</div><div class="line">248</div><div class="line">249</div><div class="line">250</div><div class="line">251</div><div class="line">252</div><div class="line">253</div><div class="line">254</div><div class="line">255</div><div class="line">256</div><div class="line">257</div><div class="line">258</div><div class="line">259</div><div class="line">260</div><div class="line">261</div><div class="line">262</div><div class="line">263</div><div class="line">264</div><div class="line">265</div><div class="line">266</div><div class="line">267</div><div class="line">268</div><div class="line">269</div><div class="line">270</div><div class="line">271</div><div class="line">272</div><div class="line">273</div><div class="line">274</div><div class="line">275</div><div class="line">276</div><div class="line">277</div><div class="line">278</div><div class="line">279</div><div class="line">280</div><div class="line">281</div><div class="line">282</div><div class="line">283</div><div class="line">284</div><div class="line">285</div><div class="line">286</div><div class="line">287</div><div class="line">288</div><div class="line">289</div><div class="line">290</div><div class="line">291</div><div class="line">292</div><div class="line">293</div><div class="line">294</div><div class="line">295</div><div class="line">296</div><div class="line">297</div><div class="line">298</div><div class="line">299</div><div class="line">300</div><div class="line">301</div><div class="line">302</div><div class="line">303</div><div class="line">304</div><div class="line">305</div><div class="line">306</div><div class="line">307</div></pre></td><td class="code"><pre><div class="line">线上文件路径</div><div class="line">\\192.168.1.206\softMgr\jc</div><div class="line"></div><div class="line">base工程服务器地址</div><div class="line">121.40.51.43	</div><div class="line">用户名:root</div><div class="line">密码</div><div class="line"></div><div class="line"></div><div class="line">oGcnhnrjmnififtc2GX3v6bfXVxnqPrkSu7jcfxp</div><div class="line"></div><div class="line">启动服务器</div><div class="line">/etc/init.d/tomcat2 restart</div><div class="line">tail -f /usr/local/tomcat2/logs/catalina-daemon.out</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">cd /data0/wwwroot/</div><div class="line">ls</div><div class="line">cd base</div><div class="line"></div><div class="line">端口号 9282</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">http://base.zfwx.com</div><div class="line">去host文件里面根据域名找对应的ip</div><div class="line">http://base.zfwx.com/register.do;jsessionid=2273D8E3BE7EEE9124BB8082EE045D2C</div><div class="line"></div><div class="line"></div><div class="line">=====================================================================</div><div class="line"></div><div class="line">207服务器查看zookeeper查看服务是否启动</div><div class="line">192.168.1.207</div><div class="line">用户名</div><div class="line">root</div><div class="line">密码</div><div class="line">asdf!@#$</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">vi 编辑保存</div><div class="line"></div><div class="line"></div><div class="line">=====================================================================</div><div class="line">查询redis服务</div><div class="line">121.40.34.17</div><div class="line">用户名</div><div class="line">root</div><div class="line">密码</div><div class="line">pfrNzrgp6ajpfrNzrgp6aQQV9mepi4jpfrNzrgp6aQ</div><div class="line"></div><div class="line"></div><div class="line">查询redis</div><div class="line">ps -ef |grep redis</div><div class="line">cd /usr/local/redis/bin</div><div class="line">ls</div><div class="line">启动客户端软件</div><div class="line">./redis-cli</div><div class="line">选择库</div><div class="line">select 3 选择3号库</div><div class="line">ok</div><div class="line">get |lstangrongzhi  查询出对应的值</div><div class="line">key *</div><div class="line">key </div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">===================================================================</div><div class="line">设置时效，过期后就自动删除</div><div class="line">set a f</div><div class="line">expire a 144000/3600 4个小时</div><div class="line">查看时效</div><div class="line">ttl a</div><div class="line"></div><div class="line"></div><div class="line">=====================================================================</div><div class="line"></div><div class="line">//30机器 data0目录是工程目录</div><div class="line">政法网校api</div><div class="line">114.55.36.30</div><div class="line">用户名</div><div class="line">root</div><div class="line">密码</div><div class="line">hvHS0ih6tVltyysoovZr8ccQlaesd2</div><div class="line"></div><div class="line"></div><div class="line">启动服务器</div><div class="line">/etc/init.d/tomcat2 restart</div><div class="line">tail -f /usr/local/tomcat1/logs/catalina-daemon.out</div><div class="line"></div><div class="line"></div><div class="line">api 监听的端口号：6088</div><div class="line"></div><div class="line"></div><div class="line">=====================================================================</div><div class="line"></div><div class="line">115.29.221.112</div><div class="line">mobile工程测试服务器</div><div class="line">用户名</div><div class="line">root</div><div class="line">密码</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">115.29.221.112   z0gmq5gpKbpXzuxmjlnwfYYpie9y9DygdpfbMkqR</div><div class="line"></div><div class="line">5098端口</div><div class="line">5099端口</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">步骤1</div><div class="line">进入tomcat的conf执行命令</div><div class="line">cat server.xml</div><div class="line">产看工程部署目录</div><div class="line"></div><div class="line">步骤2</div><div class="line">查看tomcat的环境变量</div><div class="line">cat /etc/profile</div><div class="line">查看tomcat环境变量</div><div class="line">步骤3</div><div class="line">进入/etc/init.d目录下查看有没有tomcat的启动脚本</div><div class="line">执行命令(在tomcat的脚本上面检索环境变量)</div><div class="line">grep &quot;CATALINA_HOME&quot; /etc/init.d/tomcat</div><div class="line"></div><div class="line"></div><div class="line">启动服务器</div><div class="line">/etc/init.d/tomcat2 restart</div><div class="line">tail -f /usr/local/tomcat1/logs/catalina-daemon.out</div><div class="line"></div><div class="line"></div><div class="line">112机器部署这所有的服务/data0/service/*_service</div><div class="line"></div><div class="line">=====================================================================</div><div class="line">207机器zookeeper配置</div><div class="line">192.168.1.207</div><div class="line">用户名</div><div class="line">root</div><div class="line">密码</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">测试端口是否成功</div><div class="line">telnet 192.168.1.207 2181 </div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">课程详情接口</div><div class="line">http://mm.zfwx.com/tdk/get_detail.json?courseId=3288</div><div class="line"></div><div class="line">去购买接口</div><div class="line">http://mm.zfwx.com/tdk/gopay_mysignup.json?courseId=3288</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">select distinct cg_id as id,cg_name as name,cs.cg_count as count </div><div class="line">from dj_cscategory cs  where cs.cg_count != 0 and cg_pcategory = -10</div><div class="line"> and cg_belong LIKE &apos;%1%&apos; order by cg_order;</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">mobile 端口5098</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">========================================</div><div class="line"></div><div class="line"></div><div class="line">===========================</div><div class="line">查看注册中心注册的服务</div><div class="line">进入zookeeper的安装目录，进入bin 目录 cd /usr/local/zookeeper/bin</div><div class="line">./zkCli.sh</div><div class="line">ls /dubbo/com.blank.service.servicename</div><div class="line">===========================</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">查看服务端口</div><div class="line">http://itindex.net/detail/53125-dubbo-%E6%9C%8D%E5%8A%A1-telnet</div><div class="line">http://alibaba.github.io/dubbo-doc-static/Telnet+Command+Reference-zh-showComments=true&amp;showCommentArea=true.htm</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">======================================================================</div><div class="line">管理后台界面</div><div class="line">账号yangdebao</div><div class="line">密码yangdebao</div><div class="line">http://admin.zfwx.com/admin/index.jsp</div><div class="line"></div><div class="line">-----------定位action------------</div><div class="line">打开管理后台界面</div><div class="line">随便找一个url--&gt;右键--&gt;在新的标签页面打开（t）</div><div class="line">http://admin.zfwx.com/admin/DjStucourse/batchSelectCourseForMembers.do</div><div class="line">分析这个路由规则--admin（管理后台）-- </div><div class="line">（DjStucourse:DjStucourseAction 定位到action）---（batchSelectCourseForMembers方法）</div><div class="line"></div><div class="line">-----------定位模板------------</div><div class="line">定位界面在路由方法里面return STUSELECT_JSP;这个页面规则</div><div class="line">protected static final String STUSELECT_JSP = &quot;/admin/DjStucourse/stuselectcs.jsp&quot;;</div><div class="line">ctrl+shift+r查找到对应的jsp页面</div><div class="line"></div><div class="line">-----------模板讲解------------</div><div class="line">http://admin.zfwx.com/admin/DjCourse/edit.do?courseId=3501&amp;</div><div class="line">edit.jsp页面嵌入一个模板</div><div class="line">&lt;%@ include file=&quot;form_include.jsp&quot; %&gt;</div><div class="line">jsp中struts2框架的标签</div><div class="line">&lt;s:form&gt;&lt;/s:form&gt; </div><div class="line"></div><div class="line"></div><div class="line">/**推送消息添加**/</div><div class="line">课程列表--课程&amp;选课--操作（推送）</div><div class="line"></div><div class="line"></div><div class="line">121.40.51.45</div><div class="line">用户名:root</div><div class="line">密码</div><div class="line">7Nxddaup2HEcBeq3jrrnzabumuvDSxndyUdypuc5</div><div class="line"></div><div class="line">zfwx_api 8088</div><div class="line"></div><div class="line">步骤1</div><div class="line">进入tomcat的conf执行命令</div><div class="line">cat server.xml</div><div class="line">产看工程部署目录</div><div class="line"></div><div class="line">步骤2</div><div class="line">查看tomcat的环境变量</div><div class="line">cat /etc/profile</div><div class="line">查看tomcat环境变量</div><div class="line">步骤3</div><div class="line">进入/etc/init.d目录下查看有没有tomcat的启动脚本</div><div class="line">执行命令(在tomcat的脚本上面检索环境变量)</div><div class="line">grep &quot;CATALINA_HOME&quot; /etc/init.d/tomcat</div><div class="line"></div><div class="line"></div><div class="line">启动服务器</div><div class="line">/etc/init.d/tomcat2 restart</div><div class="line">tail -f /usr/local/tomcat1/logs/catalina-daemon.out</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">----------------------------------</div><div class="line">步骤1</div><div class="line">进入tomcat的conf执行命令</div><div class="line">cat server.xml</div><div class="line">产看工程部署目录</div><div class="line"></div><div class="line">步骤2</div><div class="line">查看tomcat的环境变量</div><div class="line">cat /etc/profile</div><div class="line">查看tomcat环境变量</div><div class="line">步骤3</div><div class="line">进入/etc/init.d目录下查看有没有tomcat的启动脚本</div><div class="line">执行命令(在tomcat的脚本上面检索环境变量)</div><div class="line">grep &quot;CATALINA_HOME&quot; /etc/init.d/tomcat</div><div class="line"></div><div class="line"></div><div class="line">/etc/init.d/tomcat2 restart</div><div class="line">tail -f /usr/local/tomcat1/logs/catalina-daemon.out</div><div class="line"></div><div class="line">账号密码:yangdebao</div><div class="line"></div><div class="line">http://admin.zfwx.com/admin/index.jsp</div><div class="line"></div><div class="line">---------------------------------------------------</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">线上代码查找</div><div class="line">win+r</div><div class="line">\\192.168.1.206\softMgr\jc</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">测试服务器数据库密码</div><div class="line">djcourse密码 ssh密钥</div><div class="line">z0gmq5gpKbpXzuxmjlnwfYYpie9y9DygdpfbMkqR</div><div class="line">casserver密码 ssh密钥</div><div class="line">7Nxddaup2HEcBeq3jrrnzabumuvDSxndyUdypuc5</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">=======================================================================</div><div class="line">1查看tomcat监听的端口号</div><div class="line">2 ps -ef| grep tomcat</div><div class="line">  netstat -ntlp | grep 端口号/进程号</div><div class="line">3 jps</div><div class="line">4 杀死进程</div><div class="line">5 重启tomcat</div><div class="line"></div><div class="line">=========================================================================</div><div class="line">查看进程号</div><div class="line">lsof -i | grep 端口号</div><div class="line">lsof -i:端口号</div><div class="line">netstat -ntlp| grep 端口号</div><div class="line"></div><div class="line">例子：</div><div class="line">nststat -nflp|grep 20884</div><div class="line">lsof -i:20884</div><div class="line">lsof -i | grep 20884</div></pre></td></tr></table></figure></p>
 
           
@@ -1046,709 +1507,11 @@
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/11/06/project-name/" itemprop="url">
-                  project-name
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">Posted on</span>
-            <time itemprop="dateCreated" datetime="2017-11-06T20:50:44+08:00" content="2017-11-06">
-              2017-11-06
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/开发技巧/" itemprop="url" rel="index">
-                    <span itemprop="name">开发技巧</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <ul>
-<li>alliance_api</li>
-<li>alliance_service</li>
-<li>base</li>
-<li>base_api</li>
-<li>base_service</li>
-<li>bbs</li>
-<li>bdlk</li>
-<li>cas</li>
-<li>dailyreport</li>
-<li>demo_api</li>
-<li>demo_client</li>
-<li>demo_service</li>
-<li>design</li>
-<li>dianda</li>
-<li>dianda_manage</li>
-<li>dianjing_model</li>
-<li>dianjing_util</li>
-<li>dianting</li>
-<li>dianting_manage</li>
-<li>djDef</li>
-<li>djframework</li>
-<li>djframework-ui</li>
-<li>djph_api</li>
-<li>djph_service</li>
-<li>djyFe</li>
-<li>expert-api</li>
-<li>expert-service</li>
-<li>facetoface_api</li>
-<li>facetoface_mobile</li>
-<li>facetoface_service</li>
-<li>group</li>
-<li>haijian</li>
-<li>library_api</li>
-<li>library_service</li>
-<li>mail_api</li>
-<li>mail_service</li>
-<li>member_api</li>
-<li>member_service</li>
-<li>sfjd</li>
-<li>sfml_api</li>
-<li>sfml_pc</li>
-<li>sfml_service</li>
-<li>shop-api</li>
-<li>shop-service</li>
-<li>stustats_api</li>
-<li>stustats_service</li>
-<li>ui_worklog</li>
-<li>wangqun</li>
-<li>wdwq_api</li>
-<li>wdwq_client</li>
-<li>wdwq_service</li>
-<li>wxdy</li>
-<li>wxgr</li>
-<li>wxht_old</li>
-<li>wxqt</li>
-<li>wxqt_old</li>
-<li>wxsy_api</li>
-<li>wxsy_service</li>
-<li>xhht</li>
-<li>zfwx</li>
-<li>zfwx-admin</li>
-<li>zfwx-android</li>
-<li>zfwx-api</li>
-<li>zfwx-ios</li>
-<li>zfwx-ios-2</li>
-<li>zfwx-pad</li>
-<li>zyjs_api</li>
-<li>zyjs_service</li>
-</ul>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/11/06/cas-01/" itemprop="url">
-                  cas-01
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">Posted on</span>
-            <time itemprop="dateCreated" datetime="2017-11-06T20:24:58+08:00" content="2017-11-06">
-              2017-11-06
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/cas/" itemprop="url" rel="index">
-                    <span itemprop="name">cas</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="Cas认证基本概念"><a href="#Cas认证基本概念" class="headerlink" title="Cas认证基本概念"></a>Cas认证基本概念</h2><ul>
-<li>SSO     Single Sign On 单点登录</li>
-<li>TGT      Ticket Granting Ticket 用户身份凭证票据（令牌，存在与浏览器与S端）</li>
-<li>ST      Service Ticket 服务许可凭证票据（随机参数，每次S端校验后作废）</li>
-<li>TGC      Ticket Granting Cookie 存放用户身份认证票据（存放令牌）的cookie ，浏览器关闭就失效</li>
-</ul>
-<h2 id="认证过程"><a href="#认证过程" class="headerlink" title="认证过程"></a>认证过程</h2><ul>
-<li>1 web1的客户端检测到session无令牌凭证信息，将用户重定向到casserver</li>
-<li><p>2 s端检测到传来的请求没有带（st）证书 参数，所以跳转到Login界面进行用户登陆验证</p>
-</li>
-<li><p>3 s端登陆认证结束后生成TGT令牌 和 随机的Ticket-ST证书 ，<br>并在用户的浏览器写入cookie STC，<br>随后让用户的浏览器重定向到web1应用中，并将随机参数ST证书带上一起带过去，之后web1的cas客户端将检测到此ST证书参数，<br>发送到Server端进行校验，校验成功后，服务端主动销毁此ST证书，并继续返回web1应用中，<br>web应用此时将令牌信息写入自己的Session中，从而完成用户的单点登陆认证。<br>服务端同样的也会用一个Map记录web1假如到单点登陆范围。</p>
-</li>
-<li><p>4 带参重定向到web1</p>
-</li>
-<li>5 拿到ST参数发送到s端进行校验</li>
-<li>6 校验成功，进入web1应用，w1将令牌凭证TGT写如session</li>
-</ul>
-<h2 id="web2-发出请求"><a href="#web2-发出请求" class="headerlink" title="web2 发出请求"></a>web2 发出请求</h2><ul>
-<li><p>此时用户第一次访问web2应用，<br>web2在自己的session中无法找到令牌信息。所以将用户重定向到S端，<br>S端拿到用户浏览器传来的cookie，从里面读取TGT，<br>生成一个随机的ST证书，<br>返回w2，w2拿到ST证书，就立即和S端进行校验，<br>S端校验成功后，立即销毁此ST证书，<br>并将web2加入到单点登陆范围内，<br>用户此时在web2中进行业务操作，<br>web2同样也会在seesion中记录此令牌凭证的，至此完成用户单点登陆功能</p>
-</li>
-<li><p>当用户下次访问web1或者web2的时候，<br>由于各自session中都能拿到TGT信息，<br>只需要从中的取到每次请求时所带的ST证书参数即可和S端进行交互校验正确后达到一站登陆，N站访问的SSO效果。<br>校验最后一登陆的信息。</p>
-</li>
-<li><p>w2让用户浏览器带cookie重定向到S端</p>
-</li>
-<li>s端从cookie中找到了TGT，生成ST证书返回到w2</li>
-<li>w2根据参数ST返回到S端进行校验</li>
-<li>校验成功后可以访问W2，W2的令牌写入Session</li>
-</ul>
-<hr>
-<p>【H:\archive\17-06-06\cas架构】</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/08/26/Driving-skills/" itemprop="url">
-                  Driving-skills
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">Posted on</span>
-            <time itemprop="dateCreated" datetime="2017-08-26T16:37:15+08:00" content="2017-08-26">
-              2017-08-26
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/life/" itemprop="url" rel="index">
-                    <span itemprop="name">life</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>=^<em>^= 以下是本人考驾照的一些总结，仅供参考，恕请勿喷！=^</em>^= </p>
-<h2 id="开车习惯"><a href="#开车习惯" class="headerlink" title="开车习惯"></a>开车习惯</h2><ul>
-<li>只要不加油就备刹车</li>
-<li>右脚不是在油门就是在刹车上。</li>
-<li>停车跟车距离，看到前车的车轮胎，就是安全车距。</li>
-<li>先挂档，再打灯</li>
-<li>车随路走，路正车正，路歪车歪</li>
-<li>拐弯处停车，先踩离合器，再踩刹车</li>
-<li>注意停车踩刹车，不要着急，着急什么。说话不紧不慢的。</li>
-<li>松离合，有震动，油离配合，加速起步</li>
-</ul>
-<h2 id="开始注意"><a href="#开始注意" class="headerlink" title="开始注意"></a>开始注意</h2><ul>
-<li>档起步，一级一级加档减档</li>
-<li>离合器不能离开左脚</li>
-<li>考试系安全带</li>
-<li>起步打灯</li>
-<li>停车，空挡，拉手刹</li>
-</ul>
-<h2 id="反光镜调试"><a href="#反光镜调试" class="headerlink" title="反光镜调试"></a>反光镜调试</h2><ul>
-<li>四分之一车身，</li>
-<li>四分之一地上，</li>
-<li>天地各一半。</li>
-<li>左右车身占四分之一，</li>
-<li>上下各一半。</li>
-</ul>
-<h2 id="驾照考试错误"><a href="#驾照考试错误" class="headerlink" title="驾照考试错误"></a>驾照考试错误</h2><ul>
-<li>倒库，提前打轮</li>
-<li>侧方停车，最后左打轮，进车位</li>
-<li>库在哪个方向，往哪个方向打轮</li>
-<li>两次打灯，侧方停车打灯，坡起打灯</li>
-<li>经常犯的错误，停车刹车</li>
-<li>脚搭在油门，轻轻加油。</li>
-<li>半坡起步错误–手刹按到底</li>
-<li>脚使点劲，平行踩离合，不是脚尖踩离合</li>
-</ul>
-<h2 id="半坡起步技巧"><a href="#半坡起步技巧" class="headerlink" title="半坡起步技巧"></a>半坡起步技巧</h2><ul>
-<li>半坡起步</li>
-<li>车速降下来，离合器抬一点，车速降下来，离合器抬一点。</li>
-<li>自己与空调缝隙，杆，三点一线</li>
-<li>半坡起步</li>
-<li>右转向灯，对箭头</li>
-<li>对点对杆，踩刹车，拉手刹</li>
-<li>左转向灯，方向盘左90度，松离合器到抖动</li>
-<li>加油到20-30，油门听到轰隆声，松手刹</li>
-<li>反光镜过杆，回正方向盘</li>
-<li>杆子和空调第三格子对齐。</li>
-</ul>
-<h2 id="倒库"><a href="#倒库" class="headerlink" title="倒库"></a>倒库</h2><ul>
-<li>直行1号线消失，右打满</li>
-<li>车头正了。一圈半回正。</li>
-<li>行至到7号线中间，停车，踩刹车</li>
-<li>挂倒档，</li>
-<li>后视镜下沿三指头距离回正，</li>
-<li>右打满，继续倒车</li>
-<li>库位角两指，回正，倒车</li>
-<li>库位角消失，右打满</li>
-<li>看左边与4号线平行，车头正，一圈半回正方向盘</li>
-<li>倒到平行，回正</li>
-<li>倒车直，左透视镜下沿与黄线两指多一点，停车刚刚好。</li>
-</ul>
-<h2 id="直角转弯技巧"><a href="#直角转弯技巧" class="headerlink" title="直角转弯技巧"></a>直角转弯技巧</h2><ul>
-<li>直角转弯，扳手挨着黄线，左打满</li>
-<li>看远处左黄线与门把手平行，左打满，转弯回正</li>
-<li>直角转弯。右透视镜与黄线重合，方向盘打满，转正就ok</li>
-</ul>
-<h2 id="s型转弯"><a href="#s型转弯" class="headerlink" title="s型转弯"></a>s型转弯</h2><ul>
-<li>车速压速。</li>
-<li>侧方停车</li>
-<li>三个点</li>
-<li>压车速，到侧方停车牌，打右转向灯</li>
-<li>箭头一寸，右打满，倒车，</li>
-<li>对着右下角点，左一圈半调整。</li>
-<li>左扳手与黄线交叉，转正</li>
-<li>前进档，左转向</li>
-<li>右雨刷与白线交叉，向右</li>
-<li></li>
-<li><p>s转弯，往前边走边打弯</p>
-</li>
-<li>进车到打转向</li>
-<li>车速越快，不能猛打方向盘</li>
-<li>收油，踩离合，换档</li>
-<li>收油，准备刹车，准备刹车</li>
-<li>离合到底。</li>
-</ul>
-<h2 id="上车后操作顺序"><a href="#上车后操作顺序" class="headerlink" title="上车后操作顺序"></a>上车后操作顺序</h2><ul>
-<li>1调整坐椅</li>
-<li>2打左灯，举手</li>
-<li>开始考试</li>
-<li>松手刹，提，按，压</li>
-<li>反光镜的下沿出现角</li>
-</ul>
-<h2 id="防止溜车"><a href="#防止溜车" class="headerlink" title="防止溜车"></a>防止溜车</h2><ul>
-<li>1踩离合，踩刹车</li>
-<li>2轻松离合车抖动，松刹车</li>
-</ul>
-<p>##倒库，倒车技巧</p>
-<ul>
-<li>看后视镜，哪边宽，往哪调，调90度，然后回正。</li>
-<li>黄线在门把手的中间</li>
-</ul>
-<p>##正确挂挡</p>
-<ul>
-<li>横着用劲，竖着不用劲</li>
-</ul>
-<p>##考试步骤</p>
-<ul>
-<li>看镜子</li>
-<li>扭头看盲区</li>
-<li>转弯的时候</li>
-<li>半连动就是起步离合的位置，轻加油门。</li>
-<li>不要猛抬离合器。</li>
-<li>停车，踩离合，踩刹车，轻点刹车</li>
-<li>离合踩到底，轻点刹车。停车。</li>
-</ul>
-<ul>
-<li>轻踏缓抬</li>
-<li>油离配合</li>
-<li>方向盘够使就可以了。</li>
-</ul>
-<ul>
-<li>半坡，油离配合，</li>
-<li><p>快速起步，</p>
-</li>
-<li><p>停车起步，</p>
-<ul>
-<li>轻点离合，踩刹车，起步，松刹车，油离配合。</li>
-</ul>
-</li>
-<li><p>半坡起步，</p>
-<ul>
-<li>轻抬离合器，踩刹车，踩油门。松刹车</li>
-</ul>
-</li>
-</ul>
-<ul>
-<li>下车逆时针。<ul>
-<li>开车门左边右边左右手接替</li>
-</ul>
-</li>
-</ul>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/08/26/gitpage-push/" itemprop="url">
-                  gitpage-push
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">Posted on</span>
-            <time itemprop="dateCreated" datetime="2017-08-26T15:39:02+08:00" content="2017-08-26">
-              2017-08-26
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/git/" itemprop="url" rel="index">
-                    <span itemprop="name">git</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>查看远程分支</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git branch -va</div></pre></td></tr></table></figure>
-<p>切换远程分支<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">git checkout -t origin/2.0.0</div><div class="line">git checkout -t origin/gh-pages</div></pre></td></tr></table></figure></p>
-<p>发布静态网页</p>
-<p>add -&gt; commit -&gt; push<br>这里要注意一下，我是直接新建的库，然后发布的，所以，没有master分支，只有gh-pages分支，github只会将你的gh-pages分支部署上去，不会动你的其他分支的东西。所以，我们要将改动提交到gh-pages分支上，再push。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">myindex$ git branch</div><div class="line">        * gh-pages</div><div class="line">myindex$ git commit -a -m &quot;first commit&quot;</div><div class="line">myindex$ git push origin gh-pages</div></pre></td></tr></table></figure>
-<p>总结<br>github创建静态页面发布静态页面<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">1查看远程分支</div><div class="line">git branch -va</div><div class="line"></div><div class="line">2切换远程分支</div><div class="line">git checkout -t origin/gh-pages</div><div class="line"></div><div class="line">3发布静态网页</div><div class="line">add -&gt; commit -&gt; push</div></pre></td></tr></table></figure></p>
-<p>步骤<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">1查看当前分支</div><div class="line">git branch</div><div class="line">   * gh-pages</div><div class="line"></div><div class="line">2添加文件到库中</div><div class="line">git commit -a -m &quot;first commit&quot;</div><div class="line"></div><div class="line">3提交代码到远程分支</div><div class="line">git push origin gh-pages</div></pre></td></tr></table></figure></p>
-<p>git 提交代码步骤<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"> 创建文件夹</div><div class="line"></div><div class="line"> git init</div><div class="line"> </div><div class="line"> git add README.md</div><div class="line"> </div><div class="line"> git remote add origin</div><div class="line"> </div><div class="line"> https://git.coding.net/BlankCat/elephant-blog-api.git</div><div class="line"> </div><div class="line"> git push -u origin master</div><div class="line"> </div><div class="line">第二次</div><div class="line"></div><div class="line">git add *</div><div class="line">git commit -m “zjf”</div><div class="line">git push</div><div class="line"></div><div class="line">`</div></pre></td></tr></table></figure></p>
-<p> <a href="http://www.barretlee.com/blog/2014/04/30/switch-branch-in-git/" target="_blank" rel="external">参考链接</a></p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1789,7 +1552,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">80</span>
+              <span class="site-state-item-count">84</span>
               <span class="site-state-item-name">posts</span>
             </a>
           </div>
@@ -1806,7 +1569,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">45</span>
+                <span class="site-state-item-count">46</span>
                 <span class="site-state-item-name">tags</span>
               </a>
             </div>
@@ -1834,6 +1597,24 @@
                     <i class="fa fa-fw fa-weibo"></i>
                   
                   Weibo
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.gitnavi.com/" target="_blank" title="开发导航">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  开发导航
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://blankcat.github.io/myIndex/" target="_blank" title="个人主页">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  个人主页
                 </a>
               </span>
             

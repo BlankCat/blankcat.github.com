@@ -1,6 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[git-dos]]></title>
+    <url>%2F2017%2F12%2F25%2Fgit-dos%2F</url>
+    <content type="text"><![CDATA[工作中用到的 git 命令 dos 博客链接123456789101112131415161718192021222324252627282930313233github创建静态页面发布静态页面1查看远程分支git branch -va2切换远程分支git checkout -t origin/gh-pages3发布静态网页add -&gt; commit -&gt; push-----------------------------1查看当前分支git branch* gh-pages2添加文件到库中git commit -a -m &quot;first commit&quot;3提交代码到远程分支git push origin gh-pages----------------------------- 创建文件夹 git init git add README.md git remote add origin https://git.coding.net/BlankCat/elephant-blog-api.git git push -u origin master第二次git add *git commit -m “zjf”git push]]></content>
+      <categories>
+        <category>git</category>
+      </categories>
+      <tags>
+        <tag>git</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[develop-tool-curl]]></title>
+    <url>%2F2017%2F12%2F25%2Fdevelop-tool-curl%2F</url>
+    <content type="text"><![CDATA[curl学习使用 curl官网 curl使用方法–博客总结]]></content>
+      <categories>
+        <category>工具</category>
+      </categories>
+      <tags>
+        <tag>工具</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[url-tool-link]]></title>
+    <url>%2F2017%2F12%2F25%2Furl-tool-link%2F</url>
+    <content type="text"><![CDATA[开发中用到的 导航链接 ，url链接 ，在线工具 开发使用导航url –&gt; gitnavi 代码天气预报 –&gt; wttr 查询IP地址 –&gt; ip 在线工具【时间戳，端口号检测】 –&gt; tool在线工具【常见计算统计工具】 –&gt; tool在线工具【数字转换成钱大小写】 –&gt; tool在线工具【摩斯电码 字体编码解码】 –&gt; tool html–pdf转换工具 –&gt;可以将网页转换成各种格式的文件 抓包工具 Fiddler –&gt; 抓包]]></content>
+      <categories>
+        <category>工具</category>
+      </categories>
+      <tags>
+        <tag>工具</tag>
+        <tag>url</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[life-study-skills]]></title>
+    <url>%2F2017%2F12%2F25%2Flife-study-skills%2F</url>
+    <content type="text"><![CDATA[文章导读： 在过去未被自己流程化的情况下，自己学习新的东西的时候一直是处理迷迷糊糊的状态，直到我看到这张思维导图，我瞬间就理清自己平时在学习东西时候那混乱的思维了。可能平时我们也是这样做的，可是我们从来没有认真思考过或是整理过这样的思绪。也许你认为这样不重要，但是对我而言，有记录的东西，代表可以被流程化，这可以帮助特定情况下的我。下面跟着这张思维导图，我们一起来整理 Maven 的材料。 它是什么? 术语定义 Maven 官网定义：http://maven.apache.org/ 百度百科定义：http://baike.baidu.com/view/336103.htm 维基百科定义：https://zh.wikipedia.org/wiki/Apache_Maven 在 Wiki 上还需要注意如下，这些有助于你站在更加宏观的角度看待它，但是可能需要积累： 参见 补充阅读 参考资料 外部链接 它的历史? Google 搜索：Maven History Google 搜索：Maven 区别、Maven difference Google 搜索：Maven 使用场景 Google 搜索：What is Maven Google 搜索：To use or not to use Maven Google 搜索：Maven use case 在 Google 搜索结果页最下面，看它提示的搜索关键字内容，看是否有版本上的区别。 同类常见技术（按技术出现时间正序） Ant Gradle 同类技术比较： Google 搜索：Ant Maven Gradle 比如文章： 学习前提/依赖 要有 Java 基础相关 为什么会出现123456Google 搜索：关键字：为什么用 maven关键字：why use maven关键字：What does Maven do关键字：Why do we need Maven关键字：Why should we use Maven 哪些人不喜欢它123Google 搜索：关键字：不用 maven关键字：Why I Don&apos;t Use Maven 为什么学习它12345老师让学的？解决工作问题？提高效率？知识储备？灵机一动？ 我要怎么做（按优先级从高到低排序）123456789101112131415161718192021222324252627282930313233343536373839404142434445看教程官网快速入门文档在官网中查看带有下面几个关键字的链接：Getting StartedQuick StartGetting Started Guidesusage pageTutorialsGuidesDevelopment GuidesDocumentationDocsScreencastsbest practices在极客学院搜索对应的教学视频（我是年 VIP）Google 搜索：Maven 视频 教程 百度云网盘Google 搜索：Maven 视频 教程微博-搜索相关内容：http://weibo.com公众号-搜索相关内容：http://weixin.sogou.com/京东-图书：http://book.jd.com/YouTube-搜索相关内容：http://youtube.com/自己写 Demo参考别人 DemoGtihub 搜索 Demo：https://github.com/search/advancedGit@OSC 搜索 Demo：http://git.oschina.net/项目场景模拟、提高遇到问题找官网 FAQ：https://maven.apache.org/general.htmlQQ 群组讨论Google 搜索下面关键字方法：Maven site:stackoverflow.comMaven site:quora.comMaven site:xitu.ioMaven site:toutiao.ioMaven site:segmentfault.comMaven site:jianshu.comMaven site:zhihu.comMaven site:blog.csdn.netMaven site:cnblogs.comMaven site:blog.51cto.comMaven site:oschina.netMaven site:iteye.comMaven site:importnew.com 归纳整理并分享12345678910111213141516整理为知笔记里面内容浏览器书签简书中收藏：http://www.jianshu.com/bookmarks简书中喜欢：http://www.jianshu.com/favourites开发者头条中收藏：http://toutiao.io/favorites微博中收藏：http://weibo.com/favRSS 订阅：http://www.inoreader.com/无法订阅的博客使用 Feed43 生成 RSS：http://feed43.com/分享写博客分享到开发者头条分享到简书分享到微信公众号系统整理 Demo 在 Github 上 过程细节12345678Google 搜索必备：Maven site:www.youmeek.com，表示搜索结果局限于在：www.youmeek.com 这个站点Maven link:www.youmeek.com，返回所有链接到 www.youmeek.com 的网页r elated:www.qq.com，查找类似 www.youmeek.com 的网站cache:www.youmeek.com，查找 www.youmeek.com 的历史快照结束语我猜测你可能需要 VPN 或是 Shadowsocks 我的学习、归纳方法（以学习 Maven 为例）]]></content>
+      <categories>
+        <category>life</category>
+      </categories>
+      <tags>
+        <tag>life</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[life-work-2017-12-20]]></title>
     <url>%2F2017%2F12%2F20%2Flife-work-2017-12-20%2F</url>
     <content type="text"><![CDATA[三岁学说话，一生学闭嘴！工作的时候不要带着情绪去工作，今天上班发火了，引以为戒…完成的工作 hexo 博客 添加搜索功能 idea 修改代码风格 学习 shiro windows 和 linux 的tree使用]]></content>
@@ -36,7 +81,7 @@
   <entry>
     <title><![CDATA[develop-language-node.js]]></title>
     <url>%2F2017%2F12%2F19%2Fdevelop-language-node-js%2F</url>
-    <content type="text"><![CDATA[loopbackjs 官网]]></content>
+    <content type="text"><![CDATA[loopbackjs 官网 node.js 博客学习]]></content>
       <categories>
         <category>dev-language</category>
       </categories>
@@ -124,7 +169,7 @@
   <entry>
     <title><![CDATA[develop-skill-xshell-dos]]></title>
     <url>%2F2017%2F12%2F19%2Fdevelop-skill-xshell-dos%2F</url>
-    <content type="text"><![CDATA[《刘瑜写给女儿的信：愿你慢慢长大 》小布谷，愿你慢慢长大。愿你有好运气，如果没有，愿你在不幸中学会慈悲。愿你被很多人爱，如果没有，愿你在寂寞中学会宽容。愿你一生一世每天都可以睡到自然醒。 ##开发常用的xshell命令123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293949596979899100101102103104105106107108109110111112113114115116117118119120121122123124125126127128129130131132133134135136137138139140141142143144145146147148149150151152153154155156157158159160161162163164165166167168169170171172173174175176177178179180181182183184185186187188189190191192193194195196197198199200201202203204205206207208209210211212213214215216217218219220221222223224225226227228229230231232233234235236237238239240241242243244245246247248249250251252253254255256257258259260261262263264265266267268269270271272273274275276277278279280281282283284285286287288289290291292293294295296297298299300301302303304305306307线上文件路径\\192.168.1.206\softMgr\jcbase工程服务器地址121.40.51.43 用户名:root密码oGcnhnrjmnififtc2GX3v6bfXVxnqPrkSu7jcfxp启动服务器/etc/init.d/tomcat2 restarttail -f /usr/local/tomcat2/logs/catalina-daemon.outcd /data0/wwwroot/lscd base端口号 9282http://base.zfwx.com去host文件里面根据域名找对应的iphttp://base.zfwx.com/register.do;jsessionid=2273D8E3BE7EEE9124BB8082EE045D2C=====================================================================207服务器查看zookeeper查看服务是否启动192.168.1.207用户名root密码asdf!@#$vi 编辑保存=====================================================================查询redis服务121.40.34.17用户名root密码pfrNzrgp6ajpfrNzrgp6aQQV9mepi4jpfrNzrgp6aQ查询redisps -ef |grep rediscd /usr/local/redis/binls启动客户端软件./redis-cli选择库select 3 选择3号库okget |lstangrongzhi 查询出对应的值key *key ===================================================================设置时效，过期后就自动删除set a fexpire a 144000/3600 4个小时查看时效ttl a=====================================================================//30机器 data0目录是工程目录政法网校api114.55.36.30用户名root密码hvHS0ih6tVltyysoovZr8ccQlaesd2启动服务器/etc/init.d/tomcat2 restarttail -f /usr/local/tomcat1/logs/catalina-daemon.outapi 监听的端口号：6088=====================================================================115.29.221.112mobile工程测试服务器用户名root密码115.29.221.112 z0gmq5gpKbpXzuxmjlnwfYYpie9y9DygdpfbMkqR5098端口5099端口步骤1进入tomcat的conf执行命令cat server.xml产看工程部署目录步骤2查看tomcat的环境变量cat /etc/profile查看tomcat环境变量步骤3进入/etc/init.d目录下查看有没有tomcat的启动脚本执行命令(在tomcat的脚本上面检索环境变量)grep &quot;CATALINA_HOME&quot; /etc/init.d/tomcat启动服务器/etc/init.d/tomcat2 restarttail -f /usr/local/tomcat1/logs/catalina-daemon.out112机器部署这所有的服务/data0/service/*_service=====================================================================207机器zookeeper配置192.168.1.207用户名root密码测试端口是否成功telnet 192.168.1.207 2181 课程详情接口http://mm.zfwx.com/tdk/get_detail.json?courseId=3288去购买接口http://mm.zfwx.com/tdk/gopay_mysignup.json?courseId=3288select distinct cg_id as id,cg_name as name,cs.cg_count as count from dj_cscategory cs where cs.cg_count != 0 and cg_pcategory = -10 and cg_belong LIKE &apos;%1%&apos; order by cg_order;mobile 端口5098===================================================================查看注册中心注册的服务进入zookeeper的安装目录，进入bin 目录 cd /usr/local/zookeeper/bin./zkCli.shls /dubbo/com.blank.service.servicename===========================查看服务端口http://itindex.net/detail/53125-dubbo-%E6%9C%8D%E5%8A%A1-telnethttp://alibaba.github.io/dubbo-doc-static/Telnet+Command+Reference-zh-showComments=true&amp;showCommentArea=true.htm======================================================================管理后台界面账号yangdebao密码yangdebaohttp://admin.zfwx.com/admin/index.jsp-----------定位action------------打开管理后台界面随便找一个url--&gt;右键--&gt;在新的标签页面打开（t）http://admin.zfwx.com/admin/DjStucourse/batchSelectCourseForMembers.do分析这个路由规则--admin（管理后台）-- （DjStucourse:DjStucourseAction 定位到action）---（batchSelectCourseForMembers方法）-----------定位模板------------定位界面在路由方法里面return STUSELECT_JSP;这个页面规则protected static final String STUSELECT_JSP = &quot;/admin/DjStucourse/stuselectcs.jsp&quot;;ctrl+shift+r查找到对应的jsp页面-----------模板讲解------------http://admin.zfwx.com/admin/DjCourse/edit.do?courseId=3501&amp;edit.jsp页面嵌入一个模板&lt;%@ include file=&quot;form_include.jsp&quot; %&gt;jsp中struts2框架的标签&lt;s:form&gt;&lt;/s:form&gt; /**推送消息添加**/课程列表--课程&amp;选课--操作（推送）121.40.51.45用户名:root密码7Nxddaup2HEcBeq3jrrnzabumuvDSxndyUdypuc5zfwx_api 8088步骤1进入tomcat的conf执行命令cat server.xml产看工程部署目录步骤2查看tomcat的环境变量cat /etc/profile查看tomcat环境变量步骤3进入/etc/init.d目录下查看有没有tomcat的启动脚本执行命令(在tomcat的脚本上面检索环境变量)grep &quot;CATALINA_HOME&quot; /etc/init.d/tomcat启动服务器/etc/init.d/tomcat2 restarttail -f /usr/local/tomcat1/logs/catalina-daemon.out----------------------------------步骤1进入tomcat的conf执行命令cat server.xml产看工程部署目录步骤2查看tomcat的环境变量cat /etc/profile查看tomcat环境变量步骤3进入/etc/init.d目录下查看有没有tomcat的启动脚本执行命令(在tomcat的脚本上面检索环境变量)grep &quot;CATALINA_HOME&quot; /etc/init.d/tomcat/etc/init.d/tomcat2 restarttail -f /usr/local/tomcat1/logs/catalina-daemon.out账号密码:yangdebaohttp://admin.zfwx.com/admin/index.jsp---------------------------------------------------线上代码查找win+r\\192.168.1.206\softMgr\jc测试服务器数据库密码djcourse密码 ssh密钥z0gmq5gpKbpXzuxmjlnwfYYpie9y9DygdpfbMkqRcasserver密码 ssh密钥7Nxddaup2HEcBeq3jrrnzabumuvDSxndyUdypuc5=======================================================================1查看tomcat监听的端口号2 ps -ef| grep tomcat netstat -ntlp | grep 端口号/进程号3 jps4 杀死进程5 重启tomcat=========================================================================查看进程号lsof -i | grep 端口号lsof -i:端口号netstat -ntlp| grep 端口号例子：nststat -nflp|grep 20884lsof -i:20884lsof -i | grep 20884]]></content>
+    <content type="text"><![CDATA[windows 的一些操作，dos命令帮助快速开发，提高工作效率！ 管理员的方式启动电脑 管理员方式启动电脑dos123456compmgmt.msc系统工具→本地用户和组→用户Win+Break系统属性 ##开发常用的xshell命令123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293949596979899100101102103104105106107108109110111112113114115116117118119120121122123124125126127128129130131132133134135136137138139140141142143144145146147148149150151152153154155156157158159160161162163164165166167168169170171172173174175176177178179180181182183184185186187188189190191192193194195196197198199200201202203204205206207208209210211212213214215216217218219220221222223224225226227228229230231232233234235236237238239240241242243244245246247248249250251252253254255256257258259260261262263264265266267268269270271272273274275276277278279280281282283284285286287288289290291292293294295296297298299300301302303304305306307线上文件路径\\192.168.1.206\softMgr\jcbase工程服务器地址121.40.51.43 用户名:root密码oGcnhnrjmnififtc2GX3v6bfXVxnqPrkSu7jcfxp启动服务器/etc/init.d/tomcat2 restarttail -f /usr/local/tomcat2/logs/catalina-daemon.outcd /data0/wwwroot/lscd base端口号 9282http://base.zfwx.com去host文件里面根据域名找对应的iphttp://base.zfwx.com/register.do;jsessionid=2273D8E3BE7EEE9124BB8082EE045D2C=====================================================================207服务器查看zookeeper查看服务是否启动192.168.1.207用户名root密码asdf!@#$vi 编辑保存=====================================================================查询redis服务121.40.34.17用户名root密码pfrNzrgp6ajpfrNzrgp6aQQV9mepi4jpfrNzrgp6aQ查询redisps -ef |grep rediscd /usr/local/redis/binls启动客户端软件./redis-cli选择库select 3 选择3号库okget |lstangrongzhi 查询出对应的值key *key ===================================================================设置时效，过期后就自动删除set a fexpire a 144000/3600 4个小时查看时效ttl a=====================================================================//30机器 data0目录是工程目录政法网校api114.55.36.30用户名root密码hvHS0ih6tVltyysoovZr8ccQlaesd2启动服务器/etc/init.d/tomcat2 restarttail -f /usr/local/tomcat1/logs/catalina-daemon.outapi 监听的端口号：6088=====================================================================115.29.221.112mobile工程测试服务器用户名root密码115.29.221.112 z0gmq5gpKbpXzuxmjlnwfYYpie9y9DygdpfbMkqR5098端口5099端口步骤1进入tomcat的conf执行命令cat server.xml产看工程部署目录步骤2查看tomcat的环境变量cat /etc/profile查看tomcat环境变量步骤3进入/etc/init.d目录下查看有没有tomcat的启动脚本执行命令(在tomcat的脚本上面检索环境变量)grep &quot;CATALINA_HOME&quot; /etc/init.d/tomcat启动服务器/etc/init.d/tomcat2 restarttail -f /usr/local/tomcat1/logs/catalina-daemon.out112机器部署这所有的服务/data0/service/*_service=====================================================================207机器zookeeper配置192.168.1.207用户名root密码测试端口是否成功telnet 192.168.1.207 2181 课程详情接口http://mm.zfwx.com/tdk/get_detail.json?courseId=3288去购买接口http://mm.zfwx.com/tdk/gopay_mysignup.json?courseId=3288select distinct cg_id as id,cg_name as name,cs.cg_count as count from dj_cscategory cs where cs.cg_count != 0 and cg_pcategory = -10 and cg_belong LIKE &apos;%1%&apos; order by cg_order;mobile 端口5098===================================================================查看注册中心注册的服务进入zookeeper的安装目录，进入bin 目录 cd /usr/local/zookeeper/bin./zkCli.shls /dubbo/com.blank.service.servicename===========================查看服务端口http://itindex.net/detail/53125-dubbo-%E6%9C%8D%E5%8A%A1-telnethttp://alibaba.github.io/dubbo-doc-static/Telnet+Command+Reference-zh-showComments=true&amp;showCommentArea=true.htm======================================================================管理后台界面账号yangdebao密码yangdebaohttp://admin.zfwx.com/admin/index.jsp-----------定位action------------打开管理后台界面随便找一个url--&gt;右键--&gt;在新的标签页面打开（t）http://admin.zfwx.com/admin/DjStucourse/batchSelectCourseForMembers.do分析这个路由规则--admin（管理后台）-- （DjStucourse:DjStucourseAction 定位到action）---（batchSelectCourseForMembers方法）-----------定位模板------------定位界面在路由方法里面return STUSELECT_JSP;这个页面规则protected static final String STUSELECT_JSP = &quot;/admin/DjStucourse/stuselectcs.jsp&quot;;ctrl+shift+r查找到对应的jsp页面-----------模板讲解------------http://admin.zfwx.com/admin/DjCourse/edit.do?courseId=3501&amp;edit.jsp页面嵌入一个模板&lt;%@ include file=&quot;form_include.jsp&quot; %&gt;jsp中struts2框架的标签&lt;s:form&gt;&lt;/s:form&gt; /**推送消息添加**/课程列表--课程&amp;选课--操作（推送）121.40.51.45用户名:root密码7Nxddaup2HEcBeq3jrrnzabumuvDSxndyUdypuc5zfwx_api 8088步骤1进入tomcat的conf执行命令cat server.xml产看工程部署目录步骤2查看tomcat的环境变量cat /etc/profile查看tomcat环境变量步骤3进入/etc/init.d目录下查看有没有tomcat的启动脚本执行命令(在tomcat的脚本上面检索环境变量)grep &quot;CATALINA_HOME&quot; /etc/init.d/tomcat启动服务器/etc/init.d/tomcat2 restarttail -f /usr/local/tomcat1/logs/catalina-daemon.out----------------------------------步骤1进入tomcat的conf执行命令cat server.xml产看工程部署目录步骤2查看tomcat的环境变量cat /etc/profile查看tomcat环境变量步骤3进入/etc/init.d目录下查看有没有tomcat的启动脚本执行命令(在tomcat的脚本上面检索环境变量)grep &quot;CATALINA_HOME&quot; /etc/init.d/tomcat/etc/init.d/tomcat2 restarttail -f /usr/local/tomcat1/logs/catalina-daemon.out账号密码:yangdebaohttp://admin.zfwx.com/admin/index.jsp---------------------------------------------------线上代码查找win+r\\192.168.1.206\softMgr\jc测试服务器数据库密码djcourse密码 ssh密钥z0gmq5gpKbpXzuxmjlnwfYYpie9y9DygdpfbMkqRcasserver密码 ssh密钥7Nxddaup2HEcBeq3jrrnzabumuvDSxndyUdypuc5=======================================================================1查看tomcat监听的端口号2 ps -ef| grep tomcat netstat -ntlp | grep 端口号/进程号3 jps4 杀死进程5 重启tomcat=========================================================================查看进程号lsof -i | grep 端口号lsof -i:端口号netstat -ntlp| grep 端口号例子：nststat -nflp|grep 20884lsof -i:20884lsof -i | grep 20884]]></content>
       <categories>
         <category>开发技巧</category>
       </categories>
@@ -491,28 +536,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[Big data]]></title>
-    <url>%2F2016%2F11%2F19%2FBigdata%2F</url>
-    <content type="text"><![CDATA[《刘瑜写给女儿的信：愿你慢慢长大 》小布谷，愿你慢慢长大。愿你有好运气，如果没有，愿你在不幸中学会慈悲。愿你被很多人爱，如果没有，愿你在寂寞中学会宽容。愿你一生一世每天都可以睡到自然醒。 I am BlankCat ，welcome to my blog； 技术要点123456789101112131415161718192021222324252627282930313233343536373839404142434445464748集群分3种负载均衡：分发机制，也会用到主从概念，咱们访问wwww.baidu.com时候，百度会对应着一个服务器 这个服务ip不是对应真正的请求服务，而是做了一层分发，这样用户请求多了，可以保证减轻服务的压力 负载均衡机制都是通过算法计算，然后完成；高可用：针对服务概念，访问一个比较重要的服务，把服务做成高可用模式 把服务写成分解成多个，主服务和从服务（服务的总数必须是奇数个，方便投票机制）， 服务与服务之间通过心跳机制去沟通，发消息，每秒钟发一次； 服务与服务之间通过投票机制产生主服务。把服务拓展成性能比较高的服务 这叫高可用服务。并行计算，针对任务，一个大任务分成几个小任务，最后做汇总，hadoop并行计算（百度一下） 业务场景，统计（天气预报）全国的天气预报，需要每天每分钟做定时统计，这里设计业务很复杂的计算 为了完成一个任务，会把大的任务分解成一个小的任务，把小任务的结果进行汇总，完成任务的并行计算。================================5个九，保一年内证宕机几分钟？5个 9的是可用性，服务的可用性，高可用性 (服务器的高可用性)什么是“5个9”(99.999%)的可靠性？（GG一下,你就知道）================================clusterLB: load balancing : 负载均衡，提高并发处理能力 health check: 健康检测HA:hight availability: 高可用集群，检测心跳，提升服务在线能力（服务可用性） 在线时间/（在线时间+故障处理时间）HP:hight performance : 高性能集群，并行计算集群，处理复杂计算，科学计算集群 分布式文件系统 将大任务切割成小任务，分别进行处理的机制================================数据库主从（读写分离）http://www.cnblogs.com/panxuejun/p/5887118.html主数据库master（在往log日志里面写的时候会先锁住），插入数据库的记录会进入等待，从数据库slave，会开启两个线程（单进程多线程模式），一个io线程，一个sql线程，io读取主数据的binlog日志，sql线程执行sql，同步数据，完成数据库的同步；================================cURL是一个利用URL语法在命令行下工作的文件传输工具，1997年首次发行。它支持文件上传和下载，所以是综合传输工具，但按传统，习惯称cURL为下载工具。cURL还包含了用于程序开发的libcurl官网 https://curl.haxx.se/curl 命令行下载工具使用方法小结 http://www.jb51.net/softjc/26483.html]]></content>
-      <categories>
-        <category>大数据</category>
-      </categories>
-      <tags>
-        <tag>大数据</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[hexo技术总结]]></title>
-    <url>%2F2016%2F11%2F19%2Fhexo%2F</url>
-    <content type="text"><![CDATA[《愿你慢慢长大 》小布谷，愿你慢慢长大。愿你有好运气，如果没有，愿你在不幸中学会慈悲。愿你被很多人爱，如果没有，愿你在寂寞中学会宽容。愿你一生一世每天都可以睡到自然醒。 I am BlankCat，welcome to my blog； 技术要点12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364半个小时搭建一个个人博客hexo个人博客http://blog.csdn.net/v123411739/article/details/44964065搭建个人博客http://www.cnblogs.com/zhcncn/p/4097881.html搭建个人博客（重点）http://blog.csdn.net/jzooo/article/details/46781805个人博客搭建（知乎）https://www.zhihu.com/question/20962496hexo+github+多说http://blog.netpi.me/%E5%AE%9E%E7%94%A8/hexo/如何搭建一个个人博客（附文注册域名，维护站点）http://cnfeat.com/blog/2014/05/10/how-to-build-a-blog/mycat分库分表http://blog.csdn.net/leipeng321123/article/details/50401376搭建个人博客（****）http://blog.csdn.net/jzooo/article/details/46781805hexo上传失败解决http://www.cnblogs.com/xsilence/p/6001938.html博客主题http://blog.xinspace.space/2016/04/11/%E8%87%AA%E5%AE%9A%E4%B9%89Hexo%E5%8D%9A%E5%AE%A2%E7%9A%84%E6%96%87%E7%AB%A0%E3%80%81%E8%8D%89%E7%A8%BF%E5%92%8C%E9%A1%B5%E9%9D%A2%E7%9A%84%E6%A8%A1%E6%9D%BF/炫酷主题https://github.com/iissnan/hexo-theme-next使用文档http://theme-next.iissnan.com/hexo+next主题http://www.jianshu.com/p/f66103553c45hexo+github 总结https://zhuanlan.zhihu.com/p/22632478搭建博客（******）http://www.jianshu.com/p/f66103553c45$ hexo s --debug优化http://www.jeyzhang.com/hexo-next-add-post-views.html#http://michaelxiang.me/2015/11/30/hexo-next-optimize/发布博客git config --global user.name ""git config --global user.email ""hexo d -g发布文章hexo上传失败解决http://www.cnblogs.com/xsilence/p/6001938.html$ hexo g$ hexo d]]></content>
-      <categories>
-        <category>blog</category>
-      </categories>
-      <tags>
-        <tag>blog</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[net 网络知识]]></title>
     <url>%2F2016%2F11%2F19%2Fnet%2F</url>
     <content type="text"><![CDATA[I am BlankCat，welcome to my blog； 技术要点123456789101112131415161718192021222324252627282930ipv4私网地址 百度一下IPV4 地址分类 A B C D Ehttp://blog.csdn.net/ylqmf/article/details/4970213c类网段一般容纳254个主机；网络：设置WAN广域网LAN局域网WLAN无线局域网WAN口是对外的接口，和运营商、上级网络打交道。LAN和WLAN是对内的接口，内部的电脑、手机、PAD，都是接入到LAN或者WLAN。一般的无线路由器，包含了完整的LAN、WAN、WLAN功能ip地址讲解http://blog.csdn.net/yangluoning/article/details/8667067如何浏览器下载局域网电脑的东西输入wifi密码，手机是如何和路由器交换数据的python监听端口下载东西python -m SimpleHTTPServer 80]]></content>
@@ -532,6 +555,28 @@
       </categories>
       <tags>
         <tag>Windows</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Big data]]></title>
+    <url>%2F2016%2F11%2F19%2FBigdata%2F</url>
+    <content type="text"><![CDATA[《刘瑜写给女儿的信：愿你慢慢长大 》小布谷，愿你慢慢长大。愿你有好运气，如果没有，愿你在不幸中学会慈悲。愿你被很多人爱，如果没有，愿你在寂寞中学会宽容。愿你一生一世每天都可以睡到自然醒。 I am BlankCat ，welcome to my blog； 技术要点123456789101112131415161718192021222324252627282930313233343536373839404142434445464748集群分3种负载均衡：分发机制，也会用到主从概念，咱们访问wwww.baidu.com时候，百度会对应着一个服务器 这个服务ip不是对应真正的请求服务，而是做了一层分发，这样用户请求多了，可以保证减轻服务的压力 负载均衡机制都是通过算法计算，然后完成；高可用：针对服务概念，访问一个比较重要的服务，把服务做成高可用模式 把服务写成分解成多个，主服务和从服务（服务的总数必须是奇数个，方便投票机制）， 服务与服务之间通过心跳机制去沟通，发消息，每秒钟发一次； 服务与服务之间通过投票机制产生主服务。把服务拓展成性能比较高的服务 这叫高可用服务。并行计算，针对任务，一个大任务分成几个小任务，最后做汇总，hadoop并行计算（百度一下） 业务场景，统计（天气预报）全国的天气预报，需要每天每分钟做定时统计，这里设计业务很复杂的计算 为了完成一个任务，会把大的任务分解成一个小的任务，把小任务的结果进行汇总，完成任务的并行计算。================================5个九，保一年内证宕机几分钟？5个 9的是可用性，服务的可用性，高可用性 (服务器的高可用性)什么是“5个9”(99.999%)的可靠性？（GG一下,你就知道）================================clusterLB: load balancing : 负载均衡，提高并发处理能力 health check: 健康检测HA:hight availability: 高可用集群，检测心跳，提升服务在线能力（服务可用性） 在线时间/（在线时间+故障处理时间）HP:hight performance : 高性能集群，并行计算集群，处理复杂计算，科学计算集群 分布式文件系统 将大任务切割成小任务，分别进行处理的机制================================数据库主从（读写分离）http://www.cnblogs.com/panxuejun/p/5887118.html主数据库master（在往log日志里面写的时候会先锁住），插入数据库的记录会进入等待，从数据库slave，会开启两个线程（单进程多线程模式），一个io线程，一个sql线程，io读取主数据的binlog日志，sql线程执行sql，同步数据，完成数据库的同步；================================cURL是一个利用URL语法在命令行下工作的文件传输工具，1997年首次发行。它支持文件上传和下载，所以是综合传输工具，但按传统，习惯称cURL为下载工具。cURL还包含了用于程序开发的libcurl官网 https://curl.haxx.se/curl 命令行下载工具使用方法小结 http://www.jb51.net/softjc/26483.html]]></content>
+      <categories>
+        <category>大数据</category>
+      </categories>
+      <tags>
+        <tag>大数据</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[hexo技术总结]]></title>
+    <url>%2F2016%2F11%2F19%2Fhexo%2F</url>
+    <content type="text"><![CDATA[《愿你慢慢长大 》小布谷，愿你慢慢长大。愿你有好运气，如果没有，愿你在不幸中学会慈悲。愿你被很多人爱，如果没有，愿你在寂寞中学会宽容。愿你一生一世每天都可以睡到自然醒。 I am BlankCat，welcome to my blog； 技术要点12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364半个小时搭建一个个人博客hexo个人博客http://blog.csdn.net/v123411739/article/details/44964065搭建个人博客http://www.cnblogs.com/zhcncn/p/4097881.html搭建个人博客（重点）http://blog.csdn.net/jzooo/article/details/46781805个人博客搭建（知乎）https://www.zhihu.com/question/20962496hexo+github+多说http://blog.netpi.me/%E5%AE%9E%E7%94%A8/hexo/如何搭建一个个人博客（附文注册域名，维护站点）http://cnfeat.com/blog/2014/05/10/how-to-build-a-blog/mycat分库分表http://blog.csdn.net/leipeng321123/article/details/50401376搭建个人博客（****）http://blog.csdn.net/jzooo/article/details/46781805hexo上传失败解决http://www.cnblogs.com/xsilence/p/6001938.html博客主题http://blog.xinspace.space/2016/04/11/%E8%87%AA%E5%AE%9A%E4%B9%89Hexo%E5%8D%9A%E5%AE%A2%E7%9A%84%E6%96%87%E7%AB%A0%E3%80%81%E8%8D%89%E7%A8%BF%E5%92%8C%E9%A1%B5%E9%9D%A2%E7%9A%84%E6%A8%A1%E6%9D%BF/炫酷主题https://github.com/iissnan/hexo-theme-next使用文档http://theme-next.iissnan.com/hexo+next主题http://www.jianshu.com/p/f66103553c45hexo+github 总结https://zhuanlan.zhihu.com/p/22632478搭建博客（******）http://www.jianshu.com/p/f66103553c45$ hexo s --debug优化http://www.jeyzhang.com/hexo-next-add-post-views.html#http://michaelxiang.me/2015/11/30/hexo-next-optimize/发布博客git config --global user.name ""git config --global user.email ""hexo d -g发布文章hexo上传失败解决http://www.cnblogs.com/xsilence/p/6001938.html$ hexo g$ hexo d]]></content>
+      <categories>
+        <category>blog</category>
+      </categories>
+      <tags>
+        <tag>blog</tag>
       </tags>
   </entry>
   <entry>
